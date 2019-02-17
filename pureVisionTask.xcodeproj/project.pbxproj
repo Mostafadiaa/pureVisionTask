@@ -7,14 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		165301E42218386E004ED792 /* pageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165301E32218386E004ED792 /* pageModel.swift */; };
+		165301EC22186CEC004ED792 /* LocalizationSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165301EB22186CEC004ED792 /* LocalizationSystem.swift */; };
+		165301EF22186DB6004ED792 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 165301F122186DB6004ED792 /* Localizable.strings */; };
+		16556BB22218CE290040566E /* loginVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16556BB12218CE290040566E /* loginVc.swift */; };
 		16C157DF22182264005B2BA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C157DE22182264005B2BA6 /* AppDelegate.swift */; };
 		16C157E122182264005B2BA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C157E022182264005B2BA6 /* ViewController.swift */; };
 		16C157E422182264005B2BA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16C157E222182264005B2BA6 /* Main.storyboard */; };
 		16C157E622182266005B2BA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16C157E522182266005B2BA6 /* Assets.xcassets */; };
 		16C157E922182266005B2BA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16C157E722182266005B2BA6 /* LaunchScreen.storyboard */; };
+		16C157F722182CBC005B2BA6 /* welcomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C157F622182CBC005B2BA6 /* welcomeViewCell.swift */; };
+		16C9882F221882B100BEC7CE /* mainVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9882E221882B100BEC7CE /* mainVc.swift */; };
+		16C98837221887CB00BEC7CE /* Cairo-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16C98831221887CB00BEC7CE /* Cairo-ExtraLight.ttf */; };
+		16C98838221887CB00BEC7CE /* Cairo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16C98832221887CB00BEC7CE /* Cairo-SemiBold.ttf */; };
+		16C98839221887CB00BEC7CE /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16C98833221887CB00BEC7CE /* Cairo-Regular.ttf */; };
+		16C9883A221887CB00BEC7CE /* Cairo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16C98834221887CB00BEC7CE /* Cairo-Light.ttf */; };
+		16C9883B221887CB00BEC7CE /* Cairo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16C98835221887CB00BEC7CE /* Cairo-Black.ttf */; };
+		16C9883C221887CB00BEC7CE /* Cairo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16C98836221887CB00BEC7CE /* Cairo-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		165301E32218386E004ED792 /* pageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pageModel.swift; sourceTree = "<group>"; };
+		165301E9221869F3004ED792 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		165301EA221869F3004ED792 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		165301EB22186CEC004ED792 /* LocalizationSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationSystem.swift; sourceTree = "<group>"; };
+		165301F022186DB6004ED792 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		165301F222186DB9004ED792 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		16556BB12218CE290040566E /* loginVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginVc.swift; sourceTree = "<group>"; };
 		16C157DB22182264005B2BA6 /* pureVisionTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pureVisionTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C157DE22182264005B2BA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16C157E022182264005B2BA6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +41,14 @@
 		16C157E522182266005B2BA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16C157E822182266005B2BA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16C157EA22182266005B2BA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16C157F622182CBC005B2BA6 /* welcomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = welcomeViewCell.swift; sourceTree = "<group>"; };
+		16C9882E221882B100BEC7CE /* mainVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainVc.swift; sourceTree = "<group>"; };
+		16C98831221887CB00BEC7CE /* Cairo-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-ExtraLight.ttf"; sourceTree = "<group>"; };
+		16C98832221887CB00BEC7CE /* Cairo-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-SemiBold.ttf"; sourceTree = "<group>"; };
+		16C98833221887CB00BEC7CE /* Cairo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Regular.ttf"; sourceTree = "<group>"; };
+		16C98834221887CB00BEC7CE /* Cairo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Light.ttf"; sourceTree = "<group>"; };
+		16C98835221887CB00BEC7CE /* Cairo-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Black.ttf"; sourceTree = "<group>"; };
+		16C98836221887CB00BEC7CE /* Cairo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +81,35 @@
 		16C157DD22182264005B2BA6 /* pureVisionTask */ = {
 			isa = PBXGroup;
 			children = (
+				16C98830221887CB00BEC7CE /* Cairo */,
 				16C157DE22182264005B2BA6 /* AppDelegate.swift */,
+				16C157F622182CBC005B2BA6 /* welcomeViewCell.swift */,
 				16C157E022182264005B2BA6 /* ViewController.swift */,
+				16C9882E221882B100BEC7CE /* mainVc.swift */,
+				16556BB12218CE290040566E /* loginVc.swift */,
+				165301F122186DB6004ED792 /* Localizable.strings */,
 				16C157E222182264005B2BA6 /* Main.storyboard */,
 				16C157E522182266005B2BA6 /* Assets.xcassets */,
 				16C157E722182266005B2BA6 /* LaunchScreen.storyboard */,
 				16C157EA22182266005B2BA6 /* Info.plist */,
+				165301E32218386E004ED792 /* pageModel.swift */,
+				165301EB22186CEC004ED792 /* LocalizationSystem.swift */,
 			);
 			path = pureVisionTask;
+			sourceTree = "<group>";
+		};
+		16C98830221887CB00BEC7CE /* Cairo */ = {
+			isa = PBXGroup;
+			children = (
+				16C98831221887CB00BEC7CE /* Cairo-ExtraLight.ttf */,
+				16C98832221887CB00BEC7CE /* Cairo-SemiBold.ttf */,
+				16C98833221887CB00BEC7CE /* Cairo-Regular.ttf */,
+				16C98834221887CB00BEC7CE /* Cairo-Light.ttf */,
+				16C98835221887CB00BEC7CE /* Cairo-Black.ttf */,
+				16C98836221887CB00BEC7CE /* Cairo-Bold.ttf */,
+			);
+			name = Cairo;
+			path = ../../../Downloads/Cairo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +170,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				165301EF22186DB6004ED792 /* Localizable.strings in Resources */,
+				16C98837221887CB00BEC7CE /* Cairo-ExtraLight.ttf in Resources */,
+				16C98839221887CB00BEC7CE /* Cairo-Regular.ttf in Resources */,
+				16C9883C221887CB00BEC7CE /* Cairo-Bold.ttf in Resources */,
 				16C157E922182266005B2BA6 /* LaunchScreen.storyboard in Resources */,
 				16C157E622182266005B2BA6 /* Assets.xcassets in Resources */,
 				16C157E422182264005B2BA6 /* Main.storyboard in Resources */,
+				16C9883B221887CB00BEC7CE /* Cairo-Black.ttf in Resources */,
+				16C9883A221887CB00BEC7CE /* Cairo-Light.ttf in Resources */,
+				16C98838221887CB00BEC7CE /* Cairo-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,18 +190,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				165301E42218386E004ED792 /* pageModel.swift in Sources */,
+				165301EC22186CEC004ED792 /* LocalizationSystem.swift in Sources */,
 				16C157E122182264005B2BA6 /* ViewController.swift in Sources */,
+				16556BB22218CE290040566E /* loginVc.swift in Sources */,
+				16C157F722182CBC005B2BA6 /* welcomeViewCell.swift in Sources */,
 				16C157DF22182264005B2BA6 /* AppDelegate.swift in Sources */,
+				16C9882F221882B100BEC7CE /* mainVc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		165301F122186DB6004ED792 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				165301F022186DB6004ED792 /* ar */,
+				165301F222186DB9004ED792 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		16C157E222182264005B2BA6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				16C157E322182264005B2BA6 /* Base */,
+				165301E9221869F3004ED792 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -155,6 +225,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				16C157E822182266005B2BA6 /* Base */,
+				165301EA221869F3004ED792 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -166,6 +237,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -227,6 +299,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -292,7 +365,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Diaa.sad8.pureVisionTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -310,7 +383,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Diaa.sad8.pureVisionTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

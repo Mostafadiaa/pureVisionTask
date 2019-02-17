@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  pureVisionTask
+
+  Created by Mostafa Diaa on 2/16/19.
+  Copyright © 2019 Mostafa Diaa. All rights reserved.
+*/
+
+"Purevision"="Pure vision";
+"Purevisionlogo"="Technology solutions suitable for all individuals and companies through a variety of technical services provided by a team that is characterized by integration";
+
+"whoRweTitel"="WHO ARE WE?";
+"whoRwe"="Pure vision IT Solutions is a leading specialist in the world of Information and Communications Technology (ICT), Information Security (InfoSec) and Innovative Business Solutions";
+
+"mobTitel"="Mobile Applications";
+"mobText"="We offer our integrated services in the programming and design of Mobile applications on different operating systems";
+
+"webTitel"="Web Development";
+"webText"="We offer professional web design and development services to achieve your goal and enable you to implement your strategies";
+
+"iotTitel"="Smart Homes";
+"iotText"="We provide smart solutions for everything you think about and want to control from inside and outside your home or office";
+
+"cloudTitel" = "Cloud Computing";
+"cloudText"="Pure Vision ITS offers a broad portfolio of professional services aimed at ensuring our clients’ successful deployment, adoption and exploitation of cloud computing";
+
+"continueKey" = "Continue";
+
+"logIn" = "LogIn";
+
+"signUp" = "SignUp";
+
+"email" = "Email" ;
+
+"Pass" = "Password" ;
