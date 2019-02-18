@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ene-VB-vrQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K7Y-LW-z0A">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -99,7 +99,7 @@
                                 <color key="currentPageIndicatorTintColor" red="0.55686274509803924" green="0.26666666666666666" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXS-Kp-g4c">
-                                <rect key="frame" x="20" y="20" width="73" height="33"/>
+                                <rect key="frame" x="20" y="20" width="68" height="46"/>
                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="18"/>
                                 <state key="normal" title="Continue">
                                     <color key="titleColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -210,16 +210,16 @@
             </objects>
             <point key="canvasLocation" x="1564" y="69.715142428785612"/>
         </scene>
-        <!--PersonlVC-->
+        <!--المعلومات الشخصية-->
         <scene sceneID="so3-PS-Tye">
             <objects>
-                <viewController id="ene-VB-vrQ" customClass="personlVC" customModule="pureVisionTask" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="المعلومات الشخصية" id="ene-VB-vrQ" customClass="personlVC" customModule="pureVisionTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LJw-yC-Y12">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1050"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZn-Rn-A7o">
-                                <rect key="frame" x="0.0" y="20" width="375" height="1030"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="937"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xve-Xe-77o">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
@@ -228,13 +228,13 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="285"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Application" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3r-8P-aTO">
-                                                        <rect key="frame" x="132.5" y="52" width="110" height="32"/>
+                                                        <rect key="frame" x="128" y="40" width="119" height="20"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="طلب توظيف" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDw-AZ-30N">
-                                                        <rect key="frame" x="140.5" y="20" width="94.5" height="32"/>
+                                                        <rect key="frame" x="153" y="20" width="69" height="20"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -244,16 +244,19 @@
                                                         <state key="normal" title="Continue">
                                                             <color key="titleColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="rpe-Og-jhu" kind="show" id="tk4-5b-s0p"/>
+                                                        </connections>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Purevisionlogo0" translatesAutoresizingMaskIntoConstraints="NO" id="DTJ-2Z-xgi">
-                                                        <rect key="frame" x="6.5" y="94" width="141" height="85"/>
+                                                        <rect key="frame" x="6.5" y="70" width="141" height="85"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="85" id="491-KS-N4B"/>
                                                             <constraint firstAttribute="width" constant="141" id="Ohj-TZ-kJs"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tap-2" translatesAutoresizingMaskIntoConstraints="NO" id="HSt-Tk-VgW">
-                                                        <rect key="frame" x="225" y="94" width="150" height="86"/>
+                                                        <rect key="frame" x="225" y="70" width="150" height="86"/>
                                                         <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="86" id="Lu7-Jr-RhI"/>
@@ -264,7 +267,7 @@
                                                         </connections>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="اضغط مرتين علي الصورة الزرقاء الي فوق عشان تضيف صوره او تغير صورتك" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHw-eX-mh6">
-                                                        <rect key="frame" x="225" y="180" width="150" height="119"/>
+                                                        <rect key="frame" x="225" y="156" width="150" height="119"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="119" id="yZA-zM-kmL"/>
@@ -296,13 +299,13 @@
                                                 <rect key="frame" x="0.0" y="285" width="375" height="745"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المعلومات الشخصية" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amS-es-Hks">
-                                                        <rect key="frame" x="109.5" y="0.0" width="156.5" height="32"/>
+                                                        <rect key="frame" x="130.5" y="0.0" width="114.5" height="20"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="العنوان" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9X7-sc-d5h">
-                                                        <rect key="frame" x="5" y="67" width="365" height="30"/>
+                                                        <rect key="frame" x="5" y="55" width="365" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -311,7 +314,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="التليفون المحمول" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YWP-t7-m8R">
-                                                        <rect key="frame" x="5" y="137" width="365" height="30"/>
+                                                        <rect key="frame" x="5" y="125" width="365" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="ASCIICapableNumberPad" textContentType="tel"/>
@@ -320,7 +323,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الاسم" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEA-kY-Wm3">
-                                                        <rect key="frame" x="5" y="32" width="365" height="30"/>
+                                                        <rect key="frame" x="5" y="20" width="365" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -329,7 +332,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mMY-RP-bj1">
-                                                        <rect key="frame" x="5" y="207" width="365" height="30"/>
+                                                        <rect key="frame" x="5" y="195" width="365" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
@@ -338,7 +341,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="هاتف" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HIE-8X-yHG">
-                                                        <rect key="frame" x="5" y="102" width="365" height="30"/>
+                                                        <rect key="frame" x="5" y="90" width="365" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="ASCIICapableNumberPad" textContentType="tel"/>
@@ -347,7 +350,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="رقم البطاقة" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vUH-eU-Dbe">
-                                                        <rect key="frame" x="5" y="172" width="365" height="30"/>
+                                                        <rect key="frame" x="5" y="160" width="365" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="ASCIICapableNumberPad" textContentType="cc-number"/>
@@ -356,23 +359,23 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P1Z-9l-EYh">
-                                                        <rect key="frame" x="5" y="242" width="365" height="70"/>
+                                                        <rect key="frame" x="5" y="230" width="365" height="70"/>
                                                         <subviews>
                                                             <segmentedControl opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="6Ph-7P-fnR">
-                                                                <rect key="frame" x="85.5" y="33" width="274.5" height="29"/>
+                                                                <rect key="frame" x="85.5" y="19.5" width="274.5" height="29"/>
                                                                 <segments>
                                                                     <segment title="ذكر"/>
                                                                     <segment title="انثي"/>
                                                                 </segments>
                                                             </segmentedControl>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marital Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fie-J7-dEO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="80.5" height="24.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="80.5" height="15.5"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sO7-eg-yeW">
-                                                                <rect key="frame" x="27" y="34.5" width="26.5" height="24.5"/>
+                                                                <rect key="frame" x="26.5" y="25.5" width="27.5" height="15.5"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -401,16 +404,16 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hLX-rR-gcX">
-                                                        <rect key="frame" x="5" y="322" width="365" height="423"/>
+                                                        <rect key="frame" x="5" y="310" width="365" height="435"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الديانة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGk-XJ-0MG">
-                                                                <rect key="frame" x="163.5" y="338" width="38" height="24.5"/>
+                                                                <rect key="frame" x="168.5" y="302" width="28" height="15.5"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T3X-cA-lfI">
-                                                                <rect key="frame" x="0.0" y="278" width="365" height="60"/>
+                                                                <rect key="frame" x="0.0" y="242" width="365" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="60" id="bld-dx-0BN"/>
                                                                 </constraints>
@@ -420,13 +423,13 @@
                                                                 </connections>
                                                             </pickerView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المدينة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vd-xQ-B1S">
-                                                                <rect key="frame" x="160" y="169" width="45" height="24.5"/>
+                                                                <rect key="frame" x="169.5" y="151" width="26" height="15.5"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="tTB-PO-kPm">
-                                                                <rect key="frame" x="0.0" y="109" width="365" height="60"/>
+                                                                <rect key="frame" x="0.0" y="91" width="365" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="60" id="NNX-1p-l4M"/>
                                                                 </constraints>
@@ -435,7 +438,7 @@
                                                                 </date>
                                                             </datePicker>
                                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="3yU-FK-6ir">
-                                                                <rect key="frame" x="0.0" y="24.5" width="365" height="60"/>
+                                                                <rect key="frame" x="0.0" y="15.5" width="365" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="60" id="76T-70-517"/>
                                                                 </constraints>
@@ -444,19 +447,19 @@
                                                                 </date>
                                                             </datePicker>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تاريخ الميلاد" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRz-oO-ero">
-                                                                <rect key="frame" x="148.5" y="84.5" width="68" height="24.5"/>
+                                                                <rect key="frame" x="156" y="75.5" width="53" height="15.5"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="صالح لغاية" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Z4-7P-KYj">
-                                                                <rect key="frame" x="152" y="0.0" width="61" height="24.5"/>
+                                                                <rect key="frame" x="157.5" y="0.0" width="50" height="15.5"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4yO-vU-NVD">
-                                                                <rect key="frame" x="0.0" y="193.5" width="365" height="60"/>
+                                                                <rect key="frame" x="0.0" y="166.5" width="365" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="60" id="M7t-98-N8k"/>
                                                                 </constraints>
@@ -466,13 +469,13 @@
                                                                 </connections>
                                                             </pickerView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الجنسية" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bp7-DL-HP9">
-                                                                <rect key="frame" x="158.5" y="253.5" width="48" height="24.5"/>
+                                                                <rect key="frame" x="164.5" y="226.5" width="36.5" height="15.5"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1kc-gW-T8L">
-                                                                <rect key="frame" x="0.0" y="362.5" width="365" height="53"/>
+                                                                <rect key="frame" x="0.0" y="317.5" width="365" height="53"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="53" id="7k9-un-vex"/>
                                                                 </constraints>
@@ -578,6 +581,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Ow-YC-U8G"/>
                     </view>
+                    <navigationItem key="navigationItem" title="المعلومات الشخصية" largeTitleDisplayMode="always" id="Vg4-3i-AiP"/>
                     <size key="freeformSize" width="375" height="1050"/>
                     <connections>
                         <outlet property="adressField" destination="9X7-sc-d5h" id="NaQ-Ph-rjb"/>
@@ -593,6 +597,7 @@
                         <outlet property="nameField" destination="eEA-kY-Wm3" id="qSU-wT-QG0"/>
                         <outlet property="natLabel" destination="bp7-DL-HP9" id="45g-XF-8TT"/>
                         <outlet property="natPicker" destination="T3X-cA-lfI" id="Cnw-Kr-p9K"/>
+                        <outlet property="navTitel" destination="Vg4-3i-AiP" id="Yeo-55-H3h"/>
                         <outlet property="persLabel" destination="amS-es-Hks" id="efR-dd-zEW"/>
                         <outlet property="phoneField" destination="HIE-8X-yHG" id="kpf-tY-vEE"/>
                         <outlet property="religLabel" destination="eGk-XJ-0MG" id="79B-8U-gD1"/>
@@ -612,21 +617,21 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2489" y="69"/>
+            <point key="canvasLocation" x="4482.1875" y="68.661971830985919"/>
         </scene>
-        <!--View Controller-->
+        <!--Education-->
         <scene sceneID="FOS-mk-ccy">
             <objects>
-                <viewController id="rpe-Og-jhu" sceneMemberID="viewController">
+                <viewController title="Education" id="rpe-Og-jhu" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I8v-UY-bZG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LT5-97-kgS">
-                                <rect key="frame" x="0.0" y="20" width="320" height="980"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="887"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tDl-6p-8mJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1000" id="nbV-EE-yb6"/>
@@ -651,15 +656,93 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ha6-rG-zCf"/>
                     </view>
-                    <size key="freeformSize" width="320" height="1000"/>
+                    <size key="freeformSize" width="375" height="1000"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nge-m6-MXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3276" y="42"/>
+            <point key="canvasLocation" x="5359.6875" y="41.197183098591552"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="RXs-hQ-kLn">
+            <objects>
+                <viewController id="9ZJ-i8-oFg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6sM-ik-Xsp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Purevisionlogo0" translatesAutoresizingMaskIntoConstraints="NO" id="IgK-QK-6Ys">
+                                <rect key="frame" x="16" y="50" width="288" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Mob" translatesAutoresizingMaskIntoConstraints="NO" id="ZMV-zX-oZB">
+                                <rect key="frame" x="76" y="103" width="168" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pV-Ja-Yy3">
+                                <rect key="frame" x="127" y="270" width="67" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Sign Out"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="J1Y-ni-1FH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Jt-qc-y03" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3485.625" y="-732.04225352112678"/>
+        </scene>
+        <!--Job Application-->
+        <scene sceneID="LgQ-kF-N4d">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XgR-ht-ZEj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Job Application" image="businessman" id="rJE-PQ-6av"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rs6-3f-e9S">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ene-VB-vrQ" kind="relationship" relationship="rootViewController" id="9Xw-IA-nqR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="czV-45-eLH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3485.625" y="68.661971830985919"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="m86-Vz-56I">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="K7Y-LW-z0A" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z6I-1I-39q">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
+                                <color key="value" red="0.49803921568627452" green="0.5490196078431373" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBar>
+                    <connections>
+                        <segue destination="XgR-ht-ZEj" kind="relationship" relationship="viewControllers" id="6ux-FB-YhM"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3rI-lv-peA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2488.125" y="68.661971830985919"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Mob" width="525" height="471"/>
         <image name="Purevisionlogo0" width="141.73228454589844" height="85"/>
+        <image name="businessman" width="30" height="30"/>
         <image name="tap-2" width="384" height="384"/>
     </resources>
 </document>

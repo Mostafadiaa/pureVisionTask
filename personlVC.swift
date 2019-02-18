@@ -35,6 +35,7 @@ class personlVC: UIViewController {
     @IBOutlet weak var cityPicker: UIPickerView!
     @IBOutlet weak var natPicker: UIPickerView!
     @IBOutlet weak var religionPicker: UIPickerView!
+    @IBOutlet weak var navTitel: UINavigationItem!
     
     
     
@@ -47,6 +48,8 @@ class personlVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navTitel.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "personal", comment: "")
+       // self.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "personal", comment: "")
         tapToChosePhoto.delegate = self as? UIGestureRecognizerDelegate
         tapToChosePhoto.numberOfTapsRequired = 2
         contAcc.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "continueKey", comment: ""), for: .normal)
