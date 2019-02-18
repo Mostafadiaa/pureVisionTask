@@ -33,3 +33,28 @@
 "email" = "Email" ;
 
 "Pass" = "Password" ;
+
+"ApplicationNo" = "Application No.";
+
+"personal" = "Personal Information";
+
+"choseBut" = "Choose";
+
+"name" = "Full Name";
+"address" = "Address";
+"phone" = "TelePhone";
+"mobile" = "Mobile";
+"idNo" = "Civil ID No.";
+"tapTwice" = "Tap twice on the blue image to add or change your image";
+"marital"="Marital Status";
+"type"="Type";
+"married"="Married";
+"single"="Single";
+"femaile"="Femaile";
+"male"="Male";
+"validTo" = "Valid up to";
+"city" = "City";
+"nationality" = "Nationality";
+"religion" = "Religion";
+"dateBirth" = "Date of birth";
+

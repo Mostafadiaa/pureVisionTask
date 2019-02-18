@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // print(Locale.current.languageCode)
         if Locale.current.languageCode == "en"{
            // LocalizationSystem.sharedInstance.setLanguage(languageCode: "en")
             UIView.appearance().semanticContentAttribute = .forceLeftToRight
