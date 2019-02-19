@@ -1378,10 +1378,10 @@
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiT-Bn-Bfj">
-                                            <rect key="frame" x="141" y="354" width="38" height="44"/>
+                                            <rect key="frame" x="140" y="354" width="40" height="44"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
-                                            <state key="normal" title="Done">
+                                            <state key="normal" title="addN">
                                                 <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                         </button>
