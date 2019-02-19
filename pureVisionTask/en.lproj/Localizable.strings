@@ -81,6 +81,42 @@
 "endDate"="Date Left";
 "jobHistory" = "Work log";
 
+"addNewLang" = "Add New Language";
+"otherLang" = "Other Language";
+"arName" = "Arabic";
+"enName" = "English";
+"excellent" = "Excellent";
+"good" = "Good";
+"fair" = "Fair";
+"poor" = "Poor";
+"lang" = "Languages";
+"addNewElemen" = "Add at least one New Element";
+"yourInfo" = "Your Information";
+"skillsInfo" = "job-related skills";
+"skillsInfoField" =  "Write skills for the job";
+"whyAtPureVision" = "Why would you like to work with PureVision";
+"personNoTwo" =  "Second Person";
+"twoPerson" = "Name two people to refer to";
+"personNoOne" =  "First Person";
+"jobOfPer" = "Job";
+"compPTwo" = "Company";
+"phone" = "address / phone";
+"badPerson" = "Was your Behavio bad during your study or work period";
+"resPerson" =  "Responsible ";
+"loyalPerson" = "Honest,lives by integrity ethics";
+"leaderPerson" = "leadership";
+"anotherCity" = "Are you willing to be relocated";
+"holdayes" =  "Are you ready to work during vacations";
+"teamWorker" = "Team Player";
+"activePerson" = "energetic and ableto energize";
+"positivePerson" = "Positive attitude";
+"suspend" = "Have you been suspended from a previous job";
+"smoke" =  "Are you a smoker";
+"case" = "Have you been convicted in a previous case";
+"yes" = "Yes";
+"no" = "No";
+
+
 
 
 

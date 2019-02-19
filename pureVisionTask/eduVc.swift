@@ -123,6 +123,9 @@ class eduVc: UIViewController {
     }
     
     @IBAction func completeAction(_ sender: Any) {
+        if qDataKeys.count == 0{
+             AlertController.showAlert(self, title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "emptyField", comment: ""), message: LocalizationSystem.sharedInstance.localizedStringForKey(key: "addNewElemen", comment: ""))
+        }
     }
     
     

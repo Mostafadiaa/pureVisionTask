@@ -41,7 +41,7 @@ class jobVc: UIViewController {
         reason.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "reason", comment: "")
         salary.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "salary", comment: "")
         startLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "startDate", comment: "")
-        startLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "endDate", comment: "")
+        endLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "endDate", comment: "")
         doneOutlet.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Done", comment: ""), for: .normal)
         
     }
@@ -78,6 +78,11 @@ class jobVc: UIViewController {
     
 
     @IBAction func compAcction(_ sender: Any) {
+        if jobDataKeys.count == 0 {
+            AlertController.showAlert(self, title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "emptyField", comment: ""), message: LocalizationSystem.sharedInstance.localizedStringForKey(key: "addNewElemen", comment: ""))
+
+            
+        }
     }
     
 }

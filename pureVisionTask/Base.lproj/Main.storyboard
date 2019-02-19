@@ -356,6 +356,7 @@
                                                                     <segment title="ذكر"/>
                                                                     <segment title="انثي"/>
                                                                 </segments>
+                                                                <color key="tintColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </segmentedControl>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marital Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fie-J7-dEO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="80.5" height="24.5"/>
@@ -375,6 +376,7 @@
                                                                     <segment title="اعزب"/>
                                                                     <segment title="متزوج"/>
                                                                 </segments>
+                                                                <color key="tintColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </segmentedControl>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -719,6 +721,7 @@
                                             <color key="titleColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="completeAction:" destination="rpe-Og-jhu" eventType="touchUpInside" id="dUf-js-mJi"/>
                                             <segue destination="MO8-oq-q8H" kind="show" id="Twu-M8-22R"/>
                                         </connections>
                                     </button>
@@ -768,7 +771,7 @@
                                                 <segment title="test@"/>
                                                 <segment title="tdtd"/>
                                             </segments>
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </segmentedControl>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3w-c0-9bS">
                                             <rect key="frame" x="0.0" y="216" width="320" height="30"/>
@@ -1234,183 +1237,608 @@
         <!--lang-->
         <scene sceneID="fov-ZJ-Yyf">
             <objects>
-                <viewController title="lang" id="IDh-1A-kyr" customClass="jobVc" customModule="pureVisionTask" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="lang" id="IDh-1A-kyr" customClass="langVc" customModule="pureVisionTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HgR-t0-MF4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xdx-dl-EM5">
-                                <rect key="frame" x="0.0" y="108" width="320" height="411"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="langCell" rowHeight="201" id="uUn-ex-rSB">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="201"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uUn-ex-rSB" id="0OH-HT-AGe">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="200.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم الشركة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hic-MB-h5s">
-                                                    <rect key="frame" x="123" y="5" width="74.5" height="29"/>
-                                                    <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المسمي الوظيفي" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dr2-16-iBL">
-                                                    <rect key="frame" x="102.5" y="39" width="115.5" height="29"/>
-                                                    <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تاريخ بدء العمل " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tL3-Fb-JUe">
-                                                    <rect key="frame" x="112" y="73" width="96" height="29"/>
-                                                    <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الراتب" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLs-4P-RJL">
-                                                    <rect key="frame" x="142.5" y="107" width="35.5" height="29"/>
-                                                    <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سبب ترك العمل" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xI1-hZ-fCv">
-                                                    <rect key="frame" x="111.5" y="141" width="97" height="29"/>
-                                                    <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="hic-MB-h5s" firstAttribute="centerX" secondItem="0OH-HT-AGe" secondAttribute="centerX" id="4a8-zZ-3ru"/>
-                                                <constraint firstItem="sLs-4P-RJL" firstAttribute="top" secondItem="tL3-Fb-JUe" secondAttribute="bottom" constant="5" id="CKH-NW-6MS"/>
-                                                <constraint firstItem="hic-MB-h5s" firstAttribute="top" secondItem="0OH-HT-AGe" secondAttribute="top" constant="5" id="DcZ-K8-SKp"/>
-                                                <constraint firstItem="tL3-Fb-JUe" firstAttribute="top" secondItem="Dr2-16-iBL" secondAttribute="bottom" constant="5" id="Qs6-7x-sHF"/>
-                                                <constraint firstItem="xI1-hZ-fCv" firstAttribute="top" secondItem="sLs-4P-RJL" secondAttribute="bottom" constant="5" id="Rju-zr-VUq"/>
-                                                <constraint firstItem="xI1-hZ-fCv" firstAttribute="centerX" secondItem="sLs-4P-RJL" secondAttribute="centerX" id="W5e-XY-RKF"/>
-                                                <constraint firstItem="Dr2-16-iBL" firstAttribute="centerX" secondItem="hic-MB-h5s" secondAttribute="centerX" id="XpV-d7-Xxy"/>
-                                                <constraint firstItem="sLs-4P-RJL" firstAttribute="centerX" secondItem="tL3-Fb-JUe" secondAttribute="centerX" id="eeO-6l-kEs"/>
-                                                <constraint firstItem="Dr2-16-iBL" firstAttribute="top" secondItem="hic-MB-h5s" secondAttribute="bottom" constant="5" id="oyT-LS-jbQ"/>
-                                                <constraint firstItem="tL3-Fb-JUe" firstAttribute="centerX" secondItem="Dr2-16-iBL" secondAttribute="centerX" id="wQg-Q4-Yvc"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="67" translatesAutoresizingMaskIntoConstraints="NO" id="pRI-MW-LJu">
-                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOt-CI-YXz">
-                                        <rect key="frame" x="0.0" y="0.0" width="126.5" height="44"/>
-                                        <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
-                                        <state key="normal" title="Add">
-                                            <color key="titleColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LoK-Ka-wGc">
-                                        <rect key="frame" x="193.5" y="0.0" width="126.5" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Complete">
                                             <color key="titleColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="compToNext:" destination="IDh-1A-kyr" eventType="touchUpInside" id="LNo-Y5-N75"/>
+                                            <segue destination="5Wq-Fr-Kpm" kind="show" id="1dl-Un-MJf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="LoK-Ka-wGc" firstAttribute="leading" secondItem="oOt-CI-YXz" secondAttribute="trailing" constant="67" id="oNF-jf-dMb"/>
-                                    <constraint firstItem="oOt-CI-YXz" firstAttribute="width" secondItem="LoK-Ka-wGc" secondAttribute="width" id="xlP-br-0A6"/>
-                                </constraints>
                             </stackView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zF0-dP-aBV">
-                                <rect key="frame" x="0.0" y="62" width="320" height="568"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="KGe-xb-HpS">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="arabic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eW-UF-09e">
-                                            <rect key="frame" x="8" y="14" width="45" height="32"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
-                                            <color key="textColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="eng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3y-Bh-oaQ">
-                                            <rect key="frame" x="8" y="54" width="28" height="32"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
-                                            <color key="textColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="nZc-xd-kUC">
-                                            <rect key="frame" x="61" y="16" width="251" height="29"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <segments>
-                                                <segment title="First"/>
-                                                <segment title="Second"/>
-                                                <segment title="third"/>
-                                                <segment title="four"/>
-                                            </segments>
-                                            <color key="tintColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </segmentedControl>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="Pvz-zk-EIs">
-                                            <rect key="frame" x="61" y="56" width="251" height="29"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <segments>
-                                                <segment title="First"/>
-                                                <segment title="Second"/>
-                                                <segment title="third"/>
-                                                <segment title="four"/>
-                                            </segments>
-                                            <color key="tintColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </segmentedControl>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ov-Za-cZd">
-                                            <rect key="frame" x="141" y="406" width="38" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
-                                            <state key="normal" title="Done">
-                                                <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                        </button>
-                                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zpI-f2-3eo">
-                                            <rect key="frame" x="8" y="109" width="304" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiT-Bn-Bfj">
-                                            <rect key="frame" x="140" y="354" width="40" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
-                                            <state key="normal" title="addN">
-                                                <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                        </button>
-                                    </subviews>
-                                </view>
-                                <color key="backgroundColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="arabic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UlT-88-f6J">
+                                <rect key="frame" x="137.5" y="94" width="45" height="32"/>
+                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
+                                <color key="textColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcn-b1-owy">
+                                <rect key="frame" x="146.5" y="164" width="27.5" height="32"/>
+                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
+                                <color key="textColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="Ovf-J2-ku2">
+                                <rect key="frame" x="5" y="131" width="310" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                    <segment title="third"/>
+                                    <segment title="four"/>
+                                </segments>
+                                <color key="tintColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="CDR-EC-vBq">
+                                <rect key="frame" x="5" y="201" width="310" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                    <segment title="third"/>
+                                    <segment title="four"/>
+                                </segments>
+                                <color key="tintColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="cXf-Nt-jFZ">
+                                <rect key="frame" x="5" y="279" width="310" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                    <segment title="third"/>
+                                    <segment title="four"/>
+                                </segments>
+                                <color key="tintColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkp-ub-qbM">
+                                <rect key="frame" x="5" y="470" width="310" height="44"/>
+                                <color key="backgroundColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
+                                <state key="normal" title="AddNewLang">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addNewAc:" destination="IDh-1A-kyr" eventType="touchUpInside" id="NIA-mu-yEz"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="apI-99-3YJ">
+                                <rect key="frame" x="5" y="239" width="310" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="kKZ-Oo-qG9" firstAttribute="trailing" secondItem="CDR-EC-vBq" secondAttribute="trailing" constant="5" id="48n-eV-K6P"/>
+                            <constraint firstItem="UlT-88-f6J" firstAttribute="top" secondItem="LoK-Ka-wGc" secondAttribute="bottom" id="6pE-XJ-f0d"/>
                             <constraint firstItem="pRI-MW-LJu" firstAttribute="width" secondItem="HgR-t0-MF4" secondAttribute="width" id="7Kr-DZ-ixg"/>
-                            <constraint firstItem="zF0-dP-aBV" firstAttribute="height" secondItem="HgR-t0-MF4" secondAttribute="height" id="AU8-Wv-wGL"/>
-                            <constraint firstItem="kKZ-Oo-qG9" firstAttribute="top" secondItem="zF0-dP-aBV" secondAttribute="top" constant="2" id="CjK-UF-N0X"/>
-                            <constraint firstItem="xdx-dl-EM5" firstAttribute="top" secondItem="pRI-MW-LJu" secondAttribute="bottom" id="DTH-Uz-1KH"/>
+                            <constraint firstItem="kKZ-Oo-qG9" firstAttribute="trailing" secondItem="jkp-ub-qbM" secondAttribute="trailing" constant="5" id="8Ax-7H-IpH"/>
+                            <constraint firstItem="rcn-b1-owy" firstAttribute="top" secondItem="Ovf-J2-ku2" secondAttribute="bottom" constant="5" id="97U-gP-LlQ"/>
+                            <constraint firstItem="cXf-Nt-jFZ" firstAttribute="top" secondItem="apI-99-3YJ" secondAttribute="bottom" constant="10" id="ETZ-HC-C7g"/>
+                            <constraint firstItem="UlT-88-f6J" firstAttribute="centerX" secondItem="LoK-Ka-wGc" secondAttribute="centerX" id="Fmg-Fb-ChS"/>
+                            <constraint firstItem="apI-99-3YJ" firstAttribute="top" secondItem="CDR-EC-vBq" secondAttribute="bottom" constant="10" id="JuX-V3-cIn"/>
+                            <constraint firstItem="kKZ-Oo-qG9" firstAttribute="bottom" secondItem="jkp-ub-qbM" secondAttribute="bottom" constant="5" id="JwE-2e-WzI"/>
                             <constraint firstItem="pRI-MW-LJu" firstAttribute="centerX" secondItem="kKZ-Oo-qG9" secondAttribute="centerX" id="KCx-hn-Yzy"/>
-                            <constraint firstItem="kKZ-Oo-qG9" firstAttribute="trailing" secondItem="xdx-dl-EM5" secondAttribute="trailing" id="Yfr-1q-JkY"/>
-                            <constraint firstItem="xdx-dl-EM5" firstAttribute="leading" secondItem="kKZ-Oo-qG9" secondAttribute="leading" id="bmq-bP-dsp"/>
-                            <constraint firstItem="kKZ-Oo-qG9" firstAttribute="bottom" secondItem="xdx-dl-EM5" secondAttribute="bottom" id="jB1-UK-pgQ"/>
+                            <constraint firstItem="cXf-Nt-jFZ" firstAttribute="centerX" secondItem="apI-99-3YJ" secondAttribute="centerX" id="MfE-mE-aGM"/>
+                            <constraint firstItem="rcn-b1-owy" firstAttribute="centerX" secondItem="Ovf-J2-ku2" secondAttribute="centerX" id="OrW-nS-FnE"/>
+                            <constraint firstItem="apI-99-3YJ" firstAttribute="centerX" secondItem="CDR-EC-vBq" secondAttribute="centerX" id="Tsr-Ol-ZBl"/>
+                            <constraint firstItem="Ovf-J2-ku2" firstAttribute="top" secondItem="UlT-88-f6J" secondAttribute="bottom" constant="5" id="UtH-Bl-qdf"/>
+                            <constraint firstItem="Ovf-J2-ku2" firstAttribute="centerX" secondItem="UlT-88-f6J" secondAttribute="centerX" id="Yn2-aG-vix"/>
+                            <constraint firstItem="kKZ-Oo-qG9" firstAttribute="trailing" secondItem="Ovf-J2-ku2" secondAttribute="trailing" constant="5" id="b8g-be-dV6"/>
+                            <constraint firstItem="CDR-EC-vBq" firstAttribute="top" secondItem="rcn-b1-owy" secondAttribute="bottom" constant="5" id="iX9-LA-T6h"/>
+                            <constraint firstItem="CDR-EC-vBq" firstAttribute="leading" secondItem="kKZ-Oo-qG9" secondAttribute="leading" constant="5" id="kQc-8A-UR7"/>
+                            <constraint firstItem="jkp-ub-qbM" firstAttribute="leading" secondItem="kKZ-Oo-qG9" secondAttribute="leading" constant="5" id="r2E-op-3Up"/>
                             <constraint firstItem="pRI-MW-LJu" firstAttribute="top" secondItem="kKZ-Oo-qG9" secondAttribute="top" id="rjU-gC-df4"/>
-                            <constraint firstItem="zF0-dP-aBV" firstAttribute="width" secondItem="HgR-t0-MF4" secondAttribute="width" id="tOh-es-qde"/>
-                            <constraint firstItem="zF0-dP-aBV" firstAttribute="centerX" secondItem="kKZ-Oo-qG9" secondAttribute="centerX" id="vnk-wT-Ebm"/>
+                            <constraint firstItem="cXf-Nt-jFZ" firstAttribute="width" secondItem="apI-99-3YJ" secondAttribute="width" id="tVc-ZA-2TY"/>
+                            <constraint firstItem="apI-99-3YJ" firstAttribute="width" secondItem="CDR-EC-vBq" secondAttribute="width" id="u9s-sX-39Y"/>
+                            <constraint firstItem="Ovf-J2-ku2" firstAttribute="leading" secondItem="kKZ-Oo-qG9" secondAttribute="leading" constant="5" id="uLb-ow-XEH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kKZ-Oo-qG9"/>
                     </view>
+                    <connections>
+                        <outlet property="addNewOutlet" destination="jkp-ub-qbM" id="GdE-yc-dgp"/>
+                        <outlet property="araRate" destination="Ovf-J2-ku2" id="1PL-4E-OCb"/>
+                        <outlet property="arabicLabel" destination="UlT-88-f6J" id="Kbs-WU-ksI"/>
+                        <outlet property="compOutlet" destination="LoK-Ka-wGc" id="kK3-Tc-7DA"/>
+                        <outlet property="engLabel" destination="rcn-b1-owy" id="FVH-Ga-Bhg"/>
+                        <outlet property="engRate" destination="CDR-EC-vBq" id="8Dw-0q-gVx"/>
+                        <outlet property="otherField" destination="apI-99-3YJ" id="Gpw-sB-UVQ"/>
+                        <outlet property="otherRate" destination="cXf-Nt-jFZ" id="u4x-KV-TXc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Mk-B7-EqH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7545" y="68.661971830985919"/>
+        </scene>
+        <!--your Info-->
+        <scene sceneID="Iqw-QN-fMx">
+            <objects>
+                <viewController title="your Info" id="5Wq-Fr-Kpm" customClass="yourInfoVc" customModule="pureVisionTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5ZF-dO-pDa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1415"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1g3-pA-zKk">
+                                <rect key="frame" x="0.0" y="64" width="320" height="1302"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KvJ-Hq-oCb">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1415"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مهارات متعلقة بالوظيفة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Meg-OM-ShE">
+                                                <rect key="frame" x="63" y="8" width="194" height="32"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
+                                                <color key="textColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="لماذا " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ert-xO-EQX">
+                                                <rect key="frame" x="5" y="90" width="310" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اذكر اسم شخصين يمكن الرجوع لهم" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4M-9k-eai">
+                                                <rect key="frame" x="27.5" y="130" width="265" height="32"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
+                                                <color key="textColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الاسم" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7eh-L7-vsh">
+                                                <rect key="frame" x="5" y="214" width="310" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الوظيفة" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XV7-Um-jct">
+                                                <rect key="frame" x="5" y="254" width="310" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الشركة" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VSo-qB-vdy">
+                                                <rect key="frame" x="5" y="294" width="310" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="العنوان / الهاتف" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F0b-Wb-fgr">
+                                                <rect key="frame" x="5" y="334" width="310" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الشخص الاول" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxT-eU-cim">
+                                                <rect key="frame" x="110.5" y="172" width="99" height="32"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
+                                                <color key="textColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الاسم" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xkK-O3-MgH">
+                                                <rect key="frame" x="5" y="416" width="310" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الوظيفة" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gz2-GG-jka">
+                                                <rect key="frame" x="5" y="456" width="310" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الشركة" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uuu-0m-cM4">
+                                                <rect key="frame" x="5" y="496" width="310" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="العنوان / الهاتف" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gPE-vM-EEa">
+                                                <rect key="frame" x="5" y="536" width="310" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الشخص الثاني" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkI-SY-4p0">
+                                                <rect key="frame" x="106.5" y="374" width="107" height="32"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
+                                                <color key="textColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="هل انت مدخن" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQh-Hc-p9q">
+                                                <rect key="frame" x="123" y="571" width="74" height="23"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="12"/>
+                                                <color key="textColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="هل تمت ادانتك في قضية سابقا" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMX-gp-XFD">
+                                                <rect key="frame" x="75.5" y="632" width="169" height="23"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="12"/>
+                                                <color key="textColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="هل تم ايقافك من عمل سابق" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoS-A6-e8V">
+                                                <rect key="frame" x="83.5" y="693" width="153" height="23"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="12"/>
+                                                <color key="textColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="هل كان اسلوبك سيئ خلال فتره الدراسة او العمل سابقا" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwp-it-6UU">
+                                                <rect key="frame" x="14.5" y="754" width="291.5" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="12"/>
+                                                <color key="textColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="h7a-im-VOd">
+                                                <rect key="frame" x="5" y="599" width="310" height="29"/>
+                                                <segments>
+                                                    <segment title="لا"/>
+                                                    <segment title="نعم"/>
+                                                </segments>
+                                                <color key="tintColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </segmentedControl>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="2QZ-ky-pBy">
+                                                <rect key="frame" x="5" y="721" width="310" height="29"/>
+                                                <segments>
+                                                    <segment title="لا"/>
+                                                    <segment title="نعم"/>
+                                                </segments>
+                                                <color key="tintColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </segmentedControl>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="byq-Ng-5G7">
+                                                <rect key="frame" x="5" y="781.5" width="310" height="29"/>
+                                                <segments>
+                                                    <segment title="لا"/>
+                                                    <segment title="نعم"/>
+                                                </segments>
+                                                <color key="tintColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </segmentedControl>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="61q-CM-VKQ">
+                                                <rect key="frame" x="5" y="660" width="310" height="29"/>
+                                                <segments>
+                                                    <segment title="لا"/>
+                                                    <segment title="نعم"/>
+                                                </segments>
+                                                <color key="tintColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </segmentedControl>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شخصيتك قيادية" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mj8-8D-qep">
+                                                <rect key="frame" x="116.5" y="814.5" width="87" height="23"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="12"/>
+                                                <color key="textColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ايجاب و متعاون" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73h-4E-jVF">
+                                                <rect key="frame" x="119.5" y="875.5" width="81" height="23"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="12"/>
+                                                <color key="textColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مسؤول تتحمل المسؤلية" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdR-ul-v64">
+                                                <rect key="frame" x="93.5" y="936.5" width="133" height="23"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="12"/>
+                                                <color key="textColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مخلصو تعمل بمصداقية" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6o-x7-9Er">
+                                                <rect key="frame" x="96" y="997.5" width="128" height="23"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="12"/>
+                                                <color key="textColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="ac9-Rf-D0R">
+                                                <rect key="frame" x="5" y="842.5" width="310" height="29"/>
+                                                <segments>
+                                                    <segment title="لا"/>
+                                                    <segment title="نعم"/>
+                                                </segments>
+                                                <color key="tintColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </segmentedControl>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="Wjr-Ws-nCD">
+                                                <rect key="frame" x="5" y="964.5" width="310" height="29"/>
+                                                <segments>
+                                                    <segment title="لا"/>
+                                                    <segment title="نعم"/>
+                                                </segments>
+                                                <color key="tintColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </segmentedControl>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="GaA-Ep-N0N">
+                                                <rect key="frame" x="5" y="1025.5" width="310" height="29"/>
+                                                <segments>
+                                                    <segment title="لا"/>
+                                                    <segment title="نعم"/>
+                                                </segments>
+                                                <color key="tintColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </segmentedControl>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="Bdd-Pf-HDl">
+                                                <rect key="frame" x="5" y="903.5" width="310" height="29"/>
+                                                <segments>
+                                                    <segment title="لا"/>
+                                                    <segment title="نعم"/>
+                                                </segments>
+                                                <color key="tintColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </segmentedControl>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نشيط و حيوي" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tez-Xw-nuI">
+                                                <rect key="frame" x="123.5" y="1058.5" width="73" height="23"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="12"/>
+                                                <color key="textColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تجيد العمل الجماعي" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTp-KW-u9N">
+                                                <rect key="frame" x="105.5" y="1119.5" width="109" height="23"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="12"/>
+                                                <color key="textColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="cDG-hj-O1Z">
+                                                <rect key="frame" x="5" y="1086.5" width="310" height="29"/>
+                                                <segments>
+                                                    <segment title="لا"/>
+                                                    <segment title="نعم"/>
+                                                </segments>
+                                                <color key="tintColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </segmentedControl>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="XVW-fs-orf">
+                                                <rect key="frame" x="5" y="1147.5" width="310" height="29"/>
+                                                <segments>
+                                                    <segment title="لا"/>
+                                                    <segment title="نعم"/>
+                                                </segments>
+                                                <color key="tintColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </segmentedControl>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="WYY-BW-FdS">
+                                                <rect key="frame" x="5" y="1208.5" width="310" height="29"/>
+                                                <segments>
+                                                    <segment title="لا"/>
+                                                    <segment title="نعم"/>
+                                                </segments>
+                                                <color key="tintColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </segmentedControl>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="TKQ-dq-Nc7">
+                                                <rect key="frame" x="5" y="1269.5" width="310" height="29"/>
+                                                <segments>
+                                                    <segment title="لا"/>
+                                                    <segment title="نعم"/>
+                                                </segments>
+                                                <color key="tintColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </segmentedControl>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="هل لديك استعداد للعمل  في اي مدينة اخري" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyX-k9-eOd">
+                                                <rect key="frame" x="41.5" y="1241.5" width="237" height="23"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="12"/>
+                                                <color key="textColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" اكتب مهارات خاصة بالوظيفة" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gZ1-ji-yCP">
+                                                <rect key="frame" x="5" y="50" width="310" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="هل لديك استعداد للعمل اثناء الاجازات " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8r-IG-hHb">
+                                                <rect key="frame" x="59" y="1180.5" width="202" height="23"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="12"/>
+                                                <color key="textColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEz-vK-m3N">
+                                                <rect key="frame" x="253" y="0.0" width="67" height="29"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal" title="Complete">
+                                                    <color key="titleColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="h7a-im-VOd" firstAttribute="top" secondItem="DQh-Hc-p9q" secondAttribute="bottom" constant="5" id="02K-Og-1Oz"/>
+                                            <constraint firstItem="HTp-KW-u9N" firstAttribute="centerX" secondItem="cDG-hj-O1Z" secondAttribute="centerX" id="2gk-SP-dPJ"/>
+                                            <constraint firstItem="WYY-BW-FdS" firstAttribute="leading" secondItem="KvJ-Hq-oCb" secondAttribute="leading" constant="5" id="2i9-y4-ZLM"/>
+                                            <constraint firstItem="NoS-A6-e8V" firstAttribute="centerX" secondItem="61q-CM-VKQ" secondAttribute="centerX" id="3Yq-jA-Ncs"/>
+                                            <constraint firstItem="F0b-Wb-fgr" firstAttribute="centerX" secondItem="VSo-qB-vdy" secondAttribute="centerX" id="4eq-w0-mVx"/>
+                                            <constraint firstAttribute="trailing" secondItem="GaA-Ep-N0N" secondAttribute="trailing" constant="5" id="5ah-fg-7z0"/>
+                                            <constraint firstItem="v6o-x7-9Er" firstAttribute="centerX" secondItem="Wjr-Ws-nCD" secondAttribute="centerX" id="5hy-GI-vKj"/>
+                                            <constraint firstAttribute="trailing" secondItem="TKQ-dq-Nc7" secondAttribute="trailing" constant="5" id="5mM-eg-HGk"/>
+                                            <constraint firstItem="vyX-k9-eOd" firstAttribute="top" secondItem="WYY-BW-FdS" secondAttribute="bottom" constant="5" id="6Xz-g3-NZY"/>
+                                            <constraint firstItem="byq-Ng-5G7" firstAttribute="leading" secondItem="KvJ-Hq-oCb" secondAttribute="leading" constant="5" id="7Sm-m9-Etj"/>
+                                            <constraint firstItem="wwp-it-6UU" firstAttribute="top" secondItem="2QZ-ky-pBy" secondAttribute="bottom" constant="5" id="7iJ-Xa-bZw"/>
+                                            <constraint firstItem="h4M-9k-eai" firstAttribute="top" secondItem="Ert-xO-EQX" secondAttribute="bottom" constant="10" id="9CQ-mm-8Tj"/>
+                                            <constraint firstItem="gPE-vM-EEa" firstAttribute="top" secondItem="Uuu-0m-cM4" secondAttribute="bottom" constant="10" id="AWE-y0-Pht"/>
+                                            <constraint firstItem="73h-4E-jVF" firstAttribute="top" secondItem="ac9-Rf-D0R" secondAttribute="bottom" constant="5" id="BGQ-Hm-mzU"/>
+                                            <constraint firstItem="73h-4E-jVF" firstAttribute="centerX" secondItem="ac9-Rf-D0R" secondAttribute="centerX" id="Cug-zJ-36Q"/>
+                                            <constraint firstItem="TKQ-dq-Nc7" firstAttribute="top" secondItem="vyX-k9-eOd" secondAttribute="bottom" constant="5" id="Cvf-d6-q2z"/>
+                                            <constraint firstAttribute="trailing" secondItem="61q-CM-VKQ" secondAttribute="trailing" constant="5" id="DCK-TP-S0A"/>
+                                            <constraint firstAttribute="trailing" secondItem="WYY-BW-FdS" secondAttribute="trailing" constant="5" id="Dt4-Sk-h4O"/>
+                                            <constraint firstItem="F0b-Wb-fgr" firstAttribute="width" secondItem="VSo-qB-vdy" secondAttribute="width" id="DyT-Vs-WeJ"/>
+                                            <constraint firstItem="Mj8-8D-qep" firstAttribute="centerX" secondItem="byq-Ng-5G7" secondAttribute="centerX" id="EnO-mr-GNK"/>
+                                            <constraint firstItem="Uuu-0m-cM4" firstAttribute="centerX" secondItem="Gz2-GG-jka" secondAttribute="centerX" id="Ens-vL-sp9"/>
+                                            <constraint firstItem="2QZ-ky-pBy" firstAttribute="top" secondItem="NoS-A6-e8V" secondAttribute="bottom" constant="5" id="Eyr-78-1ky"/>
+                                            <constraint firstItem="VSo-qB-vdy" firstAttribute="centerX" secondItem="XV7-Um-jct" secondAttribute="centerX" id="FCB-t1-MvT"/>
+                                            <constraint firstItem="Wjr-Ws-nCD" firstAttribute="top" secondItem="ZdR-ul-v64" secondAttribute="bottom" constant="5" id="FMv-zQ-TFz"/>
+                                            <constraint firstItem="Meg-OM-ShE" firstAttribute="top" secondItem="KvJ-Hq-oCb" secondAttribute="top" constant="8" id="Fqt-Uy-sUp"/>
+                                            <constraint firstItem="HkI-SY-4p0" firstAttribute="top" secondItem="F0b-Wb-fgr" secondAttribute="bottom" constant="10" id="HFp-2t-j2V"/>
+                                            <constraint firstAttribute="trailing" secondItem="xkK-O3-MgH" secondAttribute="trailing" constant="5" id="HNT-dM-rwy"/>
+                                            <constraint firstItem="Ert-xO-EQX" firstAttribute="width" secondItem="gZ1-ji-yCP" secondAttribute="width" id="Hob-GJ-ehO"/>
+                                            <constraint firstAttribute="trailing" secondItem="7eh-L7-vsh" secondAttribute="trailing" constant="5" id="IA2-Ua-Skb"/>
+                                            <constraint firstItem="Gz2-GG-jka" firstAttribute="top" secondItem="xkK-O3-MgH" secondAttribute="bottom" constant="10" id="Ilz-lF-DyM"/>
+                                            <constraint firstItem="61q-CM-VKQ" firstAttribute="top" secondItem="dMX-gp-XFD" secondAttribute="bottom" constant="5" id="Jbh-4F-SaZ"/>
+                                            <constraint firstItem="yxT-eU-cim" firstAttribute="top" secondItem="h4M-9k-eai" secondAttribute="bottom" constant="10" id="Jet-aY-XX0"/>
+                                            <constraint firstItem="XV7-Um-jct" firstAttribute="centerX" secondItem="7eh-L7-vsh" secondAttribute="centerX" id="K0K-Ca-0oa"/>
+                                            <constraint firstAttribute="trailing" secondItem="Bdd-Pf-HDl" secondAttribute="trailing" constant="5" id="K3m-9j-Wez"/>
+                                            <constraint firstItem="GaA-Ep-N0N" firstAttribute="leading" secondItem="KvJ-Hq-oCb" secondAttribute="leading" constant="5" id="MJT-kL-vYU"/>
+                                            <constraint firstItem="OEz-vK-m3N" firstAttribute="top" secondItem="KvJ-Hq-oCb" secondAttribute="top" id="MYK-aY-7f7"/>
+                                            <constraint firstItem="wwp-it-6UU" firstAttribute="centerX" secondItem="2QZ-ky-pBy" secondAttribute="centerX" id="Mm3-5m-FGd"/>
+                                            <constraint firstItem="O8r-IG-hHb" firstAttribute="centerX" secondItem="XVW-fs-orf" secondAttribute="centerX" id="NJz-HA-Klj"/>
+                                            <constraint firstItem="cDG-hj-O1Z" firstAttribute="leading" secondItem="KvJ-Hq-oCb" secondAttribute="leading" constant="5" id="OAU-Cv-IGm"/>
+                                            <constraint firstAttribute="trailing" secondItem="cDG-hj-O1Z" secondAttribute="trailing" constant="5" id="Odo-Sp-6mr"/>
+                                            <constraint firstItem="NoS-A6-e8V" firstAttribute="top" secondItem="61q-CM-VKQ" secondAttribute="bottom" constant="5" id="Ono-dH-9nz"/>
+                                            <constraint firstItem="XV7-Um-jct" firstAttribute="width" secondItem="7eh-L7-vsh" secondAttribute="width" id="Owi-mT-oyt"/>
+                                            <constraint firstItem="Wjr-Ws-nCD" firstAttribute="leading" secondItem="KvJ-Hq-oCb" secondAttribute="leading" constant="5" id="QWu-u8-yKL"/>
+                                            <constraint firstItem="Ert-xO-EQX" firstAttribute="top" secondItem="gZ1-ji-yCP" secondAttribute="bottom" constant="10" id="Qvm-W6-JC4"/>
+                                            <constraint firstItem="7eh-L7-vsh" firstAttribute="top" secondItem="yxT-eU-cim" secondAttribute="bottom" constant="10" id="RNM-Zk-In2"/>
+                                            <constraint firstItem="TKQ-dq-Nc7" firstAttribute="leading" secondItem="KvJ-Hq-oCb" secondAttribute="leading" constant="5" id="SGQ-hO-fHF"/>
+                                            <constraint firstItem="HTp-KW-u9N" firstAttribute="top" secondItem="cDG-hj-O1Z" secondAttribute="bottom" constant="5" id="TXk-OV-bBj"/>
+                                            <constraint firstItem="dMX-gp-XFD" firstAttribute="top" secondItem="h7a-im-VOd" secondAttribute="bottom" constant="5" id="U0u-FR-vw5"/>
+                                            <constraint firstItem="Uuu-0m-cM4" firstAttribute="width" secondItem="Gz2-GG-jka" secondAttribute="width" id="U9n-aX-N4V"/>
+                                            <constraint firstItem="Bdd-Pf-HDl" firstAttribute="leading" secondItem="KvJ-Hq-oCb" secondAttribute="leading" constant="5" id="UDz-vF-loF"/>
+                                            <constraint firstItem="xkK-O3-MgH" firstAttribute="top" secondItem="HkI-SY-4p0" secondAttribute="bottom" constant="10" id="UZ5-nb-8Nv"/>
+                                            <constraint firstItem="gPE-vM-EEa" firstAttribute="width" secondItem="Uuu-0m-cM4" secondAttribute="width" id="VlP-CX-Ce6"/>
+                                            <constraint firstItem="DQh-Hc-p9q" firstAttribute="centerX" secondItem="gPE-vM-EEa" secondAttribute="centerX" id="WXC-4M-O92"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wjr-Ws-nCD" secondAttribute="trailing" constant="5" id="Xmc-3V-ROs"/>
+                                            <constraint firstAttribute="height" constant="1415" id="Zhm-bU-A0i"/>
+                                            <constraint firstItem="VSo-qB-vdy" firstAttribute="top" secondItem="XV7-Um-jct" secondAttribute="bottom" constant="10" id="Zoa-Pa-AEJ"/>
+                                            <constraint firstItem="Uuu-0m-cM4" firstAttribute="top" secondItem="Gz2-GG-jka" secondAttribute="bottom" constant="10" id="Zxb-gA-W5K"/>
+                                            <constraint firstAttribute="trailing" secondItem="gZ1-ji-yCP" secondAttribute="trailing" constant="5" id="aLh-J8-H5S"/>
+                                            <constraint firstItem="Gz2-GG-jka" firstAttribute="centerX" secondItem="xkK-O3-MgH" secondAttribute="centerX" id="ax8-sf-QEa"/>
+                                            <constraint firstItem="h7a-im-VOd" firstAttribute="leading" secondItem="KvJ-Hq-oCb" secondAttribute="leading" constant="5" id="c8o-Bm-0mN"/>
+                                            <constraint firstItem="ZdR-ul-v64" firstAttribute="centerX" secondItem="Bdd-Pf-HDl" secondAttribute="centerX" id="ce4-ON-73x"/>
+                                            <constraint firstItem="gZ1-ji-yCP" firstAttribute="leading" secondItem="KvJ-Hq-oCb" secondAttribute="leading" constant="5" id="cqO-9Y-7Q1"/>
+                                            <constraint firstAttribute="trailing" secondItem="h7a-im-VOd" secondAttribute="trailing" constant="5" id="dhy-5U-fmk"/>
+                                            <constraint firstItem="7eh-L7-vsh" firstAttribute="leading" secondItem="KvJ-Hq-oCb" secondAttribute="leading" constant="5" id="dxn-hw-kmo"/>
+                                            <constraint firstItem="h4M-9k-eai" firstAttribute="centerX" secondItem="Ert-xO-EQX" secondAttribute="centerX" id="e22-ea-zhw"/>
+                                            <constraint firstItem="Gz2-GG-jka" firstAttribute="width" secondItem="xkK-O3-MgH" secondAttribute="width" id="eEx-7H-Scz"/>
+                                            <constraint firstItem="tez-Xw-nuI" firstAttribute="centerX" secondItem="GaA-Ep-N0N" secondAttribute="centerX" id="gff-xx-uKu"/>
+                                            <constraint firstItem="DQh-Hc-p9q" firstAttribute="top" secondItem="gPE-vM-EEa" secondAttribute="bottom" constant="5" id="h7n-xN-v3J"/>
+                                            <constraint firstItem="7eh-L7-vsh" firstAttribute="centerX" secondItem="yxT-eU-cim" secondAttribute="centerX" id="hHc-i7-i4X"/>
+                                            <constraint firstItem="v6o-x7-9Er" firstAttribute="top" secondItem="Wjr-Ws-nCD" secondAttribute="bottom" constant="5" id="hMa-AO-XH8"/>
+                                            <constraint firstItem="Meg-OM-ShE" firstAttribute="centerX" secondItem="KvJ-Hq-oCb" secondAttribute="centerX" id="hhS-Co-dBK"/>
+                                            <constraint firstItem="gPE-vM-EEa" firstAttribute="centerX" secondItem="Uuu-0m-cM4" secondAttribute="centerX" id="hig-AM-VFM"/>
+                                            <constraint firstItem="XVW-fs-orf" firstAttribute="top" secondItem="HTp-KW-u9N" secondAttribute="bottom" constant="5" id="iX2-M1-2bJ"/>
+                                            <constraint firstItem="Bdd-Pf-HDl" firstAttribute="top" secondItem="73h-4E-jVF" secondAttribute="bottom" constant="5" id="itb-40-G5u"/>
+                                            <constraint firstItem="byq-Ng-5G7" firstAttribute="top" secondItem="wwp-it-6UU" secondAttribute="bottom" constant="5" id="kEy-90-iJQ"/>
+                                            <constraint firstItem="yxT-eU-cim" firstAttribute="centerX" secondItem="h4M-9k-eai" secondAttribute="centerX" id="kra-JP-E4J"/>
+                                            <constraint firstItem="F0b-Wb-fgr" firstAttribute="top" secondItem="VSo-qB-vdy" secondAttribute="bottom" constant="10" id="lCg-yB-Whb"/>
+                                            <constraint firstAttribute="trailing" secondItem="OEz-vK-m3N" secondAttribute="trailing" id="nEx-0i-159"/>
+                                            <constraint firstItem="ac9-Rf-D0R" firstAttribute="top" secondItem="Mj8-8D-qep" secondAttribute="bottom" constant="5" id="nMv-iG-dMy"/>
+                                            <constraint firstItem="Ert-xO-EQX" firstAttribute="centerX" secondItem="gZ1-ji-yCP" secondAttribute="centerX" id="nQ2-rW-rvm"/>
+                                            <constraint firstItem="gZ1-ji-yCP" firstAttribute="top" secondItem="Meg-OM-ShE" secondAttribute="bottom" constant="10" id="nQh-b3-pmV"/>
+                                            <constraint firstItem="cDG-hj-O1Z" firstAttribute="top" secondItem="tez-Xw-nuI" secondAttribute="bottom" constant="5" id="oQ1-UT-2EH"/>
+                                            <constraint firstItem="VSo-qB-vdy" firstAttribute="width" secondItem="XV7-Um-jct" secondAttribute="width" id="p6Y-RM-FBu"/>
+                                            <constraint firstItem="HkI-SY-4p0" firstAttribute="centerX" secondItem="F0b-Wb-fgr" secondAttribute="centerX" id="q1K-p2-Qo1"/>
+                                            <constraint firstAttribute="trailing" secondItem="XVW-fs-orf" secondAttribute="trailing" constant="5" id="qeo-CK-h3h"/>
+                                            <constraint firstItem="tez-Xw-nuI" firstAttribute="top" secondItem="GaA-Ep-N0N" secondAttribute="bottom" constant="5" id="qsb-0b-09R"/>
+                                            <constraint firstItem="ZdR-ul-v64" firstAttribute="top" secondItem="Bdd-Pf-HDl" secondAttribute="bottom" constant="5" id="s0Y-Kx-s0n"/>
+                                            <constraint firstItem="vyX-k9-eOd" firstAttribute="centerX" secondItem="WYY-BW-FdS" secondAttribute="centerX" id="s6c-xF-8HA"/>
+                                            <constraint firstItem="61q-CM-VKQ" firstAttribute="leading" secondItem="KvJ-Hq-oCb" secondAttribute="leading" constant="5" id="sGD-is-KnF"/>
+                                            <constraint firstItem="O8r-IG-hHb" firstAttribute="top" secondItem="XVW-fs-orf" secondAttribute="bottom" constant="5" id="sM2-dz-MdP"/>
+                                            <constraint firstItem="2QZ-ky-pBy" firstAttribute="leading" secondItem="KvJ-Hq-oCb" secondAttribute="leading" constant="5" id="sTO-t4-ZY8"/>
+                                            <constraint firstItem="ac9-Rf-D0R" firstAttribute="leading" secondItem="KvJ-Hq-oCb" secondAttribute="leading" constant="5" id="tLp-DN-uzg"/>
+                                            <constraint firstItem="WYY-BW-FdS" firstAttribute="top" secondItem="O8r-IG-hHb" secondAttribute="bottom" constant="5" id="tec-0W-uJT"/>
+                                            <constraint firstAttribute="trailing" secondItem="2QZ-ky-pBy" secondAttribute="trailing" constant="5" id="uB0-N0-zhE"/>
+                                            <constraint firstItem="dMX-gp-XFD" firstAttribute="centerX" secondItem="h7a-im-VOd" secondAttribute="centerX" id="uaS-4b-fGv"/>
+                                            <constraint firstItem="XVW-fs-orf" firstAttribute="leading" secondItem="KvJ-Hq-oCb" secondAttribute="leading" constant="5" id="v9B-3U-39c"/>
+                                            <constraint firstItem="xkK-O3-MgH" firstAttribute="leading" secondItem="KvJ-Hq-oCb" secondAttribute="leading" constant="5" id="vb2-mA-mV2"/>
+                                            <constraint firstItem="Mj8-8D-qep" firstAttribute="top" secondItem="byq-Ng-5G7" secondAttribute="bottom" constant="5" id="vb9-H7-ecL"/>
+                                            <constraint firstAttribute="trailing" secondItem="byq-Ng-5G7" secondAttribute="trailing" constant="5" id="xeH-wK-ukF"/>
+                                            <constraint firstItem="XV7-Um-jct" firstAttribute="top" secondItem="7eh-L7-vsh" secondAttribute="bottom" constant="10" id="xi2-45-SaT"/>
+                                            <constraint firstAttribute="trailing" secondItem="ac9-Rf-D0R" secondAttribute="trailing" constant="5" id="z8b-fa-fn7"/>
+                                            <constraint firstItem="GaA-Ep-N0N" firstAttribute="top" secondItem="v6o-x7-9Er" secondAttribute="bottom" constant="5" id="zJ8-Jc-bUC"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="KvJ-Hq-oCb" firstAttribute="leading" secondItem="1g3-pA-zKk" secondAttribute="leading" id="HNB-4B-U5W"/>
+                                    <constraint firstAttribute="trailing" secondItem="KvJ-Hq-oCb" secondAttribute="trailing" id="K96-N6-y8h"/>
+                                    <constraint firstAttribute="bottom" secondItem="KvJ-Hq-oCb" secondAttribute="bottom" constant="-113" id="k1e-83-jYr"/>
+                                    <constraint firstItem="KvJ-Hq-oCb" firstAttribute="top" secondItem="1g3-pA-zKk" secondAttribute="top" id="nZf-M0-OOq"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="18H-G4-HjB" firstAttribute="bottom" secondItem="1g3-pA-zKk" secondAttribute="bottom" id="09C-fk-om5"/>
+                            <constraint firstItem="1g3-pA-zKk" firstAttribute="leading" secondItem="18H-G4-HjB" secondAttribute="leading" id="P26-Zn-XAC"/>
+                            <constraint firstItem="KvJ-Hq-oCb" firstAttribute="width" secondItem="5ZF-dO-pDa" secondAttribute="width" id="ZVE-fS-gmt"/>
+                            <constraint firstItem="18H-G4-HjB" firstAttribute="trailing" secondItem="1g3-pA-zKk" secondAttribute="trailing" id="ih7-ZI-v3a"/>
+                            <constraint firstItem="1g3-pA-zKk" firstAttribute="top" secondItem="18H-G4-HjB" secondAttribute="top" id="xXw-bf-cAp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="18H-G4-HjB"/>
+                    </view>
+                    <size key="freeformSize" width="320" height="1415"/>
+                    <connections>
+                        <outlet property="activeLabel" destination="tez-Xw-nuI" id="Lvr-La-UJL"/>
+                        <outlet property="activeSegm" destination="cDG-hj-O1Z" id="GI8-UC-szC"/>
+                        <outlet property="anotherCityLAbel" destination="vyX-k9-eOd" id="yT4-3p-gDo"/>
+                        <outlet property="anotherCitySegm" destination="TKQ-dq-Nc7" id="CXE-tj-yhU"/>
+                        <outlet property="badLabel" destination="wwp-it-6UU" id="WWz-wp-OiS"/>
+                        <outlet property="badSegm" destination="byq-Ng-5G7" id="dAg-LJ-zlw"/>
+                        <outlet property="caseLabel" destination="dMX-gp-XFD" id="JJY-xh-Deg"/>
+                        <outlet property="caseSegm" destination="61q-CM-VKQ" id="Q7u-aT-HCt"/>
+                        <outlet property="comp" destination="OEz-vK-m3N" id="6Gi-Li-NNZ"/>
+                        <outlet property="compPOne" destination="VSo-qB-vdy" id="FLO-5e-goy"/>
+                        <outlet property="compPTwo" destination="Uuu-0m-cM4" id="wFB-pf-iBI"/>
+                        <outlet property="holdayesLabel" destination="O8r-IG-hHb" id="hCY-PB-amj"/>
+                        <outlet property="holyDayesSegm" destination="WYY-BW-FdS" id="3Vw-b7-tUt"/>
+                        <outlet property="jobPTwo" destination="Gz2-GG-jka" id="IXO-EB-fn4"/>
+                        <outlet property="jobPone" destination="XV7-Um-jct" id="GeX-Ie-6MF"/>
+                        <outlet property="leaderLAbel" destination="Mj8-8D-qep" id="B6k-gn-t72"/>
+                        <outlet property="leaderSegm" destination="ac9-Rf-D0R" id="P2F-JZ-Pxh"/>
+                        <outlet property="loyalLabel" destination="v6o-x7-9Er" id="wSt-s2-3ZG"/>
+                        <outlet property="loyalSegm" destination="GaA-Ep-N0N" id="iIF-kj-ycZ"/>
+                        <outlet property="namePOne" destination="7eh-L7-vsh" id="jua-Ta-FYF"/>
+                        <outlet property="namePTwo" destination="xkK-O3-MgH" id="5ee-KP-jJP"/>
+                        <outlet property="oersonNoTwo" destination="HkI-SY-4p0" id="BEg-B0-yFI"/>
+                        <outlet property="personNoOne" destination="yxT-eU-cim" id="zOQ-di-3xM"/>
+                        <outlet property="phonePOne" destination="F0b-Wb-fgr" id="K9V-DB-Alt"/>
+                        <outlet property="phonePtwo" destination="gPE-vM-EEa" id="VWR-Uw-tln"/>
+                        <outlet property="positiveLAbel" destination="73h-4E-jVF" id="0Hz-he-FUi"/>
+                        <outlet property="positiveSegm" destination="Bdd-Pf-HDl" id="Pam-FT-edm"/>
+                        <outlet property="respLabel" destination="ZdR-ul-v64" id="h0v-vt-edb"/>
+                        <outlet property="respSegm" destination="Wjr-Ws-nCD" id="07k-ie-puu"/>
+                        <outlet property="skillsField" destination="gZ1-ji-yCP" id="DhM-px-yks"/>
+                        <outlet property="skillsLAbel" destination="Meg-OM-ShE" id="3Sf-o7-3lF"/>
+                        <outlet property="smoke" destination="DQh-Hc-p9q" id="Iw7-E9-Ofh"/>
+                        <outlet property="smokeSegm" destination="h7a-im-VOd" id="Xie-nx-kmu"/>
+                        <outlet property="suspendLAbel" destination="NoS-A6-e8V" id="Y5a-bN-lf0"/>
+                        <outlet property="suspundedSegm" destination="2QZ-ky-pBy" id="K98-9w-ITw"/>
+                        <outlet property="teamWorkLabel" destination="HTp-KW-u9N" id="WiT-H9-z7P"/>
+                        <outlet property="teamWorkerSegm" destination="XVW-fs-orf" id="fRW-XB-IaN"/>
+                        <outlet property="twoPersonLAbel" destination="h4M-9k-eai" id="2sX-50-YWm"/>
+                        <outlet property="whyAtPureVision" destination="Ert-xO-EQX" id="RcB-11-ktD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ixK-IO-vyp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8326.875" y="68.133802816901408"/>
         </scene>
     </scenes>
     <resources>

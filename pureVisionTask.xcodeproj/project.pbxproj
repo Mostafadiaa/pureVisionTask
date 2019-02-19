@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16120269221C6E4D00E0A01B /* langVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16120268221C6E4D00E0A01B /* langVc.swift */; };
+		1612026B221C6F9D00E0A01B /* langClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1612026A221C6F9D00E0A01B /* langClassCell.swift */; };
+		1612026D221C94AE00E0A01B /* yourInfoVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1612026C221C94AE00E0A01B /* yourInfoVc.swift */; };
 		161B1BCC221A4FC100F54255 /* eduVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161B1BCB221A4FC100F54255 /* eduVc.swift */; };
 		16240137221A0C51002995E2 /* personlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16240136221A0C51002995E2 /* personlVC.swift */; };
 		165301E42218386E004ED792 /* pageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165301E32218386E004ED792 /* pageModel.swift */; };
@@ -33,6 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16120268221C6E4D00E0A01B /* langVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = langVc.swift; sourceTree = "<group>"; };
+		1612026A221C6F9D00E0A01B /* langClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = langClassCell.swift; sourceTree = "<group>"; };
+		1612026C221C94AE00E0A01B /* yourInfoVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yourInfoVc.swift; sourceTree = "<group>"; };
 		161B1BCB221A4FC100F54255 /* eduVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eduVc.swift; sourceTree = "<group>"; };
 		16240136221A0C51002995E2 /* personlVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personlVC.swift; sourceTree = "<group>"; };
 		165301E32218386E004ED792 /* pageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pageModel.swift; sourceTree = "<group>"; };
@@ -95,6 +101,7 @@
 			children = (
 				16C98830221887CB00BEC7CE /* Cairo */,
 				16C20031221C3E0900BA7507 /* jobVc.swift */,
+				1612026A221C6F9D00E0A01B /* langClassCell.swift */,
 				16C2002D221BFC8300BA7507 /* eduCellClass.swift */,
 				161B1BCB221A4FC100F54255 /* eduVc.swift */,
 				16240136221A0C51002995E2 /* personlVC.swift */,
@@ -107,6 +114,8 @@
 				16C20033221C3E5000BA7507 /* jobTabelCell.swift */,
 				165301F122186DB6004ED792 /* Localizable.strings */,
 				16C157E222182264005B2BA6 /* Main.storyboard */,
+				16120268221C6E4D00E0A01B /* langVc.swift */,
+				1612026C221C94AE00E0A01B /* yourInfoVc.swift */,
 				16C157E522182266005B2BA6 /* Assets.xcassets */,
 				16C157E722182266005B2BA6 /* LaunchScreen.storyboard */,
 				16C157EA22182266005B2BA6 /* Info.plist */,
@@ -214,6 +223,8 @@
 				161B1BCC221A4FC100F54255 /* eduVc.swift in Sources */,
 				16C20034221C3E5000BA7507 /* jobTabelCell.swift in Sources */,
 				16556BB22218CE290040566E /* loginVc.swift in Sources */,
+				16120269221C6E4D00E0A01B /* langVc.swift in Sources */,
+				1612026B221C6F9D00E0A01B /* langClassCell.swift in Sources */,
 				16C157F722182CBC005B2BA6 /* welcomeViewCell.swift in Sources */,
 				16C157DF22182264005B2BA6 /* AppDelegate.swift in Sources */,
 				16240137221A0C51002995E2 /* personlVC.swift in Sources */,
@@ -221,6 +232,7 @@
 				16C9882F221882B100BEC7CE /* mainVc.swift in Sources */,
 				16C20032221C3E0900BA7507 /* jobVc.swift in Sources */,
 				16C2002E221BFC8300BA7507 /* eduCellClass.swift in Sources */,
+				1612026D221C94AE00E0A01B /* yourInfoVc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
