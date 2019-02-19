@@ -58,4 +58,30 @@
 "religion" = "Religion";
 "jobApp" = "Job Application";
 "dateBirth" = "Date of birth";
+"Done" = "Done";
+"education"="Education";
+"highSchool"="High School";
+"college"="College";
+"other"="Other";
+"courseName"="Course of study";
+"courselocation"="Location";
+"numOfYears"="No. of Years Completetd";
+"gradYear"="Year graduated";
+"add"="Add New";
+"emptyField" = "Empty Field";
+"allReq" = "All Fields Are Required";
+"from" = "From";
+"to" = "To";
+
+"comName"="Company Name";
+"jobTitel"="Job Title";
+"reason"="Reason For Leaving";
+"salary"="Salary";
+"startDate"="Date Started";
+"endDate"="Date Left";
+"jobHistory" = "Work log";
+
+
+
+
 

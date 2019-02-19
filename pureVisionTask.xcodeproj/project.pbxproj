@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		161B1BCC221A4FC100F54255 /* eduVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161B1BCB221A4FC100F54255 /* eduVc.swift */; };
 		16240137221A0C51002995E2 /* personlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16240136221A0C51002995E2 /* personlVC.swift */; };
 		165301E42218386E004ED792 /* pageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165301E32218386E004ED792 /* pageModel.swift */; };
 		165301EC22186CEC004ED792 /* LocalizationSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165301EB22186CEC004ED792 /* LocalizationSystem.swift */; };
@@ -18,6 +19,10 @@
 		16C157E622182266005B2BA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16C157E522182266005B2BA6 /* Assets.xcassets */; };
 		16C157E922182266005B2BA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16C157E722182266005B2BA6 /* LaunchScreen.storyboard */; };
 		16C157F722182CBC005B2BA6 /* welcomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C157F622182CBC005B2BA6 /* welcomeViewCell.swift */; };
+		16C2002E221BFC8300BA7507 /* eduCellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C2002D221BFC8300BA7507 /* eduCellClass.swift */; };
+		16C20030221C1DC100BA7507 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C2002F221C1DC000BA7507 /* AlertController.swift */; };
+		16C20032221C3E0900BA7507 /* jobVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C20031221C3E0900BA7507 /* jobVc.swift */; };
+		16C20034221C3E5000BA7507 /* jobTabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C20033221C3E5000BA7507 /* jobTabelCell.swift */; };
 		16C9882F221882B100BEC7CE /* mainVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9882E221882B100BEC7CE /* mainVc.swift */; };
 		16C98837221887CB00BEC7CE /* Cairo-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16C98831221887CB00BEC7CE /* Cairo-ExtraLight.ttf */; };
 		16C98838221887CB00BEC7CE /* Cairo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16C98832221887CB00BEC7CE /* Cairo-SemiBold.ttf */; };
@@ -28,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		161B1BCB221A4FC100F54255 /* eduVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eduVc.swift; sourceTree = "<group>"; };
 		16240136221A0C51002995E2 /* personlVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personlVC.swift; sourceTree = "<group>"; };
 		165301E32218386E004ED792 /* pageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pageModel.swift; sourceTree = "<group>"; };
 		165301E9221869F3004ED792 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
@@ -44,6 +50,10 @@
 		16C157E822182266005B2BA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16C157EA22182266005B2BA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16C157F622182CBC005B2BA6 /* welcomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = welcomeViewCell.swift; sourceTree = "<group>"; };
+		16C2002D221BFC8300BA7507 /* eduCellClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eduCellClass.swift; sourceTree = "<group>"; };
+		16C2002F221C1DC000BA7507 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		16C20031221C3E0900BA7507 /* jobVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jobVc.swift; sourceTree = "<group>"; };
+		16C20033221C3E5000BA7507 /* jobTabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jobTabelCell.swift; sourceTree = "<group>"; };
 		16C9882E221882B100BEC7CE /* mainVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainVc.swift; sourceTree = "<group>"; };
 		16C98831221887CB00BEC7CE /* Cairo-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-ExtraLight.ttf"; sourceTree = "<group>"; };
 		16C98832221887CB00BEC7CE /* Cairo-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -67,7 +77,6 @@
 		16C157D222182263005B2BA6 = {
 			isa = PBXGroup;
 			children = (
-				16240136221A0C51002995E2 /* personlVC.swift */,
 				16C157DD22182264005B2BA6 /* pureVisionTask */,
 				16C157DC22182264005B2BA6 /* Products */,
 			);
@@ -85,11 +94,17 @@
 			isa = PBXGroup;
 			children = (
 				16C98830221887CB00BEC7CE /* Cairo */,
+				16C20031221C3E0900BA7507 /* jobVc.swift */,
+				16C2002D221BFC8300BA7507 /* eduCellClass.swift */,
+				161B1BCB221A4FC100F54255 /* eduVc.swift */,
+				16240136221A0C51002995E2 /* personlVC.swift */,
+				16C2002F221C1DC000BA7507 /* AlertController.swift */,
 				16C157DE22182264005B2BA6 /* AppDelegate.swift */,
 				16C157F622182CBC005B2BA6 /* welcomeViewCell.swift */,
 				16C157E022182264005B2BA6 /* ViewController.swift */,
 				16C9882E221882B100BEC7CE /* mainVc.swift */,
 				16556BB12218CE290040566E /* loginVc.swift */,
+				16C20033221C3E5000BA7507 /* jobTabelCell.swift */,
 				165301F122186DB6004ED792 /* Localizable.strings */,
 				16C157E222182264005B2BA6 /* Main.storyboard */,
 				16C157E522182266005B2BA6 /* Assets.xcassets */,
@@ -196,11 +211,16 @@
 				165301E42218386E004ED792 /* pageModel.swift in Sources */,
 				165301EC22186CEC004ED792 /* LocalizationSystem.swift in Sources */,
 				16C157E122182264005B2BA6 /* ViewController.swift in Sources */,
+				161B1BCC221A4FC100F54255 /* eduVc.swift in Sources */,
+				16C20034221C3E5000BA7507 /* jobTabelCell.swift in Sources */,
 				16556BB22218CE290040566E /* loginVc.swift in Sources */,
 				16C157F722182CBC005B2BA6 /* welcomeViewCell.swift in Sources */,
 				16C157DF22182264005B2BA6 /* AppDelegate.swift in Sources */,
 				16240137221A0C51002995E2 /* personlVC.swift in Sources */,
+				16C20030221C1DC100BA7507 /* AlertController.swift in Sources */,
 				16C9882F221882B100BEC7CE /* mainVc.swift in Sources */,
+				16C20032221C3E0900BA7507 /* jobVc.swift in Sources */,
+				16C2002E221BFC8300BA7507 /* eduCellClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -52,7 +52,7 @@ class personlVC: UIViewController {
        // self.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "personal", comment: "")
         tapToChosePhoto.delegate = self as? UIGestureRecognizerDelegate
         tapToChosePhoto.numberOfTapsRequired = 2
-        contAcc.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "continueKey", comment: ""), for: .normal)
+     //   contAcc.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "continueKey", comment: ""), for: .normal)
       //  choseBut.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "choseBut", comment: ""), for: .normal)
        // appliNO.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "ApplicationNo", comment: "")
         tapTwice.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "tapTwice", comment: "")
