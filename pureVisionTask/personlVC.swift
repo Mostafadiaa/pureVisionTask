@@ -14,6 +14,8 @@ class personlVC: UIViewController {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var contAcc: UIButton!
    // @IBOutlet weak var choseBut: UIButton!
+    var imgPicker = UIImagePickerController()
+
    // @IBOutlet weak var appliNO: UILabel!
     @IBOutlet weak var persLabel: UILabel!
     @IBOutlet weak var nameField: UITextField!
@@ -48,6 +50,7 @@ class personlVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imgPicker.delegate = self
         navTitel.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "personal", comment: "")
        // self.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "personal", comment: "")
         tapToChosePhoto.delegate = self as? UIGestureRecognizerDelegate
@@ -80,10 +83,13 @@ class personlVC: UIViewController {
     
 
     @IBAction func tapTochoseImageAc(_ sender: Any) {
-        print("hehhehehe")
+       
         UIView.animate(withDuration: 0.5) {
             self.tapTwice.alpha = 0.0
         }
+        self.imgPicker.sourceType = .photoLibrary
+        self.imgPicker.allowsEditing = true
+        present(self.imgPicker, animated: true, completion: nil)
         
        
         
@@ -137,4 +143,14 @@ extension personlVC:UIPickerViewDelegate,UIPickerViewDataSource{
     }
     
     
+}
+
+extension personlVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        if let imageData = info[.originalImage] as? UIImage {
+            userImage.image = imageData
+            
+        }
+        dismiss(animated: true, completion: nil)
+    }
 }

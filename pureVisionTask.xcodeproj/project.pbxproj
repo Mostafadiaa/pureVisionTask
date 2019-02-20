@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160EF4D0221D594A00DD9640 /* thanksVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160EF4CF221D594A00DD9640 /* thanksVc.swift */; };
 		16120269221C6E4D00E0A01B /* langVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16120268221C6E4D00E0A01B /* langVc.swift */; };
 		1612026B221C6F9D00E0A01B /* langClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1612026A221C6F9D00E0A01B /* langClassCell.swift */; };
 		1612026D221C94AE00E0A01B /* yourInfoVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1612026C221C94AE00E0A01B /* yourInfoVc.swift */; };
@@ -16,6 +17,9 @@
 		165301EC22186CEC004ED792 /* LocalizationSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165301EB22186CEC004ED792 /* LocalizationSystem.swift */; };
 		165301EF22186DB6004ED792 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 165301F122186DB6004ED792 /* Localizable.strings */; };
 		16556BB22218CE290040566E /* loginVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16556BB12218CE290040566E /* loginVc.swift */; };
+		16756056221D3740007FC513 /* addCertificatesVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16756055221D3740007FC513 /* addCertificatesVc.swift */; };
+		16756058221D3AC0007FC513 /* cirtClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16756057221D3AC0007FC513 /* cirtClassCell.swift */; };
+		1675605A221D4759007FC513 /* acceptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16756059221D4759007FC513 /* acceptVC.swift */; };
 		16C157DF22182264005B2BA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C157DE22182264005B2BA6 /* AppDelegate.swift */; };
 		16C157E122182264005B2BA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C157E022182264005B2BA6 /* ViewController.swift */; };
 		16C157E422182264005B2BA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16C157E222182264005B2BA6 /* Main.storyboard */; };
@@ -36,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		160EF4CF221D594A00DD9640 /* thanksVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thanksVc.swift; sourceTree = "<group>"; };
 		16120268221C6E4D00E0A01B /* langVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = langVc.swift; sourceTree = "<group>"; };
 		1612026A221C6F9D00E0A01B /* langClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = langClassCell.swift; sourceTree = "<group>"; };
 		1612026C221C94AE00E0A01B /* yourInfoVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yourInfoVc.swift; sourceTree = "<group>"; };
@@ -48,6 +53,9 @@
 		165301F022186DB6004ED792 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		165301F222186DB9004ED792 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		16556BB12218CE290040566E /* loginVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginVc.swift; sourceTree = "<group>"; };
+		16756055221D3740007FC513 /* addCertificatesVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addCertificatesVc.swift; sourceTree = "<group>"; };
+		16756057221D3AC0007FC513 /* cirtClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cirtClassCell.swift; sourceTree = "<group>"; };
+		16756059221D4759007FC513 /* acceptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = acceptVC.swift; sourceTree = "<group>"; };
 		16C157DB22182264005B2BA6 /* pureVisionTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pureVisionTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C157DE22182264005B2BA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16C157E022182264005B2BA6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,12 +123,16 @@
 				165301F122186DB6004ED792 /* Localizable.strings */,
 				16C157E222182264005B2BA6 /* Main.storyboard */,
 				16120268221C6E4D00E0A01B /* langVc.swift */,
+				16756057221D3AC0007FC513 /* cirtClassCell.swift */,
+				16756055221D3740007FC513 /* addCertificatesVc.swift */,
+				16756059221D4759007FC513 /* acceptVC.swift */,
 				1612026C221C94AE00E0A01B /* yourInfoVc.swift */,
 				16C157E522182266005B2BA6 /* Assets.xcassets */,
 				16C157E722182266005B2BA6 /* LaunchScreen.storyboard */,
 				16C157EA22182266005B2BA6 /* Info.plist */,
 				165301E32218386E004ED792 /* pageModel.swift */,
 				165301EB22186CEC004ED792 /* LocalizationSystem.swift */,
+				160EF4CF221D594A00DD9640 /* thanksVc.swift */,
 			);
 			path = pureVisionTask;
 			sourceTree = "<group>";
@@ -224,13 +236,17 @@
 				16C20034221C3E5000BA7507 /* jobTabelCell.swift in Sources */,
 				16556BB22218CE290040566E /* loginVc.swift in Sources */,
 				16120269221C6E4D00E0A01B /* langVc.swift in Sources */,
+				160EF4D0221D594A00DD9640 /* thanksVc.swift in Sources */,
 				1612026B221C6F9D00E0A01B /* langClassCell.swift in Sources */,
+				16756058221D3AC0007FC513 /* cirtClassCell.swift in Sources */,
 				16C157F722182CBC005B2BA6 /* welcomeViewCell.swift in Sources */,
 				16C157DF22182264005B2BA6 /* AppDelegate.swift in Sources */,
 				16240137221A0C51002995E2 /* personlVC.swift in Sources */,
 				16C20030221C1DC100BA7507 /* AlertController.swift in Sources */,
 				16C9882F221882B100BEC7CE /* mainVc.swift in Sources */,
 				16C20032221C3E0900BA7507 /* jobVc.swift in Sources */,
+				1675605A221D4759007FC513 /* acceptVC.swift in Sources */,
+				16756056221D3740007FC513 /* addCertificatesVc.swift in Sources */,
 				16C2002E221BFC8300BA7507 /* eduCellClass.swift in Sources */,
 				1612026D221C94AE00E0A01B /* yourInfoVc.swift in Sources */,
 			);

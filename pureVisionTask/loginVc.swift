@@ -43,7 +43,7 @@ class loginVc: UIViewController {
 
     @IBAction func logButtAc(_ sender: Any) {
         if emailField.text == "diaa@test.com" && passField.text == "1234567"{
-            print("done")
+           performSegue(withIdentifier: "access", sender: nil)
         }
     }
 

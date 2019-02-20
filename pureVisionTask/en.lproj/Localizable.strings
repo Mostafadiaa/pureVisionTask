@@ -115,9 +115,27 @@
 "case" = "Have you been convicted in a previous case";
 "yes" = "Yes";
 "no" = "No";
+"cirtInfo" = "Certificates Images";
 
-
-
+"jobInfo" = "Employment data";
+"desirdJob" = "Position Applied For";
+"expSalary" = "expected salary";
+"howPvision" = "How did you know about PureVision";
+"relativPureVision" = "Do you have relatives within PureVision";
+"hobits" = "Hobbies";
+"afterFive" = "Where do you see yourself after five years";
+"extraInfo" = "Other information you wish to add";
+"startDateLabel" = "When are you available for work";
+"driveLicLabel" = "Do you have a driver's license";
+"iAgreeLabell" = "I agree below to confirm that the information is correct and accurate";
+"acceptOutlet" = "I Agree";
+"thankyou" = "Thank you";
+"thanks" = "Your request under review";
+"settings" = "Settings";
+"signOut" = "signOut" ;
+"needR" = "Alert";
+"restart" = "Please restart the App for the best experience";
+//
 
 
 

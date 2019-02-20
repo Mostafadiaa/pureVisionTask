@@ -9,37 +9,41 @@
 import UIKit
 
 class mainVc: UIViewController {
-    
+    @IBOutlet var dd: UINavigationItem!
+    @IBOutlet var signOutOtlet: UIButton!
+    var changeLang = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        dd.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "settings", comment: "")
+        signOutOtlet.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "signOut", comment: ""), for: .normal)
     }
-    
+
     @IBAction func engButt(_ sender: Any) {
+        let alert = UIAlertController(title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "needR", comment: ""), message: LocalizationSystem.sharedInstance.localizedStringForKey(key: "restart", comment: ""), preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+            _ in
             LocalizationSystem.sharedInstance.setLanguage(languageCode: "en")
-            UIView.appearance().semanticContentAttribute = .forceLeftToRight
-            viewDidLoad()
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "vcW") as! ViewController
-            let appDlg = UIApplication.shared.delegate as? AppDelegate
-            appDlg?.window?.rootViewController = vc
-            self.dismiss(animated: true, completion: nil)
-            present(vc,animated: true)
-        
-    }
-    
-    
-    @IBAction func arButt(_ sender: Any) {
-        LocalizationSystem.sharedInstance.setLanguage(languageCode: "ar")
-        UIView.appearance().semanticContentAttribute = .forceRightToLeft
-        viewDidLoad()
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "vcW") as! ViewController
-        let appDlg = UIApplication.shared.delegate as? AppDelegate
-        appDlg?.window?.rootViewController = vc
-        self.dismiss(animated: true, completion: nil)
-        present(vc,animated: true)
+            UIView.appearance().semanticContentAttribute = .forceRightToLeft
+            self.viewDidLoad()
         }
-    
-    
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
 
+    }
+
+
+
+
+    @IBAction func arButt(_ sender: Any) {
+        let alert = UIAlertController(title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "needR", comment: ""), message: LocalizationSystem.sharedInstance.localizedStringForKey(key: "restart", comment: ""), preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+            _ in
+            LocalizationSystem.sharedInstance.setLanguage(languageCode: "ar")
+            UIView.appearance().semanticContentAttribute = .forceRightToLeft
+            self.viewDidLoad()
+        }
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+    }
 }
