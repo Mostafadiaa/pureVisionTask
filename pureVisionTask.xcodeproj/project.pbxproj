@@ -88,6 +88,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		168D74FA221D805F003445DC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				16C20031221C3E0900BA7507 /* jobVc.swift */,
+				161B1BCB221A4FC100F54255 /* eduVc.swift */,
+				16240136221A0C51002995E2 /* personlVC.swift */,
+				16C2002F221C1DC000BA7507 /* AlertController.swift */,
+				16C157E022182264005B2BA6 /* ViewController.swift */,
+				16C9882E221882B100BEC7CE /* mainVc.swift */,
+				16556BB12218CE290040566E /* loginVc.swift */,
+				16120268221C6E4D00E0A01B /* langVc.swift */,
+				16756055221D3740007FC513 /* addCertificatesVc.swift */,
+				16756059221D4759007FC513 /* acceptVC.swift */,
+				1612026C221C94AE00E0A01B /* yourInfoVc.swift */,
+				160EF4CF221D594A00DD9640 /* thanksVc.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		168D74FB221D8094003445DC /* clell */ = {
+			isa = PBXGroup;
+			children = (
+				1612026A221C6F9D00E0A01B /* langClassCell.swift */,
+				16C2002D221BFC8300BA7507 /* eduCellClass.swift */,
+				16C157F622182CBC005B2BA6 /* welcomeViewCell.swift */,
+				16C20033221C3E5000BA7507 /* jobTabelCell.swift */,
+				16756057221D3AC0007FC513 /* cirtClassCell.swift */,
+			);
+			path = clell;
+			sourceTree = "<group>";
+		};
+		168D74FC221D80AE003445DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				168D74FB221D8094003445DC /* clell */,
+				16C157E222182264005B2BA6 /* Main.storyboard */,
+				16C157E722182266005B2BA6 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		168D7505221D80ED003445DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				165301E32218386E004ED792 /* pageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		168D7506221D8100003445DC /* General */ = {
+			isa = PBXGroup;
+			children = (
+				16C157DE22182264005B2BA6 /* AppDelegate.swift */,
+				165301F122186DB6004ED792 /* Localizable.strings */,
+				165301EB22186CEC004ED792 /* LocalizationSystem.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		16C157D222182263005B2BA6 = {
 			isa = PBXGroup;
 			children = (
@@ -108,31 +167,12 @@
 			isa = PBXGroup;
 			children = (
 				16C98830221887CB00BEC7CE /* Cairo */,
-				16C20031221C3E0900BA7507 /* jobVc.swift */,
-				1612026A221C6F9D00E0A01B /* langClassCell.swift */,
-				16C2002D221BFC8300BA7507 /* eduCellClass.swift */,
-				161B1BCB221A4FC100F54255 /* eduVc.swift */,
-				16240136221A0C51002995E2 /* personlVC.swift */,
-				16C2002F221C1DC000BA7507 /* AlertController.swift */,
-				16C157DE22182264005B2BA6 /* AppDelegate.swift */,
-				16C157F622182CBC005B2BA6 /* welcomeViewCell.swift */,
-				16C157E022182264005B2BA6 /* ViewController.swift */,
-				16C9882E221882B100BEC7CE /* mainVc.swift */,
-				16556BB12218CE290040566E /* loginVc.swift */,
-				16C20033221C3E5000BA7507 /* jobTabelCell.swift */,
-				165301F122186DB6004ED792 /* Localizable.strings */,
-				16C157E222182264005B2BA6 /* Main.storyboard */,
-				16120268221C6E4D00E0A01B /* langVc.swift */,
-				16756057221D3AC0007FC513 /* cirtClassCell.swift */,
-				16756055221D3740007FC513 /* addCertificatesVc.swift */,
-				16756059221D4759007FC513 /* acceptVC.swift */,
-				1612026C221C94AE00E0A01B /* yourInfoVc.swift */,
+				168D7505221D80ED003445DC /* Model */,
+				168D74FC221D80AE003445DC /* View */,
+				168D74FA221D805F003445DC /* Controller */,
+				168D7506221D8100003445DC /* General */,
 				16C157E522182266005B2BA6 /* Assets.xcassets */,
-				16C157E722182266005B2BA6 /* LaunchScreen.storyboard */,
 				16C157EA22182266005B2BA6 /* Info.plist */,
-				165301E32218386E004ED792 /* pageModel.swift */,
-				165301EB22186CEC004ED792 /* LocalizationSystem.swift */,
-				160EF4CF221D594A00DD9640 /* thanksVc.swift */,
 			);
 			path = pureVisionTask;
 			sourceTree = "<group>";
