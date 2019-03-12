@@ -8,12 +8,19 @@
 
 import UIKit
 
+struct loginData:Codable{
+    var userName = String()
+    var passWord = String()
+}
+
 class loginVc: UIViewController {
     @IBOutlet var emailField: UITextField!
     @IBOutlet var passField: UITextField!
     @IBOutlet var logButt: UIButton!
     @IBOutlet var signUpButt: UIButton!
-
+    let loginUrl = "https://amrwaheeed.000webhostapp.com/wazzaf-app/apis/login.php"
+   // let userName = "amr.waheed00@outlook.com"
+    //let password = "01095202651*Aa"
     override func viewDidLoad() {
         super.viewDidLoad()
         emailField.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "email", comment: "")
@@ -40,11 +47,58 @@ class loginVc: UIViewController {
 
         }
     //}
+    
+    func loginfunc(){
+        guard let urlToLogin = URL(string: loginUrl) else {
+            return
+        }
+        var req = URLRequest(url: urlToLogin)
+        req.httpMethod = "POST"
+        let postString = "email=\(emailField.text!)&password=\(passField.text!)"
+        req.httpBody = postString.data(using: .utf8)
+        let session = URLSession.shared
+        let task = session.dataTask(with: req) { (data, response, err) in
+            guard let data = data else {
+                return
+            }
+            do {
+                let responsehh = try JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject]
+               //print(responsehh)
+                if responsehh!["status"]! as! String == "2" {
+                    if responsehh!["type"]! as! String == "3" {
+                       self.dismiss(animated: true, completion: nil)
+                       self.performSegue(withIdentifier: "access", sender: self)
+                        
+                    }
+                    else if responsehh!["type"]! as! String == "2" {
+                     print("company")
+                    }
+                    else if responsehh!["type"]! as! String == "1" {
+                        print("admin")
+                    }
+                }
+                else{
+                     AlertController.showAlert(self, title: "Something Wrong", message: "please check your mail for the activation")
+                }
+                
+            } catch let error as NSError {
+                print(error)
+            }
+            
+            
+        }
+        task.resume()
+    }
 
     @IBAction func logButtAc(_ sender: Any) {
-        if emailField.text == "diaa@test.com" && passField.text == "1234567"{
-           performSegue(withIdentifier: "access", sender: nil)
+        if emailField.text == "" || passField.text == ""{
+            AlertController.showAlert(self, title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "emptyField", comment: ""), message: LocalizationSystem.sharedInstance.localizedStringForKey(key: "allReq", comment: ""))
+        }else{
+            loginfunc()
         }
+
+
+
     }
 
     @IBAction func signUpButtAcc(_ sender: Any) {

@@ -23,6 +23,20 @@ class jobVc: UIViewController {
     @IBOutlet weak var endLabel: UILabel!
     @IBOutlet weak var doneOutlet: UIButton!
     @IBOutlet weak var viView: UIVisualEffectView!
+    var jobStrDate: String?
+    var jobEndDate: String?
+    let arabicNumbers = [
+        "٠": "0",
+        "١": "1",
+        "٢": "2",
+        "٣": "3",
+        "٤": "4",
+        "٥": "5",
+        "٦": "6",
+        "٧": "7",
+        "٨": "8",
+        "٩": "9"
+    ]
     
      var jobData : [String:[String]] = [:]
      var jobDataKeys: [String] = []
@@ -30,7 +44,21 @@ class jobVc: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         dateFormatter.dateFormat = "dd MMM yyyy"
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        if LocalizationSystem.sharedInstance.getLanguage() == "ar"
+        {
+            comName.textAlignment = .right
+            jobTitel.textAlignment = .right
+            reason.textAlignment = .right
+            salary.textAlignment = .right
+        }
+        else{
+            comName.textAlignment = .left
+            jobTitel.textAlignment = .left
+            reason.textAlignment = .left
+            salary.textAlignment = .left
+        }
+        // dateFormatter.dateFormat = "dd MMM yyyy"
         jobDataKeys = Array(jobData.keys).sorted()
         hideKeyboardWhenTappedAround()
         self.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "jobHistory", comment: "")
@@ -49,9 +77,13 @@ class jobVc: UIViewController {
     @IBAction func doneAction(_ sender: Any) {
       
         let count = jobDataKeys.count + 1
-        let starSelectedDate = dateFormatter.string(from: startDate.date)
-        let endSelectedDate = dateFormatter.string(from: endDate.date)
-        if comName.text != "" && jobTitel.text != "" && starSelectedDate != endSelectedDate && salary.text != "" && reason.text != ""
+        guard let starSelectedDate = jobStrDate else {
+            return
+        }
+        guard let endSelectedDate = jobEndDate else {
+            return
+        }
+        if comName.text != "" && jobTitel.text != "" && starSelectedDate != endSelectedDate && reason.text != ""
         {
             UIView.animate(withDuration: 0.5) {
                 self.viView.alpha = 0.0
@@ -62,6 +94,12 @@ class jobVc: UIViewController {
             jobTabel.beginUpdates()
             jobTabel.insertRows(at: [indexPath], with:.automatic )
             jobTabel.endUpdates()
+            comName.text = ""
+            jobTitel.text = ""
+            salary.text = ""
+            reason.text = ""
+            view.endEditing(true)
+            
         }
         else{
              AlertController.showAlert(self, title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "emptyField", comment: ""), message: LocalizationSystem.sharedInstance.localizedStringForKey(key: "allReq", comment: ""))
@@ -83,6 +121,29 @@ class jobVc: UIViewController {
 
             
         }
+    }
+    
+    @IBAction func startAction(_ sender: Any) {
+        
+        jobStrDate = dateFormatter.string(from: startDate.date)
+        if LocalizationSystem.sharedInstance.getLanguage() == "ar"{
+            for (key,value) in arabicNumbers {
+                jobStrDate = jobStrDate!.replacingOccurrences(of: key, with: value)
+            }
+            print(jobStrDate)
+        }
+        
+    }
+    
+    @IBAction func endAction(_ sender: Any) {
+        jobEndDate = dateFormatter.string(from: endDate.date)
+        if LocalizationSystem.sharedInstance.getLanguage() == "ar"{
+        for (key,value) in arabicNumbers {
+            jobEndDate = jobEndDate!.replacingOccurrences(of: key, with: value)
+        }
+        print(jobEndDate)
+        }
+        
     }
     
 }

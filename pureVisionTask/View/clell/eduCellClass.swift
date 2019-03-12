@@ -10,12 +10,10 @@ import UIKit
 
 class eduCellClass: UITableViewCell {
 
-    @IBOutlet weak var certLabe: UILabel!
-    @IBOutlet weak var schoolName: UILabel!
-    @IBOutlet weak var courseLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var yearsNumLabel: UILabel!
-    @IBOutlet weak var gradYearLabel: UILabel!
+    @IBOutlet weak var courseTopic: UILabel!
+    @IBOutlet weak var startToEndDate: UILabel!
+    @IBOutlet weak var organizationName: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

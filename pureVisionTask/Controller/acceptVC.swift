@@ -9,37 +9,27 @@
 import UIKit
 
 class acceptVC: UIViewController {
-
-    @IBOutlet weak var desirdJob: UITextField!
+    var desierdJopData = ["PHP Developer","Andorid Develper","BackEnd Developer"]
+    var currentLevel = ["entry level","senior","junior"]
+    @IBOutlet weak var currentCarrer: UILabel!
+    @IBOutlet weak var desierdJopPicker: UIPickerView!
     @IBOutlet weak var expSalary: UITextField!
-    @IBOutlet weak var howPvision: UITextField!
-    @IBOutlet weak var relativPureVision: UITextField!
-    @IBOutlet weak var hobits: UITextField!
+    @IBOutlet weak var desierdJob: UILabel!
     @IBOutlet weak var afterFive: UITextField!
-    @IBOutlet weak var extraInfo: UITextField!
-    @IBOutlet weak var startDateLabel: UILabel!
-    @IBOutlet weak var startDatePicker: UIDatePicker!
-    @IBOutlet weak var driveLicLabel: UILabel!
-    @IBOutlet weak var iAgreeLabell: UITextView!
     @IBOutlet weak var acceptOutlet: UIButton!
-    @IBOutlet weak var dirveLicSegm: UISegmentedControl!
+    @IBOutlet weak var carrerLevel: UIPickerView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
         self.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "jobInfo", comment: "")
-        desirdJob.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "desirdJob", comment: "")
+        desierdJob.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "desirdJob", comment: "")
         expSalary.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "expSalary", comment: "")
-        howPvision.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "howPvision", comment: "")
-        relativPureVision.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "relativPureVision", comment: "")
-        hobits.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "hobits", comment: "")
         afterFive.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "afterFive", comment: "")
-        extraInfo.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "extraInfo", comment: "")
-        startDateLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "startDateLabel", comment: "")
-        driveLicLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "driveLicLabel", comment: "")
-        iAgreeLabell.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "iAgreeLabell", comment: "")
         acceptOutlet.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "acceptOutlet", comment: ""), for: .normal)
-        dirveLicSegm.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "yes", comment: ""), forSegmentAt: 0)
-              dirveLicSegm.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "no", comment: ""), forSegmentAt: 1)
+        currentCarrer.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "currerLevel", comment: "")
+       
 
         
         
@@ -50,9 +40,57 @@ class acceptVC: UIViewController {
     
 
     @IBAction func acceptAction(_ sender: Any) {
-        
+        if LocalizationSystem.sharedInstance.getLanguage() == "ar"
+        {
+            let thanksVc = self.storyboard?.instantiateViewController(withIdentifier: "thanksVc") as! thanksVc
+            present(thanksVc, animated: true)
+        }
+        else{
+            performSegue(withIdentifier: "showExam", sender: self)
+        }
     }
     
     
 
+}
+extension acceptVC:UIPickerViewDelegate,UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView == desierdJopPicker {
+            return desierdJopData.count
+        }
+        else if pickerView == carrerLevel {
+            return currentLevel.count
+            
+        }
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == desierdJopPicker {
+            print(desierdJopData[row])
+        }
+        else if pickerView == carrerLevel {
+            print(currentLevel[row])
+            
+        }
+        //print(desierdJopData[row])
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+    {
+        if pickerView == desierdJopPicker {
+            return desierdJopData[row]
+        }
+        else if pickerView == carrerLevel {
+            return currentLevel[row]
+            
+        }
+         //return desierdJopData[row]
+        return ""
+    }
+    
+    
 }

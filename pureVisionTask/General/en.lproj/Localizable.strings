@@ -17,8 +17,8 @@
 
 "webTitel"="Web Development";
 "webText"="We offer professional web design and development services to achieve your goal and enable you to implement your strategies";
-
-"iotTitel"="Smart Homes";
+"OnlinePresence"="Online Presence";
+"iotTitel" = "Smart Homes";
 "iotText"="We provide smart solutions for everything you think about and want to control from inside and outside your home or office";
 
 "cloudTitel" = "Cloud Computing";
@@ -39,10 +39,11 @@
 "personal" = "Personal Information";
 
 "choseBut" = "Choose";
-
+"degreeLevel" = "Degree Level";
+"currerLevel"="Current Level";
 "name" = "Full Name";
 "address" = "Address";
-"phone" = "TelePhone";
+"phone" = "Home Phone";
 "mobile" = "Mobile";
 "idNo" = "Civil ID No.";
 "tapTwice" = "Tap twice on the blue image to add or change your image";
@@ -52,19 +53,20 @@
 "single"="Single";
 "femaile"="Femaile";
 "male"="Male";
-"validTo" = "Valid up to";
+"countryName" = "Country Name";
 "city" = "City";
 "nationality" = "Nationality";
 "religion" = "Religion";
 "jobApp" = "Job Application";
 "dateBirth" = "Date of birth";
 "Done" = "Done";
+"rePass"= "Re-enter password";
 "education"="Education";
 "highSchool"="High School";
 "college"="College";
 "other"="Other";
-"courseName"="Course of study";
-"courselocation"="Location";
+"courseName"="Course Topic";
+"courselocation"="Organization Name";
 "numOfYears"="No. of Years Completetd";
 "gradYear"="Year graduated";
 "add"="Add New";
@@ -72,6 +74,9 @@
 "allReq" = "All Fields Are Required";
 "from" = "From";
 "to" = "To";
+"grade" = "Grade";
+"coures" = "Courses";
+
 
 "comName"="Company Name";
 "jobTitel"="Job Title";

@@ -7,15 +7,21 @@
 //
 
 import UIKit
+struct religionData: Codable {
+    let religion_id, religion_name,arabic_name: String
+    
+}
+
 
 class personlVC: UIViewController {
-    
+    let bb = "https://amrwaheeed.000webhostapp.com/wazzaf-app/apis/religiondata.php"
     @IBOutlet var tapToChosePhoto: UITapGestureRecognizer!
     @IBOutlet weak var userImage: UIImageView!
-    @IBOutlet weak var contAcc: UIButton!
+   // @IBOutlet weak var contAcc: UIButton!
    // @IBOutlet weak var choseBut: UIButton!
     var imgPicker = UIImagePickerController()
-
+    @IBOutlet weak var birthDatePicker: UIDatePicker!
+    
    // @IBOutlet weak var appliNO: UILabel!
     @IBOutlet weak var persLabel: UILabel!
     @IBOutlet weak var nameField: UITextField!
@@ -28,7 +34,7 @@ class personlVC: UIViewController {
     @IBOutlet weak var typelabel: UILabel!
     @IBOutlet weak var mariStatSegm: UISegmentedControl!
     @IBOutlet weak var typeSegm: UISegmentedControl!
-    @IBOutlet weak var validUpLabel: UILabel!
+    @IBOutlet weak var countryName: UILabel!
     @IBOutlet weak var birthDateLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var natLabel: UILabel!
@@ -38,18 +44,45 @@ class personlVC: UIViewController {
     @IBOutlet weak var natPicker: UIPickerView!
     @IBOutlet weak var religionPicker: UIPickerView!
     @IBOutlet weak var navTitel: UINavigationItem!
+    @IBOutlet weak var countryPicer: UIPickerView!
     
     
-    
+    var countryNames = ["Egypt","KSA","London"]
     var cityNames = ["Giza","Cairo","Maadi"]
     var natNames = ["Egyptian","Saudi","American","Canadian"]
     var religionNames = ["Christian","Muslim","Other"]
-    
-    //var tapAlready = false
-    
+    var strDate: String?
+    let dateFormatter = DateFormatter()
+    var relegList: [religionData] = []
+    let arabicNumbers = [
+        "٠": "0",
+        "١": "1",
+        "٢": "2",
+        "٣": "3",
+        "٤": "4",
+        "٥": "5",
+        "٦": "6",
+        "٧": "7",
+        "٨": "8",
+        "٩": "9"
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getRelegion()
+        
+        //Formatter.locale = NSLocale(localeIdentifier: "EN") as Locale
+
+       // MM/dd/yyyy
+        //let loc = Locale(identifier: "en")
+        //birthDatePicker.locale = loc
+         dateFormatter.dateFormat = "dd/MM/yyyy"
+         //strDate = dateFormatter.string(from: birthDatePicker.date)
+        //let currentDate = NSDate()
+        //let usDateFormat = DateFormatter()
+        //usDateFormat.dateFormat = "d MMMM y"
+       // usDateFormat.locale = NSLocale(localeIdentifier: "en_US") as Locale
+       // cmt.date = usDateFormat.stringFromDate(currentDate)
         imgPicker.delegate = self
         navTitel.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "personal", comment: "")
        // self.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "personal", comment: "")
@@ -73,11 +106,12 @@ class personlVC: UIViewController {
         typeSegm.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "femaile", comment: ""), forSegmentAt: 0)
         typeSegm.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "male", comment: ""), forSegmentAt: 1)
          cityLabel.text  = LocalizationSystem.sharedInstance.localizedStringForKey(key: "city", comment: "")
-         validUpLabel.text  = LocalizationSystem.sharedInstance.localizedStringForKey(key: "validTo", comment: "")
+         countryName.text  = LocalizationSystem.sharedInstance.localizedStringForKey(key: "countryName", comment: "")
          religLabel.text  = LocalizationSystem.sharedInstance.localizedStringForKey(key: "religion", comment: "")
          natLabel.text  = LocalizationSystem.sharedInstance.localizedStringForKey(key: "nationality", comment: "")
         birthDateLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "dateBirth", comment: "")
         hideKeyboardWhenTappedAround()
+        
         
     }
     
@@ -94,6 +128,49 @@ class personlVC: UIViewController {
        
         
     }
+    @IBAction func dateBirthAct(_ sender: Any) {
+        strDate = dateFormatter.string(from: birthDatePicker.date)
+        for (key,value) in arabicNumbers {
+            strDate = strDate!.replacingOccurrences(of: key, with: value)
+        }
+       // print(strDate)
+    }
+    
+    @IBAction func testJsonAction(_ sender: Any) {
+        print(relegList)
+        
+    }
+    func getRelegion(){
+        guard let relData = URL(string: bb) else {
+            return
+        }
+        var urlRequest = URLRequest(url: relData)
+        urlRequest.httpMethod = "GET"
+        let session = URLSession.shared
+        let task =  session.dataTask(with: urlRequest) { (data, res, err) in
+            guard let data = data else {
+                return
+            }
+            do {
+                let relJson = try JSONDecoder().decode([religionData].self, from: data)
+                print(relJson)
+                self.relegList = relJson
+                DispatchQueue.main.async {
+                    self.religionPicker.reloadAllComponents()
+                }
+               
+                
+            }
+            catch let error as NSError{
+                print(error)
+            }
+        }
+        
+        task.resume()
+    }
+    
+    
+    
     
 }
 extension personlVC:UIPickerViewDelegate,UIPickerViewDataSource{
@@ -110,7 +187,10 @@ extension personlVC:UIPickerViewDelegate,UIPickerViewDataSource{
             return natNames.count
         }
         else if pickerView == religionPicker {
-            return religionNames.count
+            return relegList.count
+        }
+        else if pickerView == countryPicer {
+            return countryNames.count
         }
        return 1
     }
@@ -123,7 +203,16 @@ extension personlVC:UIPickerViewDelegate,UIPickerViewDataSource{
             print(natNames[row])
         }
         else if pickerView == religionPicker {
-            print(religionNames[row])
+            if LocalizationSystem.sharedInstance.getLanguage() == "ar"{
+                 print(relegList[row].religion_id)
+            }
+            else{
+                 print(relegList[row].religion_id)
+            }
+           
+        }
+        else if pickerView == countryPicer{
+             print(countryNames[row])
         }
        
        
@@ -137,7 +226,15 @@ extension personlVC:UIPickerViewDelegate,UIPickerViewDataSource{
             return natNames[row]
         }
         else if pickerView == religionPicker {
-            return religionNames[row]
+            if LocalizationSystem.sharedInstance.getLanguage() == "ar"{
+                 return relegList[row].arabic_name
+            }
+            else{
+                return relegList[row].religion_name
+            }
+        }
+        else if pickerView == countryPicer{
+            return countryNames[row]
         }
         return ""
     }
@@ -154,3 +251,4 @@ extension personlVC: UIImagePickerControllerDelegate, UINavigationControllerDele
         dismiss(animated: true, completion: nil)
     }
 }
+

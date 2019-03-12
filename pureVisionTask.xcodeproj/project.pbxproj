@@ -13,6 +13,7 @@
 		1612026D221C94AE00E0A01B /* yourInfoVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1612026C221C94AE00E0A01B /* yourInfoVc.swift */; };
 		161B1BCC221A4FC100F54255 /* eduVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161B1BCB221A4FC100F54255 /* eduVc.swift */; };
 		16240137221A0C51002995E2 /* personlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16240136221A0C51002995E2 /* personlVC.swift */; };
+		164DADE8222BE048008B3EE9 /* educationVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164DADE7222BE048008B3EE9 /* educationVc.swift */; };
 		165301E42218386E004ED792 /* pageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165301E32218386E004ED792 /* pageModel.swift */; };
 		165301EC22186CEC004ED792 /* LocalizationSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165301EB22186CEC004ED792 /* LocalizationSystem.swift */; };
 		165301EF22186DB6004ED792 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 165301F122186DB6004ED792 /* Localizable.strings */; };
@@ -20,6 +21,7 @@
 		16756056221D3740007FC513 /* addCertificatesVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16756055221D3740007FC513 /* addCertificatesVc.swift */; };
 		16756058221D3AC0007FC513 /* cirtClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16756057221D3AC0007FC513 /* cirtClassCell.swift */; };
 		1675605A221D4759007FC513 /* acceptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16756059221D4759007FC513 /* acceptVC.swift */; };
+		16B6766022369C3F009B6450 /* regVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B6765F22369C3F009B6450 /* regVc.swift */; };
 		16C157DF22182264005B2BA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C157DE22182264005B2BA6 /* AppDelegate.swift */; };
 		16C157E122182264005B2BA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C157E022182264005B2BA6 /* ViewController.swift */; };
 		16C157E422182264005B2BA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16C157E222182264005B2BA6 /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 		16C9883A221887CB00BEC7CE /* Cairo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16C98834221887CB00BEC7CE /* Cairo-Light.ttf */; };
 		16C9883B221887CB00BEC7CE /* Cairo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16C98835221887CB00BEC7CE /* Cairo-Black.ttf */; };
 		16C9883C221887CB00BEC7CE /* Cairo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16C98836221887CB00BEC7CE /* Cairo-Bold.ttf */; };
+		16F26A6B222E7486000DE1DB /* onlinePresence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F26A6A222E7486000DE1DB /* onlinePresence.swift */; };
+		16F26A6D222EB3B5000DE1DB /* examsVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F26A6C222EB3B5000DE1DB /* examsVc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,7 @@
 		1612026C221C94AE00E0A01B /* yourInfoVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yourInfoVc.swift; sourceTree = "<group>"; };
 		161B1BCB221A4FC100F54255 /* eduVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eduVc.swift; sourceTree = "<group>"; };
 		16240136221A0C51002995E2 /* personlVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personlVC.swift; sourceTree = "<group>"; };
+		164DADE7222BE048008B3EE9 /* educationVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = educationVc.swift; sourceTree = "<group>"; };
 		165301E32218386E004ED792 /* pageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pageModel.swift; sourceTree = "<group>"; };
 		165301E9221869F3004ED792 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		165301EA221869F3004ED792 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -56,6 +61,7 @@
 		16756055221D3740007FC513 /* addCertificatesVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addCertificatesVc.swift; sourceTree = "<group>"; };
 		16756057221D3AC0007FC513 /* cirtClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cirtClassCell.swift; sourceTree = "<group>"; };
 		16756059221D4759007FC513 /* acceptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = acceptVC.swift; sourceTree = "<group>"; };
+		16B6765F22369C3F009B6450 /* regVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = regVc.swift; sourceTree = "<group>"; };
 		16C157DB22182264005B2BA6 /* pureVisionTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pureVisionTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C157DE22182264005B2BA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16C157E022182264005B2BA6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +81,8 @@
 		16C98834221887CB00BEC7CE /* Cairo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Light.ttf"; sourceTree = "<group>"; };
 		16C98835221887CB00BEC7CE /* Cairo-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Black.ttf"; sourceTree = "<group>"; };
 		16C98836221887CB00BEC7CE /* Cairo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Bold.ttf"; sourceTree = "<group>"; };
+		16F26A6A222E7486000DE1DB /* onlinePresence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onlinePresence.swift; sourceTree = "<group>"; };
+		16F26A6C222EB3B5000DE1DB /* examsVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = examsVc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,9 @@
 		168D74FA221D805F003445DC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				16B6765F22369C3F009B6450 /* regVc.swift */,
+				16F26A6C222EB3B5000DE1DB /* examsVc.swift */,
+				16F26A6A222E7486000DE1DB /* onlinePresence.swift */,
 				16C20031221C3E0900BA7507 /* jobVc.swift */,
 				161B1BCB221A4FC100F54255 /* eduVc.swift */,
 				16240136221A0C51002995E2 /* personlVC.swift */,
@@ -103,6 +114,7 @@
 				16756059221D4759007FC513 /* acceptVC.swift */,
 				1612026C221C94AE00E0A01B /* yourInfoVc.swift */,
 				160EF4CF221D594A00DD9640 /* thanksVc.swift */,
+				164DADE7222BE048008B3EE9 /* educationVc.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -274,15 +286,19 @@
 				16C157E122182264005B2BA6 /* ViewController.swift in Sources */,
 				161B1BCC221A4FC100F54255 /* eduVc.swift in Sources */,
 				16C20034221C3E5000BA7507 /* jobTabelCell.swift in Sources */,
+				16B6766022369C3F009B6450 /* regVc.swift in Sources */,
 				16556BB22218CE290040566E /* loginVc.swift in Sources */,
 				16120269221C6E4D00E0A01B /* langVc.swift in Sources */,
+				16F26A6D222EB3B5000DE1DB /* examsVc.swift in Sources */,
 				160EF4D0221D594A00DD9640 /* thanksVc.swift in Sources */,
 				1612026B221C6F9D00E0A01B /* langClassCell.swift in Sources */,
+				164DADE8222BE048008B3EE9 /* educationVc.swift in Sources */,
 				16756058221D3AC0007FC513 /* cirtClassCell.swift in Sources */,
 				16C157F722182CBC005B2BA6 /* welcomeViewCell.swift in Sources */,
 				16C157DF22182264005B2BA6 /* AppDelegate.swift in Sources */,
 				16240137221A0C51002995E2 /* personlVC.swift in Sources */,
 				16C20030221C1DC100BA7507 /* AlertController.swift in Sources */,
+				16F26A6B222E7486000DE1DB /* onlinePresence.swift in Sources */,
 				16C9882F221882B100BEC7CE /* mainVc.swift in Sources */,
 				16C20032221C3E0900BA7507 /* jobVc.swift in Sources */,
 				1675605A221D4759007FC513 /* acceptVC.swift in Sources */,

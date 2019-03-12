@@ -13,22 +13,35 @@ class eduVc: UIViewController {
   //  @IBOutlet weak var eduTabel: UITableView!
     //  @IBOutlet weak var xTop: NSLayoutConstraint!
     @IBOutlet weak var eduTabel: UITableView!
-    @IBOutlet weak var qualName: UISegmentedControl!
-    @IBOutlet weak var schoolNameField: UITextField!
-    @IBOutlet weak var courseNameField: UITextField!
-    @IBOutlet weak var locationNameField: UITextField!
-    @IBOutlet weak var numOfYearsField: UITextField!
-    @IBOutlet weak var gradYearField: UITextField!
+    
+    @IBOutlet weak var satrtDateLabel: UILabel!
+    @IBOutlet weak var endDateLabel: UILabel!
+    @IBOutlet weak var courseTopicField: UITextField!
+    @IBOutlet weak var organizationNameField: UITextField!
+    @IBOutlet weak var startDatePicker: UIDatePicker!
+    @IBOutlet weak var endDatePicker: UIDatePicker!
     @IBOutlet weak var doneOutlet: UIButton!
     @IBOutlet weak var addOutlet: UIButton!
-    @IBOutlet weak var segmQual: UISegmentedControl!
     @IBOutlet weak var comPlete: UIButton!
-    
-    
+    var eduStrDate: String?
+    var eduEndDate: String?
+    let arabicNumbers = [
+        "٠": "0",
+        "١": "1",
+        "٢": "2",
+        "٣": "3",
+        "٤": "4",
+        "٥": "5",
+        "٦": "6",
+        "٧": "7",
+        "٨": "8",
+        "٩": "9"
+    ]
+     var dateFormatter = DateFormatter()
     
  //  @IBOutlet weak var xView: UIView!
    // var startCgange = false
-    @IBOutlet weak var pickerC: UIPickerView!
+    //@IBOutlet weak var pickerC: UIPickerView!
     
 @IBOutlet var fiView: UIVisualEffectView!
     var qData : [String:[String]] = [:]
@@ -36,20 +49,31 @@ class eduVc: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "education", comment: "")
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        if LocalizationSystem.sharedInstance.getLanguage() == "ar"
+        {
+            courseTopicField.textAlignment = .right
+            organizationNameField.textAlignment = .right
+           
+        }
+        else{
+            courseTopicField.textAlignment = .left
+            organizationNameField.textAlignment = .left
+           
+        }
+        self.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "coures", comment: "")
         qDataKeys = Array(qData.keys).sorted()
-            segmQual.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "highSchool", comment: ""), forSegmentAt: 0)
-        segmQual.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "college", comment: ""), forSegmentAt: 1)
-        segmQual.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "other", comment: ""), forSegmentAt: 2)
         
-        schoolNameField.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "name", comment: "")
-           courseNameField.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "courseName", comment: "")
-        locationNameField.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "courselocation", comment: "")
-        numOfYearsField.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "numOfYears", comment: "")
-        gradYearField.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "gradYear", comment: "")
+        courseTopicField.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "courseName", comment: "")
+        organizationNameField.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "courselocation", comment: "")
+       // startDateField.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "startDate", comment: "")
+      //  endDateField.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "endDate", comment: "")
         doneOutlet.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Done", comment: ""), for: .normal)
         addOutlet.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "add", comment: ""), for: .normal)
         comPlete.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "continueKey", comment: ""), for: .normal)
+        satrtDateLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "startDate", comment: "")
+        endDateLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "endDate", comment: "")
+        
         hideKeyboardWhenTappedAround()
        
         }
@@ -93,26 +117,32 @@ class eduVc: UIViewController {
     }
     
     @IBAction func doneCer(_ sender: Any) {
-        if schoolNameField.text != "" && courseNameField.text != "" && numOfYearsField.text != "" && gradYearField.text != "" &&  locationNameField.text != "" &&  self.qualName.selectedSegmentIndex != UISegmentedControl.noSegment{
+        //let starSelectedDate = dateFormatter.string(from: startDatePicker.date)
+        //let endSelectedDate = dateFormatter.string(from: endDatePicker.date)
+        guard let starSelectedDate = eduStrDate else {
+            return
+        }
+        guard let endSelectedDate = eduEndDate else {
+            return
+        }
+
+        if courseTopicField.text != "" && organizationNameField.text != ""  && starSelectedDate != endSelectedDate {
             UIView.animate(withDuration: 0.5) {
                 self.fiView.alpha = 0.0
             }
             let count = qDataKeys.count + 1
-            guard let title = qualName.titleForSegment(at: qualName.selectedSegmentIndex) else {
-                return
-            }
-            self.qualName.selectedSegmentIndex = UISegmentedControl.noSegment
-            qData["Qualification \(count)"] = [title,schoolNameField.text!,courseNameField.text!,locationNameField.text!,numOfYearsField.text!,gradYearField.text!]
+//            guard let title = qualName.titleForSegment(at: qualName.selectedSegmentIndex) else {
+//                return
+//            }
+            //self.qualName.selectedSegmentIndex = UISegmentedControl.noSegment
+            qData["Qualification \(count)"] = [courseTopicField.text!,organizationNameField.text!,starSelectedDate,endSelectedDate]
             qDataKeys.append("Qualification \(count)")
             let indexPath = IndexPath(row: qDataKeys.count - 1, section: 0)
             eduTabel.beginUpdates()
             eduTabel.insertRows(at: [indexPath], with:.automatic )
             eduTabel.endUpdates()
-            schoolNameField.text = ""
-            courseNameField.text = ""
-            numOfYearsField.text = ""
-            gradYearField.text = ""
-            locationNameField.text = ""
+            courseTopicField.text = ""
+            organizationNameField.text = ""
             view.endEditing(true)
         }
         
@@ -128,6 +158,26 @@ class eduVc: UIViewController {
         }
     }
     
+    
+    @IBAction func startAction(_ sender: Any) {
+        eduStrDate = dateFormatter.string(from: startDatePicker.date)
+        if LocalizationSystem.sharedInstance.getLanguage() == "ar"{
+        for (key,value) in arabicNumbers {
+            eduStrDate = eduStrDate!.replacingOccurrences(of: key, with: value)
+        }
+        print(eduStrDate as Any)
+        }
+    }
+    @IBAction func endAction(_ sender: Any) {
+        eduEndDate = dateFormatter.string(from: endDatePicker.date)
+        if LocalizationSystem.sharedInstance.getLanguage() == "ar"{
+        for (key,value) in arabicNumbers {
+            eduEndDate = eduEndDate!.replacingOccurrences(of: key, with: value)
+        }
+            print(eduEndDate ?? "dd")
+            
+        }
+    }
     
 //    @IBAction func startEdit(_ sender: Any) {
 //        startCgange = true
@@ -145,12 +195,16 @@ extension eduVc:UITableViewDelegate,UITableViewDataSource{
         let eduCell = eduTabel.dequeueReusableCell(withIdentifier: "eduCell") as? eduCellClass
         let key = qDataKeys[indexPath.row]
         let arr = qData[key]!
-        eduCell?.certLabe.text = arr[0]
-        eduCell?.schoolName.text = arr[1]
-        eduCell?.courseLabel.text = arr[2]
-        eduCell?.locationLabel.text = arr[3]
-        eduCell?.yearsNumLabel.text = arr[4]
-        eduCell?.gradYearLabel.text = arr[5]
+        print(arr)
+        eduCell?.courseTopic.text = arr[0]
+        eduCell?.organizationName.text = arr[1]
+        eduCell?.startToEndDate.text = "\(LocalizationSystem.sharedInstance.localizedStringForKey(key: "from", comment: "")) \(arr[2]) \(LocalizationSystem.sharedInstance.localizedStringForKey(key: "to", comment: "")) \(arr[3])"
+       // eduCell?.certLabe.text = arr[0]
+      //  eduCell?.schoolName.text = arr[1]
+       // eduCell?.courseLabel.text = arr[2]
+      //  eduCell?.locationLabel.text = arr[3]
+      //  eduCell?.yearsNumLabel.text = arr[4]
+      //  eduCell?.gradYearLabel.text = arr[5]
         
         
        // eduCell?.courseLabel.text = x["key2"]
@@ -158,7 +212,7 @@ extension eduVc:UITableViewDelegate,UITableViewDataSource{
         return eduCell!
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 205
+        return 117
     }
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true

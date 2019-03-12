@@ -35,6 +35,7 @@
 "email" = "البريد الإلكتروني";
 
 "Pass" = "الرقم السري";
+"rePass"="أعد كتابة الرقم السري";
 
 "ApplicationNo" = "رقم الطلب" ;
 
@@ -54,18 +55,20 @@
 "single"="أعزب";
 "femaile"="أنثى";
 "male"="ذكر";
-"validTo" = "صالح لغاية";
+"countryName" = "البلد";
 "city" = "المدينة";
 "nationality" = "الجنسية";
 "religion" = "الديانة";
 "dateBirth" = "تاريخ الميلاد";
 "jobApp" = "طلب توظيف";
 "Done" = "خلاص";
-
+//"rePass" = "اعادة ادخال كلمة السر";
 "education"="المؤهلات العلمية";
+"coures" = "الكورسات";
 "highSchool"="الثانوية";
 "college"="الكلية";
 "other"="اخري";
+"OnlinePresence" = "الروابط";
 "courseName"="التخصص";
 "courselocation"="مكان الدراسة";
 "numOfYears"="عدد سنوات الدراسة";
@@ -76,13 +79,14 @@
 "addNewElemen" = "ادخل بعض البيانات";
 "from" = "من";
 "to" = "الي";
-
+"degreeLevel" = "الدرجة العلمية";
+"grade" = "درجة";
 "comName"="اسم الشركة";
 "jobTitel"="المسمي الوظيفي";
 "reason"="سبب ترك العمل";
 "salary"="الراتب";
-"startDate"="تاريخ بدء العمل";
-"endDate"="تاريخ نهاية العمل";
+"startDate"="تاريخ البدء";
+"endDate"="تاريخ النهاية";
 "jobHistory" = "سجل العمل";
 
 "addNewLang" = "اضافة لغة جديدة";
@@ -105,7 +109,8 @@
 "personNoOne" = "الشخص الاول";
 "jobOfPer" = "الوظيفة";
 "compPTwo" = "الشركة";
-"phone" = "العنوان / الهاتف";
+"phone" = "هاتف المنزل";
+"currerLevel"="المستوى الحالي";
 "badPerson" = "هل كان اسلوبك سيئ خلال فتره الدراسة او العمل سابقا";
 "resPerson" = "مسؤول تتحمل المسؤلية";
 "loyalPerson" = "مخلص و تعمل بمصداقية";
