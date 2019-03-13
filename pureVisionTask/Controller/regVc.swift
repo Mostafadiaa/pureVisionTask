@@ -9,13 +9,13 @@
 import UIKit
 
 class regVc: UIViewController {
-    let regUrl = "https://amrwaheeed.000webhostapp.com/wazzaf-app/apis/register.php"
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var passField: UITextField!
-    @IBOutlet weak var rePass: UITextField!
-    @IBOutlet weak var doneOutlet: UIButton!
-    @IBOutlet weak var userName: UITextField!
-    
+    let regUrl = "http://amrwahed2.000webhostapp.com/wazzaf-app/apis/regist.php"
+    @IBOutlet var emailField: UITextField!
+    @IBOutlet var passField: UITextField!
+    @IBOutlet var rePass: UITextField!
+    @IBOutlet var doneOutlet: UIButton!
+    @IBOutlet var userName: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         emailField.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "email", comment: "")
@@ -25,17 +25,21 @@ class regVc: UIViewController {
         doneOutlet.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Done", comment: ""), for: .normal)
         hideKeyboardWhenTappedAround()
     }
-    
-    func regAct(){
-        let postString = "username=\(userName.text!)&email=\(emailField.text!)&password=\(passField.text!)"
+
+    func regAct() {
+        //let postString = "username=\(userName.text!)&email=\(emailField.text!)&password=\(passField.text!)"
+       let postString = ["username":"\(userName.text!)","email":"\(emailField.text!)","password":"\(passField.text!)"]
         guard let urlToReg = URL(string: regUrl) else {
             return
         }
         var req = URLRequest(url: urlToReg)
         req.httpMethod = "POST"
-        req.httpBody = postString.data(using: .utf8)
+        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        //req.httpBody = postString.data(using: .utf8)
+        req.addValue("application/json", forHTTPHeaderField: "Accept")
+        req.httpBody = try! JSONSerialization.data(withJSONObject: postString, options: [])
         let session = URLSession.shared
-        let task = session.dataTask(with: req) { (data, response, err) in
+        let task = session.dataTask(with: req) { data, _, _ in
             guard let data = data else {
                 return
             }
@@ -58,30 +62,22 @@ class regVc: UIViewController {
             } catch let error as NSError {
                 AlertController.showAlert(self, title: "Something Wrong", message: "\(error.localizedDescription)")
             }
-            
-            
         }
         task.resume()
     }
 
-    
     @IBAction func doneAction(_ sender: Any) {
         if emailField.text != "" && passField.text != "" && rePass.text != "" {
             guard let passtext = passField.text else {
                 return
             }
-                if passtext.count < 8 || passtext != rePass.text! {
-                    AlertController.showAlert(self, title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "emptyField", comment: ""), message: "Password and Confirm Password does't match or the password less than eight chaacter")
-                }
-                else {
-                    regAct()
-                }
-            
+            if passtext.count < 8 || passtext != rePass.text! {
+                AlertController.showAlert(self, title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "emptyField", comment: ""), message: "Password and Confirm Password does't match or the password less than eight chaacter")
+            } else {
+                regAct()
+            }
+        } else {
+            AlertController.showAlert(self, title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "emptyField", comment: ""), message: LocalizationSystem.sharedInstance.localizedStringForKey(key: "allReq", comment: ""))
         }
-        else {
-             AlertController.showAlert(self, title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "emptyField", comment: ""), message: LocalizationSystem.sharedInstance.localizedStringForKey(key: "allReq", comment: ""))
-        }
-        
     }
-    
 }

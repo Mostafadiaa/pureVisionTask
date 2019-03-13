@@ -8,7 +8,18 @@
 
 import Foundation
 struct pageModel {
-    let imageName:String
-    let titel:String
-    let textData:String
+    let imageName: String
+    let titel    : String
+    let textData : String
+}
+struct religionData:Codable {
+    let data: [relData]
+}
+
+struct relData:Codable {
+    let religion_id, religion_name, arabic_name: String
+}
+
+struct UserElement {
+    let countryID, nicename: String
 }

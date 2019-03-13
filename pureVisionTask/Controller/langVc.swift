@@ -9,22 +9,21 @@
 import UIKit
 
 class langVc: UIViewController {
-   
-    @IBOutlet weak var compOutlet: UIButton!
-    @IBOutlet weak var arabicLabel: UILabel!
-    @IBOutlet weak var engLabel: UILabel!
-    @IBOutlet weak var araRate: UISegmentedControl!
-    @IBOutlet weak var engRate: UISegmentedControl!
-    @IBOutlet weak var otherRate: UISegmentedControl!
-    @IBOutlet weak var addNewOutlet: UIButton!
-    @IBOutlet weak var otherField: UITextField!
-    
+    @IBOutlet var compOutlet: UIButton!
+    @IBOutlet var arabicLabel: UILabel!
+    @IBOutlet var engLabel: UILabel!
+    @IBOutlet var araRate: UISegmentedControl!
+    @IBOutlet var engRate: UISegmentedControl!
+    @IBOutlet var otherRate: UISegmentedControl!
+    @IBOutlet var addNewOutlet: UIButton!
+    @IBOutlet var otherField: UITextField!
+
     var addedNewLang = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
-        self.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "lang", comment: "")
+        title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "lang", comment: "")
         compOutlet.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "continueKey", comment: ""), for: .normal)
         addNewOutlet.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "addNewLang", comment: ""), for: .normal)
         otherField.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "otherLang", comment: "")
@@ -42,10 +41,8 @@ class langVc: UIViewController {
         otherRate.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "good", comment: ""), forSegmentAt: 1)
         otherRate.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "fair", comment: ""), forSegmentAt: 2)
         otherRate.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "poor", comment: ""), forSegmentAt: 3)
-        
     }
-    
-    
+
     @IBAction func addNewAc(_ sender: Any) {
         UIView.animate(withDuration: 0.5) {
             self.otherField.alpha = 1
@@ -53,18 +50,14 @@ class langVc: UIViewController {
         }
         addedNewLang = true
     }
-    
 
     @IBAction func compToNext(_ sender: Any) {
-        if addedNewLang{
-            if otherField.text == "" || self.otherRate.selectedSegmentIndex == UISegmentedControl.noSegment{
-                 AlertController.showAlert(self, title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "emptyField", comment: ""), message: LocalizationSystem.sharedInstance.localizedStringForKey(key: "allReq", comment: ""))
+        if addedNewLang {
+            if otherField.text == "" || otherRate.selectedSegmentIndex == UISegmentedControl.noSegment {
+                AlertController.showAlert(self, title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "emptyField", comment: ""), message: LocalizationSystem.sharedInstance.localizedStringForKey(key: "allReq", comment: ""))
             }
-        }
-        else if self.araRate.selectedSegmentIndex == UISegmentedControl.noSegment || self.engRate.selectedSegmentIndex == UISegmentedControl.noSegment {
-             AlertController.showAlert(self, title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "emptyField", comment: ""), message: LocalizationSystem.sharedInstance.localizedStringForKey(key: "allReq", comment: ""))
-            
+        } else if araRate.selectedSegmentIndex == UISegmentedControl.noSegment || engRate.selectedSegmentIndex == UISegmentedControl.noSegment {
+            AlertController.showAlert(self, title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "emptyField", comment: ""), message: LocalizationSystem.sharedInstance.localizedStringForKey(key: "allReq", comment: ""))
         }
     }
-    
 }

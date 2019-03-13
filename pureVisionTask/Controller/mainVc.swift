@@ -28,12 +28,8 @@ class mainVc: UIViewController {
             self.viewDidLoad()
         }
         alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil)
-
+        present(alert, animated: true, completion: nil)
     }
-
-
-
 
     @IBAction func arButt(_ sender: Any) {
         let alert = UIAlertController(title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "needR", comment: ""), message: LocalizationSystem.sharedInstance.localizedStringForKey(key: "restart", comment: ""), preferredStyle: .alert)
@@ -44,6 +40,6 @@ class mainVc: UIViewController {
             self.viewDidLoad()
         }
         alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
 }
