@@ -13,14 +13,19 @@
 		1612026D221C94AE00E0A01B /* yourInfoVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1612026C221C94AE00E0A01B /* yourInfoVc.swift */; };
 		161B1BCC221A4FC100F54255 /* eduVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161B1BCB221A4FC100F54255 /* eduVc.swift */; };
 		16240137221A0C51002995E2 /* personlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16240136221A0C51002995E2 /* personlVC.swift */; };
+		163AB2D1223A5BC600D1A23E /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163AB2D0223A5BC600D1A23E /* CheckInternet.swift */; };
 		164DADE8222BE048008B3EE9 /* educationVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164DADE7222BE048008B3EE9 /* educationVc.swift */; };
 		165301E42218386E004ED792 /* pageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165301E32218386E004ED792 /* pageModel.swift */; };
 		165301EC22186CEC004ED792 /* LocalizationSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165301EB22186CEC004ED792 /* LocalizationSystem.swift */; };
 		165301EF22186DB6004ED792 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 165301F122186DB6004ED792 /* Localizable.strings */; };
+		165358B322539B9800623B25 /* companyVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165358B222539B9800623B25 /* companyVc.swift */; };
+		165358B52254EF5900623B25 /* companyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165358B42254EF5900623B25 /* companyCell.swift */; };
 		16556BB22218CE290040566E /* loginVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16556BB12218CE290040566E /* loginVc.swift */; };
 		16756056221D3740007FC513 /* addCertificatesVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16756055221D3740007FC513 /* addCertificatesVc.swift */; };
 		16756058221D3AC0007FC513 /* cirtClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16756057221D3AC0007FC513 /* cirtClassCell.swift */; };
 		1675605A221D4759007FC513 /* acceptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16756059221D4759007FC513 /* acceptVC.swift */; };
+		169114E1223FC9C3001DB0B7 /* helpedFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169114E0223FC9C3001DB0B7 /* helpedFunctions.swift */; };
+		169114E322413080001DB0B7 /* keyChainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169114E222413080001DB0B7 /* keyChainWrapper.swift */; };
 		16B6766022369C3F009B6450 /* regVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B6765F22369C3F009B6450 /* regVc.swift */; };
 		16C157DF22182264005B2BA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C157DE22182264005B2BA6 /* AppDelegate.swift */; };
 		16C157E122182264005B2BA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C157E022182264005B2BA6 /* ViewController.swift */; };
@@ -50,6 +55,7 @@
 		1612026C221C94AE00E0A01B /* yourInfoVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yourInfoVc.swift; sourceTree = "<group>"; };
 		161B1BCB221A4FC100F54255 /* eduVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eduVc.swift; sourceTree = "<group>"; };
 		16240136221A0C51002995E2 /* personlVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personlVC.swift; sourceTree = "<group>"; };
+		163AB2D0223A5BC600D1A23E /* CheckInternet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		164DADE7222BE048008B3EE9 /* educationVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = educationVc.swift; sourceTree = "<group>"; };
 		165301E32218386E004ED792 /* pageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pageModel.swift; sourceTree = "<group>"; };
 		165301E9221869F3004ED792 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
@@ -57,10 +63,14 @@
 		165301EB22186CEC004ED792 /* LocalizationSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationSystem.swift; sourceTree = "<group>"; };
 		165301F022186DB6004ED792 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		165301F222186DB9004ED792 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		165358B222539B9800623B25 /* companyVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = companyVc.swift; sourceTree = "<group>"; };
+		165358B42254EF5900623B25 /* companyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = companyCell.swift; sourceTree = "<group>"; };
 		16556BB12218CE290040566E /* loginVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginVc.swift; sourceTree = "<group>"; };
 		16756055221D3740007FC513 /* addCertificatesVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addCertificatesVc.swift; sourceTree = "<group>"; };
 		16756057221D3AC0007FC513 /* cirtClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cirtClassCell.swift; sourceTree = "<group>"; };
 		16756059221D4759007FC513 /* acceptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = acceptVC.swift; sourceTree = "<group>"; };
+		169114E0223FC9C3001DB0B7 /* helpedFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpedFunctions.swift; sourceTree = "<group>"; };
+		169114E222413080001DB0B7 /* keyChainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keyChainWrapper.swift; sourceTree = "<group>"; };
 		16B6765F22369C3F009B6450 /* regVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = regVc.swift; sourceTree = "<group>"; };
 		16C157DB22182264005B2BA6 /* pureVisionTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pureVisionTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C157DE22182264005B2BA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +109,8 @@
 		168D74FA221D805F003445DC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				165358B222539B9800623B25 /* companyVc.swift */,
+				163AB2D0223A5BC600D1A23E /* CheckInternet.swift */,
 				16B6765F22369C3F009B6450 /* regVc.swift */,
 				16F26A6C222EB3B5000DE1DB /* examsVc.swift */,
 				16F26A6A222E7486000DE1DB /* onlinePresence.swift */,
@@ -115,6 +127,7 @@
 				1612026C221C94AE00E0A01B /* yourInfoVc.swift */,
 				160EF4CF221D594A00DD9640 /* thanksVc.swift */,
 				164DADE7222BE048008B3EE9 /* educationVc.swift */,
+				169114E222413080001DB0B7 /* keyChainWrapper.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -122,6 +135,7 @@
 		168D74FB221D8094003445DC /* clell */ = {
 			isa = PBXGroup;
 			children = (
+				165358B42254EF5900623B25 /* companyCell.swift */,
 				1612026A221C6F9D00E0A01B /* langClassCell.swift */,
 				16C2002D221BFC8300BA7507 /* eduCellClass.swift */,
 				16C157F622182CBC005B2BA6 /* welcomeViewCell.swift */,
@@ -145,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				165301E32218386E004ED792 /* pageModel.swift */,
+				169114E0223FC9C3001DB0B7 /* helpedFunctions.swift */,
+				165301EB22186CEC004ED792 /* LocalizationSystem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -154,7 +170,6 @@
 			children = (
 				16C157DE22182264005B2BA6 /* AppDelegate.swift */,
 				165301F122186DB6004ED792 /* Localizable.strings */,
-				165301EB22186CEC004ED792 /* LocalizationSystem.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -245,6 +260,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 16C157D222182263005B2BA6;
 			productRefGroup = 16C157DC22182264005B2BA6 /* Products */;
@@ -281,17 +297,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				169114E322413080001DB0B7 /* keyChainWrapper.swift in Sources */,
 				165301E42218386E004ED792 /* pageModel.swift in Sources */,
 				165301EC22186CEC004ED792 /* LocalizationSystem.swift in Sources */,
 				16C157E122182264005B2BA6 /* ViewController.swift in Sources */,
+				165358B52254EF5900623B25 /* companyCell.swift in Sources */,
+				169114E1223FC9C3001DB0B7 /* helpedFunctions.swift in Sources */,
 				161B1BCC221A4FC100F54255 /* eduVc.swift in Sources */,
 				16C20034221C3E5000BA7507 /* jobTabelCell.swift in Sources */,
 				16B6766022369C3F009B6450 /* regVc.swift in Sources */,
 				16556BB22218CE290040566E /* loginVc.swift in Sources */,
 				16120269221C6E4D00E0A01B /* langVc.swift in Sources */,
+				165358B322539B9800623B25 /* companyVc.swift in Sources */,
 				16F26A6D222EB3B5000DE1DB /* examsVc.swift in Sources */,
 				160EF4D0221D594A00DD9640 /* thanksVc.swift in Sources */,
 				1612026B221C6F9D00E0A01B /* langClassCell.swift in Sources */,
+				163AB2D1223A5BC600D1A23E /* CheckInternet.swift in Sources */,
 				164DADE8222BE048008B3EE9 /* educationVc.swift in Sources */,
 				16756058221D3AC0007FC513 /* cirtClassCell.swift in Sources */,
 				16C157F722182CBC005B2BA6 /* welcomeViewCell.swift in Sources */,

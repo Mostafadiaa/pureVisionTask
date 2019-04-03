@@ -19,8 +19,13 @@ class eduVc: UIViewController {
     @IBOutlet var doneOutlet: UIButton!
     @IBOutlet var addOutlet: UIButton!
     @IBOutlet var comPlete: UIButton!
+    @IBOutlet weak var topOutlet: NSLayoutConstraint!
+    
     var eduStrDate: String?
     var eduEndDate: String?
+    fileprivate let  keychainAccess = KeychainAccess()
+    fileprivate var userId = ""
+    let insertCourse = "http://ahmedhariedy62848.ipage.com/wazeftak/apis/couresinsertdata.php"
     let arabicNumbers = [
         "٠": "0",
         "١": "1",
@@ -41,7 +46,8 @@ class eduVc: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
+         userId =  keychainAccess.getPasscode(identifier: "user_id")!
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         if LocalizationSystem.sharedInstance.getLanguage() == "ar" {
             courseTopicField.textAlignment = .right
             organizationNameField.textAlignment = .right
@@ -64,42 +70,77 @@ class eduVc: UIViewController {
     }
 
     @IBAction func testActo(_ sender: Any) {
-        UIView.animate(withDuration: 0.5) {
-            self.fiView.alpha = 1.0
-        }
+//        UIView.animate(withDuration: 0.5) {
+//            self.fiView.alpha = 1.0
+//        }
+        self.doneOutlet.alpha = 1
+        self.courseTopicField.text = ""
+        self.organizationNameField.text = ""
+        eduStrDate = nil
+        eduEndDate = nil
+        self.endDatePicker.setDate(Date(), animated: true)
+        self.startDatePicker.setDate(Date(), animated: true)
+        
+        
     }
 
     @IBAction func doneCer(_ sender: Any) {
+        
         guard let starSelectedDate = eduStrDate else {
             return
         }
         guard let endSelectedDate = eduEndDate else {
             return
         }
-
+        print(starSelectedDate,endSelectedDate)
         if courseTopicField.text != "" && organizationNameField.text != "" && starSelectedDate != endSelectedDate {
-            UIView.animate(withDuration: 0.5) {
-                self.fiView.alpha = 0.0
+            let activityInd = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.whiteLarge)
+            activityInd.color = UIColor.darkGray
+            activityInd.center = view.center
+            activityInd.startAnimating()
+            view.addSubview(activityInd)
+            let courseData = insertCourseData.init(course_name: courseTopicField.text!, organization_name: organizationNameField.text!, start_date: starSelectedDate, end_date: endSelectedDate, user_id: userId)
+            helpedFunctions.sharedInstance.postDataWithOutRes(postData: courseData, url: insertCourse) { (data) in
+                if let dataRes = data {
+                    do {
+                    let insertCourseResJson = try JSONDecoder().decode(personalResponse.self, from: dataRes)
+                        if insertCourseResJson.message == "Successfully"{
+                            DispatchQueue.main.async {
+                                self.comPlete.alpha = 1
+                                activityInd.stopAnimating()
+                                activityInd.removeFromSuperview()
+                                self.topOutlet.constant = 44
+                                self.doneOutlet.alpha = 0
+                            }
+                        }
+                        print(insertCourseResJson)
+                }
+                    catch let err as NSError{
+                        print(err.localizedDescription)
+                    }
+                }
             }
-            let count = qDataKeys.count + 1
-            qData["Qualification \(count)"] = [courseTopicField.text!, organizationNameField.text!, starSelectedDate, endSelectedDate]
-            qDataKeys.append("Qualification \(count)")
-            let indexPath = IndexPath(row: qDataKeys.count - 1, section: 0)
-            eduTabel.beginUpdates()
-            eduTabel.insertRows(at: [indexPath], with: .automatic)
-            eduTabel.endUpdates()
-            courseTopicField.text = ""
-            organizationNameField.text = ""
-            view.endEditing(true)
+//            UIView.animate(withDuration: 0.5) {
+//                self.fiView.alpha = 0.0
+//            }
+//            let count = qDataKeys.count + 1
+//            qData["Qualification \(count)"] = [courseTopicField.text!, organizationNameField.text!, starSelectedDate, endSelectedDate]
+//            qDataKeys.append("Qualification \(count)")
+//            let indexPath = IndexPath(row: qDataKeys.count - 1, section: 0)
+//            eduTabel.beginUpdates()
+//            eduTabel.insertRows(at: [indexPath], with: .automatic)
+//            eduTabel.endUpdates()
+//            courseTopicField.text = ""
+//            organizationNameField.text = ""
+//            view.endEditing(true)
         } else {
             AlertController.showAlert(self, title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "emptyField", comment: ""), message: LocalizationSystem.sharedInstance.localizedStringForKey(key: "allReq", comment: ""))
         }
     }
 
     @IBAction func completeAction(_ sender: Any) {
-        if qDataKeys.count == 0 {
-            AlertController.showAlert(self, title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "emptyField", comment: ""), message: LocalizationSystem.sharedInstance.localizedStringForKey(key: "addNewElemen", comment: ""))
-        }
+        self.performSegue(withIdentifier: "okDone", sender: self)
+        
     }
 
     @IBAction func startAction(_ sender: Any) {

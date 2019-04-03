@@ -21,12 +21,21 @@ class educationVc: UIViewController {
     @IBOutlet var degreePicker: UIPickerView!
     @IBOutlet var gradePicker: UIPickerView!
     @IBOutlet var gradeLabel: UILabel!
-    let deg = ["Bachelor", "Master", "PHD"]
-    let grade = ["Excellent", "very good", "Good", "Poor"]
+    fileprivate let  keychainAccess = KeychainAccess()
+    var yearIsValid = false
+    let degreeUrl = "http://ahmedhariedy62848.ipage.com/wazeftak/apis/degreeleveldata.php"
+    let gradeUrl =  "http://ahmedhariedy62848.ipage.com/wazeftak/apis/gradeData.php"
+    let insertEdu = "http://ahmedhariedy62848.ipage.com/wazeftak/apis/educationinsertdata.php"
+    var degreeList : [degreeData] = []
+    var geadeList : [gradeData] = []
+    var selectedDegree:String!
+    var selectedGrade:String!
+    fileprivate var userId = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        // degreePicker.se = deg.count
+        userId =  keychainAccess.getPasscode(identifier: "user_id")!
         hideKeyboardWhenTappedAround()
+        //schoolYear
         title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "education", comment: "")
         highSchool.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "highSchool", comment: "")
         univLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "college", comment: "")
@@ -40,7 +49,81 @@ class educationVc: UIViewController {
         cFieldStudy.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "courseName", comment: "")
         schoolYear.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "gradYear", comment: "")
         gradYearField.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "gradYear", comment: "")
+        helpedFunctions.sharedInstance.getData(url: degreeUrl) { (data) in
+            if let degreeData = data{
+                do {
+                    let degreeJson = try JSONDecoder().decode(degreeArr.self, from: degreeData)
+                    self.degreeList = degreeJson.data
+                    //print(self.degreeList)
+                    DispatchQueue.main.async {
+                        self.degreePicker.reloadAllComponents()
+                    }
+                } catch let error as NSError {
+                    print(error)
+                }
+            }
+        }
+        helpedFunctions.sharedInstance.getData(url: gradeUrl) { (data) in
+            if let gradeData = data {
+                do {
+                    let gradeJson = try JSONDecoder().decode(gradeArr.self, from: gradeData)
+                    self.geadeList = gradeJson.data
+                   // print(self.geadeList)
+                    DispatchQueue.main.async {
+                        self.gradePicker.reloadAllComponents()
+                    }
+                } catch let error as NSError {
+                    print(error)
+                }
+            }
+            }
+        }
+    
+    
+    @IBAction func yearValid(_ sender: UITextField) {
+        if sender.text != ""{
+            let text = sender.text
+            if text!.count == 4 {
+                yearIsValid = true
+            }
+            else{
+                AlertController.showAlert(self, title: "error", message: "(hint 2019)")
+            }
+        }
     }
+    
+    
+        
+    @IBAction func compDone(_ sender: UIButton) {
+        
+        if schoolNameField.text != "" && schoolYear.text != "" && uinNameField.text != "" && cFieldStudy.text != "" && gradYearField.text != "" && selectedDegree != nil && selectedGrade != nil {
+            
+            let activityInd = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.whiteLarge)
+            activityInd.color = UIColor.darkGray
+            activityInd.center = view.center
+            activityInd.startAnimating()
+            view.addSubview(activityInd)
+           let postData =  educationInsertData.init(college_name: schoolNameField.text!, graduationyear: schoolYear.text!, university_name: uinNameField.text!, fields_study:  cFieldStudy.text!, endyear: gradYearField.text!, degree_id: selectedDegree, grade_id: selectedGrade, user_id: userId)
+            helpedFunctions.sharedInstance.postData(postData: postData, responseData: personalResponse.self, url: insertEdu) { (bool) in
+                
+                if let done = bool {
+                    if done {
+                        DispatchQueue.main.async {
+                            activityInd.stopAnimating()
+                            activityInd.removeFromSuperview()
+                            self.performSegue(withIdentifier: "okTogo", sender: self)
+                        }
+                    }
+                }
+            }
+        }else {
+            AlertController.showAlert(self, title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "emptyField", comment: ""), message: LocalizationSystem.sharedInstance.localizedStringForKey(key: "allReq", comment: "")) }
+        
+        
+    }
+    
+    
+
 }
 
 extension educationVc: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -50,9 +133,9 @@ extension educationVc: UIPickerViewDelegate, UIPickerViewDataSource {
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == gradePicker {
-            return grade.count
+            return geadeList.count
         } else if pickerView == degreePicker {
-            return deg.count
+            return degreeList.count
         }
 
         return 1
@@ -60,17 +143,17 @@ extension educationVc: UIPickerViewDelegate, UIPickerViewDataSource {
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == degreePicker {
-            print(deg[row])
+            self.selectedDegree =  degreeList[row].degree_id
         } else if pickerView == gradePicker {
-            print(grade[row])
+          self.selectedGrade =  geadeList[row].grade_id
         }
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == gradePicker {
-            return grade[row]
+            return geadeList[row].grade_name
         } else if pickerView == degreePicker {
-            return deg[row]
+            return degreeList[row].degree_name
         }
 
         return ""

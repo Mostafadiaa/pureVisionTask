@@ -12,6 +12,7 @@ class mainVc: UIViewController {
     @IBOutlet var dd: UINavigationItem!
     @IBOutlet var signOutOtlet: UIButton!
     var changeLang = false
+    let  keychainAccess = KeychainAccess()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,4 +43,12 @@ class mainVc: UIViewController {
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
+    @IBAction func signOut(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "logedIn")
+        UserDefaults.standard.synchronize()
+        self.keychainAccess.setPasscode(identifier: "user_id", passcode: "")
+        let loginViewController = storyboard?.instantiateViewController(withIdentifier: "loginVc") as! loginVc
+        present(loginViewController,animated: true)
+    }
+    
 }

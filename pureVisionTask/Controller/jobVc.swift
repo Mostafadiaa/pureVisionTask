@@ -22,6 +22,12 @@ class jobVc: UIViewController {
     @IBOutlet var endLabel: UILabel!
     @IBOutlet var doneOutlet: UIButton!
     @IBOutlet var viView: UIVisualEffectView!
+    @IBOutlet weak var topSpace: NSLayoutConstraint!
+    
+    @IBOutlet var tapToChosePhoto: UITapGestureRecognizer!
+    
+    fileprivate let  keychainAccess = KeychainAccess()
+    fileprivate var userId = ""
     var jobStrDate: String?
     var jobEndDate: String?
     let arabicNumbers = [
@@ -37,13 +43,17 @@ class jobVc: UIViewController {
         "٩": "9",
     ]
 
-    var jobData: [String: [String]] = [:]
-    var jobDataKeys: [String] = []
+   // var jobData: [String: [String]] = [:]
+   // var jobDataKeys: [String] = []
+    let insertExperianceUrl = "http://ahmedhariedy62848.ipage.com/wazeftak/apis/experianceinsertdata.php"
     var dateFormatter = DateFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
+        userId =  keychainAccess.getPasscode(identifier: "user_id")!
+
+       // self.salary.text = " "
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         if LocalizationSystem.sharedInstance.getLanguage() == "ar" {
             comName.textAlignment = .right
             jobTitel.textAlignment = .right
@@ -55,8 +65,7 @@ class jobVc: UIViewController {
             reason.textAlignment = .left
             salary.textAlignment = .left
         }
-        // dateFormatter.dateFormat = "dd MMM yyyy"
-        jobDataKeys = Array(jobData.keys).sorted()
+       // jobDataKeys = Array(jobData.keys).sorted()
         hideKeyboardWhenTappedAround()
         title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "jobHistory", comment: "")
         addOutlet.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "add", comment: ""), for: .normal)
@@ -71,43 +80,73 @@ class jobVc: UIViewController {
     }
 
     @IBAction func doneAction(_ sender: Any) {
-        let count = jobDataKeys.count + 1
-        guard let starSelectedDate = jobStrDate else {
-            return
-        }
-        guard let endSelectedDate = jobEndDate else {
-            return
-        }
-        if comName.text != "" && jobTitel.text != "" && starSelectedDate != endSelectedDate && reason.text != "" {
-            UIView.animate(withDuration: 0.5) {
-                self.viView.alpha = 0.0
+        //let count = jobDataKeys.count + 1
+       
+        if comName.text != "" && jobTitel.text != "" && jobStrDate != jobEndDate && reason.text != "" {
+            let activityInd = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.whiteLarge)
+            activityInd.color = UIColor.darkGray
+            activityInd.center = view.center
+            activityInd.startAnimating()
+            view.addSubview(activityInd)
+//            UIView.animate(withDuration: 0.5) {
+//                self.viView.alpha = 0.0
+//            }
+           // jobData["job \(count)"] = [comName.text!, jobTitel.text!, starSelectedDate, endSelectedDate, salary.text!, reason.text!]
+            //jobDataKeys.append("job \(count)")
+//            let indexPath = IndexPath(row: jobDataKeys.count - 1, section: 0)
+//            jobTabel.beginUpdates()
+//            jobTabel.insertRows(at: [indexPath], with: .automatic)
+//            jobTabel.endUpdates()
+            let experianceDataPost = insertExData.init(company_name: comName.text!, job_title: jobTitel.text!, date_start: jobStrDate!, date_end: jobEndDate!, salary: salary.text ?? " ", reasonforleaving: reason.text!, user_id: userId)
+            helpedFunctions.sharedInstance.postDataWithOutRes(postData: experianceDataPost, url: insertExperianceUrl) { (data) in
+                if let dataRes = data {
+                    do {
+                        let expResJson = try JSONDecoder().decode(personalResponse.self, from: dataRes)
+                        if expResJson.message == "Successfully"{
+                            DispatchQueue.main.async {
+                                self.topSpace.constant = 44
+                                self.doneOutlet.alpha = 0
+                                activityInd.stopAnimating()
+                                activityInd.removeFromSuperview()
+                                
+                            }
+                        }
+                        print(expResJson)
+                    }
+                    catch let err as NSError{
+                        print(err.localizedDescription)
+                    }
+                }
             }
-            jobData["job \(count)"] = [comName.text!, jobTitel.text!, starSelectedDate, endSelectedDate, salary.text!, reason.text!]
-            jobDataKeys.append("job \(count)")
-            let indexPath = IndexPath(row: jobDataKeys.count - 1, section: 0)
-            jobTabel.beginUpdates()
-            jobTabel.insertRows(at: [indexPath], with: .automatic)
-            jobTabel.endUpdates()
-            comName.text = ""
-            jobTitel.text = ""
-            salary.text = ""
-            reason.text = ""
-            view.endEditing(true)
+           
         } else {
             AlertController.showAlert(self, title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "emptyField", comment: ""), message: LocalizationSystem.sharedInstance.localizedStringForKey(key: "allReq", comment: ""))
         }
     }
 
     @IBAction func addAction(_ sender: Any) {
-        UIView.animate(withDuration: 0.5) {
-            self.viView.alpha = 1.0
-        }
+//        UIView.animate(withDuration: 0.5) {
+//            self.viView.alpha = 1.0
+//        }
+        self.startDate.setDate(Date(), animated: true)
+        self.endDate.setDate(Date(), animated: true)
+        self.jobStrDate = nil
+        self.jobStrDate = nil
+        comName.text = ""
+        jobTitel.text = ""
+        salary.text = ""
+        reason.text = ""
+        self.doneOutlet.alpha = 1
+        view.endEditing(true)
+        
+        
     }
 
     @IBAction func compAcction(_ sender: Any) {
-        if jobDataKeys.count == 0 {
-            AlertController.showAlert(self, title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "emptyField", comment: ""), message: LocalizationSystem.sharedInstance.localizedStringForKey(key: "addNewElemen", comment: ""))
-        }
+//        if jobDataKeys.count == 0 {
+//            AlertController.showAlert(self, title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "emptyField", comment: ""), message: LocalizationSystem.sharedInstance.localizedStringForKey(key: "addNewElemen", comment: ""))
+//        }
+        
     }
 
     @IBAction func startAction(_ sender: Any) {
@@ -131,18 +170,19 @@ class jobVc: UIViewController {
 
 extension jobVc: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return jobDataKeys.count
+       // return jobDataKeys.count
+        return 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let jobCell = jobTabel.dequeueReusableCell(withIdentifier: "jobCell") as! jobTabelCell
-        let key = jobDataKeys[indexPath.row]
-        let arr = jobData[key]!
-        jobCell.companyName.text = arr[0]
-        jobCell.jobTitel.text = arr[1]
-        jobCell.dateWork.text = "\(LocalizationSystem.sharedInstance.localizedStringForKey(key: "from", comment: "")) \(arr[2]) \(LocalizationSystem.sharedInstance.localizedStringForKey(key: "to", comment: ""))  \(arr[3])"
-        jobCell.salary.text = arr[4]
-        jobCell.reason.text = arr[5]
+//        let key = jobDataKeys[indexPath.row]
+//        let arr = jobData[key]!
+//        jobCell.companyName.text = arr[0]
+//        jobCell.jobTitel.text = arr[1]
+//        jobCell.dateWork.text = "\(LocalizationSystem.sharedInstance.localizedStringForKey(key: "from", comment: "")) \(arr[2]) \(LocalizationSystem.sharedInstance.localizedStringForKey(key: "to", comment: ""))  \(arr[3])"
+//        jobCell.salary.text = arr[4]
+//        jobCell.reason.text = arr[5]
 
         return jobCell
     }
@@ -155,12 +195,12 @@ extension jobVc: UITableViewDelegate, UITableViewDataSource {
         return true
     }
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            jobDataKeys.remove(at: indexPath.row)
-            jobTabel.beginUpdates()
-            jobTabel.deleteRows(at: [indexPath], with: .automatic)
-            jobTabel.endUpdates()
-        }
-    }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            jobDataKeys.remove(at: indexPath.row)
+//            jobTabel.beginUpdates()
+//            jobTabel.deleteRows(at: [indexPath], with: .automatic)
+//            jobTabel.endUpdates()
+//        }
+//    }
 }

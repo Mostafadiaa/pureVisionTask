@@ -18,9 +18,12 @@ class loginVc: UIViewController {
     @IBOutlet var passField: UITextField!
     @IBOutlet var logButt: UIButton!
     @IBOutlet var signUpButt: UIButton!
-    let loginUrl = "https://amrwaheeed.000webhostapp.com/wazzaf-app/apis/login.php"
+    let  keychainAccess = KeychainAccess()
+    let loginUrl = "http://ahmedhariedy62848.ipage.com/wazeftak/apis/login.php"
     override func viewDidLoad() {
+       
         super.viewDidLoad()
+        
         emailField.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "email", comment: "")
         passField.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Pass", comment: "")
         logButt.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "logIn", comment: ""), for: .normal)
@@ -31,6 +34,10 @@ class loginVc: UIViewController {
         } else if Locale.current.languageCode == "en" {
             UIView.appearance().semanticContentAttribute = .forceLeftToRight
         }
+        //DAKeychain.shared["userName"] = "MostafaDiaa"
+       // let x = keychainAccess.getPasscode(identifier: "userName")
+       // key
+       // print(x)
     }
 
     func loginfunc() {
@@ -48,10 +55,17 @@ class loginVc: UIViewController {
             }
             do {
                 let responsehh = try JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject]
+                //print(responsehh)
+                if  responsehh!["message"]! as! String == "Login successful"{
+                self.keychainAccess.setPasscode(identifier: "user_id", passcode: "\(responsehh!["user_id"]!)")
                 if responsehh!["status"]! as! String == "2" {
                     if responsehh!["type"]! as! String == "3" {
                         self.dismiss(animated: true, completion: nil)
                         self.performSegue(withIdentifier: "access", sender: self)
+                        UserDefaults.standard.set(true, forKey: "logedIn")
+                        UserDefaults.standard.synchronize()
+                        self.emailField.text = ""
+                        self.passField.text = ""
                     } else if responsehh!["type"]! as! String == "2" {
                         print("company")
                     } else if responsehh!["type"]! as! String == "1" {
@@ -59,6 +73,14 @@ class loginVc: UIViewController {
                     }
                 } else {
                     AlertController.showAlert(self, title: "Something Wrong", message: "please check your mail for the activation")
+                }
+            }
+                else {
+                    guard let message = responsehh?["message"] else
+                    {
+                        return
+                    }
+                    AlertController.showAlert(self, title: "Something Wrong", message: "\(message)")
                 }
 
             } catch let error as NSError {
@@ -77,6 +99,7 @@ class loginVc: UIViewController {
     }
 
     @IBAction func signUpButtAcc(_ sender: Any) {
+       
     }
 }
 

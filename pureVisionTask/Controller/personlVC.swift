@@ -8,15 +8,24 @@
 
 import UIKit
 
-
-
 class personlVC: UIViewController {
-    //let bb = "https://amrwaheeed.000webhostapp.com/wazzaf-app/apis/religiondata.php"
-    let bb = "http://amrwahed2.000webhostapp.com/wazzaf-app/apis/religiondata.php"
-    
+    @IBOutlet var heightOfImageContainer: NSLayoutConstraint!
+    // let bb = "https://amrwaheeed.000webhostapp.com/wazzaf-app/apis/religiondata.php"
+    let relegionUrl = "http://ahmedhariedy62848.ipage.com/wazeftak/apis/religiondata.php"
+    let countryUrl = "http://ahmedhariedy62848.ipage.com/wazeftak/apis/countriesData.php"
+    let nationalityUrl = "http://ahmedhariedy62848.ipage.com/wazeftak/apis/nationalteData.php"
+    let insertPersonal = "http://ahmedhariedy62848.ipage.com/wazeftak/apis/insertdata.php"
+    var selectedCountry: String?
+    var selectedRelegion: String?
+    var selectedNationalty: String?
+    var userImageText :String!
     @IBOutlet var tapToChosePhoto: UITapGestureRecognizer!
     @IBOutlet var userImage: UIImageView!
+    @IBOutlet var imageContainerView: UIView!
+    fileprivate let  keychainAccess = KeychainAccess()
+    fileprivate var userId = ""
     var imgPicker = UIImagePickerController()
+    var idNumIsValid = false
     @IBOutlet var birthDatePicker: UIDatePicker!
     @IBOutlet var persLabel: UILabel!
     @IBOutlet var nameField: UITextField!
@@ -31,23 +40,22 @@ class personlVC: UIViewController {
     @IBOutlet var typeSegm: UISegmentedControl!
     @IBOutlet var countryName: UILabel!
     @IBOutlet var birthDateLabel: UILabel!
-    @IBOutlet var cityLabel: UILabel!
+    // @IBOutlet var cityLabel: UILabel!
+    @IBOutlet var cityField: UITextField!
     @IBOutlet var natLabel: UILabel!
     @IBOutlet var religLabel: UILabel!
     @IBOutlet var tapTwice: UITextView!
-    @IBOutlet var cityPicker: UIPickerView!
+    // @IBOutlet var cityPicker: UIPickerView!
     @IBOutlet var natPicker: UIPickerView!
     @IBOutlet var religionPicker: UIPickerView!
     @IBOutlet var navTitel: UINavigationItem!
     @IBOutlet var countryPicer: UIPickerView!
-
-    var countryNames = ["Egypt", "KSA", "London"]
-    var cityNames = ["Giza", "Cairo", "Maadi"]
-    var natNames = ["Egyptian", "Saudi", "American", "Canadian"]
-    //var religionNames = ["Christian", "Muslim", "Other"]
+ 
     var strDate: String?
     let dateFormatter = DateFormatter()
-    var relegList:[relData] = []
+    var relegList: [relData] = []
+    var countryList: [countryResponse] = []
+    var nationalityList: [natResponse] = []
     let arabicNumbers = [
         "٠": "0",
         "١": "1",
@@ -60,11 +68,10 @@ class personlVC: UIViewController {
         "٨": "8",
         "٩": "9",
     ]
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        getRelegion()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
+        userId =  keychainAccess.getPasscode(identifier: "user_id")!
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         imgPicker.delegate = self
         navTitel.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "personal", comment: "")
         tapToChosePhoto.delegate = self as? UIGestureRecognizerDelegate
@@ -83,18 +90,62 @@ class personlVC: UIViewController {
         mariStatSegm.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "single", comment: ""), forSegmentAt: 1)
         typeSegm.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "femaile", comment: ""), forSegmentAt: 0)
         typeSegm.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "male", comment: ""), forSegmentAt: 1)
-        cityLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "city", comment: "")
+        cityField.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "city", comment: "")
         countryName.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "countryName", comment: "")
         religLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "religion", comment: "")
         natLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "nationality", comment: "")
         birthDateLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "dateBirth", comment: "")
         hideKeyboardWhenTappedAround()
+        //typeSegm.selectedSegmentIndex = UISegmentedControl.noSegment
+        helpedFunctions.sharedInstance.getData(url: nationalityUrl) { data in
+            if let data = data {
+                do {
+                    let natJson = try JSONDecoder().decode(nationalityData.self, from: data)
+                    self.nationalityList = natJson.data
+                    DispatchQueue.main.async {
+                        self.natPicker.reloadAllComponents()
+                    }
+                } catch let error as NSError {
+                    print(error)
+                }
+            }
+        }
+        helpedFunctions.sharedInstance.getData(url: countryUrl) { data in
+            if let data = data {
+                do {
+                    let countryJson = try JSONDecoder().decode(countryData.self, from: data)
+                    self.countryList = countryJson.data
+                   // print(self.countryList)
+                    DispatchQueue.main.async {
+                        self.countryPicer.reloadAllComponents()
+                    }
+                } catch let error as NSError {
+                    print(error)
+                }
+            }
+        }
+        helpedFunctions.sharedInstance.getData(url: relegionUrl) { data in
+            if let data = data {
+                do {
+                    let relJson = try JSONDecoder().decode(religionData.self, from: data)
+                    self.relegList = relJson.data
+                    DispatchQueue.main.async {
+                        self.religionPicker.reloadAllComponents()
+                    }
+                } catch let error as NSError {
+                    print(error)
+                }
+            }
+        }
     }
 
     @IBAction func tapTochoseImageAc(_ sender: Any) {
+        heightOfImageContainer.constant = 180
         UIView.animate(withDuration: 0.5) {
             self.tapTwice.alpha = 0.0
+            self.view.layoutIfNeeded()
         }
+
         imgPicker.sourceType = .photoLibrary
         imgPicker.allowsEditing = true
         present(imgPicker, animated: true, completion: nil)
@@ -105,39 +156,56 @@ class personlVC: UIViewController {
         for (key, value) in arabicNumbers {
             strDate = strDate!.replacingOccurrences(of: key, with: value)
         }
+        // print(strDate)
     }
-
-    @IBAction func testJsonAction(_ sender: Any) {
-        
-    }
-
-    func getRelegion() {
-        guard let relData = URL(string: bb) else {
-            return
-        }
-        var urlRequest = URLRequest(url: relData)
-        urlRequest.httpMethod = "GET"
-        let session = URLSession.shared
-        let task = session.dataTask(with: urlRequest) { data, _, _ in
-            guard let data = data else {
-                return
+    
+    @IBAction func idNumValidation(_ sender: UITextField) {
+        if sender.text != ""{
+            let senderText = sender.text
+            if senderText!.count == 14{
+                idNumIsValid = true
             }
-            do {
-                //   let user = try? newJSONDecoder().decode(User.self, from: jsonData)
-                let relJson = try JSONDecoder().decode(religionData.self, from: data)
-                self.relegList = relJson.data
-                //self.relegList = relJson
-                DispatchQueue.main.async {
-                    self.religionPicker.reloadAllComponents()
+            else{
+                AlertController.showAlert(self, title: "Error", message: "Id number must be 14")
+            }
+        }
+    }
+    
+    @IBAction func uploadJsonAction(_ sender: Any) {
+        if nameField.text != "" && strDate != nil && mailField.text != "" && idNumField.text != "" && adressField.text != "" && phoneField.text != "" && mobileField.text != "" && typeSegm.selectedSegmentIndex != UISegmentedControl.noSegment && mariStatSegm.selectedSegmentIndex != UISegmentedControl.noSegment && selectedNationalty != nil && selectedCountry != nil && cityField.text != "" && userImageText != nil && selectedRelegion != nil && idNumIsValid {
+            let activityInd = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.whiteLarge)
+            activityInd.color = UIColor.darkGray
+            activityInd.center = view.center
+            activityInd.startAnimating()
+            view.addSubview(activityInd)
+            let persData = personData.init(fullname: "\(nameField.text!)", birthday: "\(strDate!)", address: "\(adressField.text!)", email: "\(mailField.text!)", civil_id_no: "\(idNumField.text!)", telephone: "\(phoneField.text!)", mobile: "\(mobileField.text!)", gender: "\(typeSegm.titleForSegment(at: typeSegm.selectedSegmentIndex)!)", martial_status: "\(mariStatSegm.titleForSegment(at: mariStatSegm.selectedSegmentIndex)!)", nationality_id: "\(selectedNationalty!)", country_id: "\(selectedCountry!)", city_name: "\(cityField.text!)", religion_id: "\(selectedRelegion!)", user_id: userId, image_name: "\(userImageText!)")
+            helpedFunctions.sharedInstance.postDataWithOutRes(postData: persData, url: insertPersonal) { (data) in
+                
+                if let dataRes = data {
+                    do {
+                        let ResJson = try JSONDecoder().decode(personalResponse.self, from: dataRes)
+                        if ResJson.message == "Successfully"{
+                            DispatchQueue.main.async {
+                                activityInd.stopAnimating()
+                                activityInd.removeFromSuperview()
+                                self.performSegue(withIdentifier: "personalDone", sender: self)
+                            }
+
+                        }
+                        print(ResJson)
+                    }
+                    catch let err as NSError{
+                        print(err.localizedDescription)
+                    }
                 }
-            } catch let error as NSError {
-                print(error)
+                
             }
-        }
-
-        task.resume()
+        } else {
+            AlertController.showAlert(self, title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "emptyField", comment: ""), message: LocalizationSystem.sharedInstance.localizedStringForKey(key: "allReq", comment: "")) }
     }
 }
+
+
 
 extension personlVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -145,40 +213,39 @@ extension personlVC: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == cityPicker {
-            return cityNames.count
-        } else if pickerView == natPicker {
-            return natNames.count
+        if pickerView == natPicker {
+            return nationalityList.count
         } else if pickerView == religionPicker {
             return relegList.count
-           // return religionNames.count
         } else if pickerView == countryPicer {
-            return countryNames.count
+            return countryList.count
         }
         return 1
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView == cityPicker {
-            print(cityNames[row])
-        } else if pickerView == natPicker {
-            print(natNames[row])
+        if pickerView == natPicker {
+            selectedNationalty = nationalityList[row].nationality_id
+
         } else if pickerView == religionPicker {
             if LocalizationSystem.sharedInstance.getLanguage() == "ar" {
-                print(relegList[row].religion_id)
+                selectedRelegion = relegList[row].religion_id
             } else {
-                print(relegList[row].religion_id)
+                selectedRelegion = relegList[row].religion_id
             }
         } else if pickerView == countryPicer {
-            print(countryNames[row])
+            selectedCountry = countryList[row].country_id
         }
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == cityPicker {
-            return cityNames[row]
-        } else if pickerView == natPicker {
-            return natNames[row]
+        if pickerView == natPicker {
+            //return nationalityList[row].nationality_enNationality
+            if LocalizationSystem.sharedInstance.getLanguage() == "ar" {
+                return nationalityList[row].nationality_arNationality
+            } else {
+                return nationalityList[row].nationality_enNationality
+            }
         } else if pickerView == religionPicker {
             if LocalizationSystem.sharedInstance.getLanguage() == "ar" {
                 return relegList[row].arabic_name
@@ -186,7 +253,7 @@ extension personlVC: UIPickerViewDelegate, UIPickerViewDataSource {
                 return relegList[row].religion_name
             }
         } else if pickerView == countryPicer {
-            return countryNames[row]
+            return countryList[row].nicename
         }
         return ""
     }
@@ -196,6 +263,8 @@ extension personlVC: UIImagePickerControllerDelegate, UINavigationControllerDele
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let imageData = info[.originalImage] as? UIImage {
             userImage.image = imageData
+           guard let imgData = imageData.pngData() else { return }
+            userImageText = imgData.base64EncodedString(options: .lineLength64Characters)
         }
         dismiss(animated: true, completion: nil)
     }

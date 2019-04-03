@@ -51,7 +51,7 @@
 "type"="Type";
 "married"="Married";
 "single"="Single";
-"femaile"="Femaile";
+"femaile"="Female";
 "male"="Male";
 "countryName" = "Country Name";
 "city" = "City";
@@ -86,9 +86,12 @@
 "endDate"="Date Left";
 "jobHistory" = "Work log";
 
+"addAnother" = "Add Another One";
+
 "addNewLang" = "Add New Language";
 "otherLang" = "Other Language";
-"arName" = "Arabic";
+"arName" = "Choose language";
+"gradeName" = "Grade";
 "enName" = "English";
 "excellent" = "Excellent";
 "good" = "Good";

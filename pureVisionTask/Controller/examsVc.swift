@@ -13,8 +13,10 @@ class examsVc: UIViewController {
     @IBOutlet var answerTwo: UIButton!
     @IBOutlet var answerThree: UIButton!
     @IBOutlet var answerFour: UIButton!
-
     @IBOutlet var fsfs: UITextView!
+    let insertExam = "http://ahmedhariedy62848.ipage.com/wazeftak/apis/resultexams.php"
+    fileprivate let keychainAccess = KeychainAccess()
+    fileprivate var userId = ""
     var x = 0
     var itsTheLast = false
     var engScoreCounter = 0
@@ -74,6 +76,7 @@ class examsVc: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        userId = keychainAccess.getPasscode(identifier: "user_id")!
         fsfs.text = engQuestions[0]
         let firstArr = mAnswers[0]
         answerOne.setTitle(firstArr[0], for: .normal)
@@ -137,11 +140,32 @@ class examsVc: UIViewController {
     }
 
     func doneAcc() {
+        let exampPostData = examData.init(user_id: userId, final_degree: "\(engScoreCounter + iqScoreCounter)", degree_iq: "\(iqScoreCounter)", degree_english: "\(engScoreCounter)")
         let alert = UIAlertController(title: "Your IQ Score", message: "IQ Score : \(iqScoreCounter) \n Your Total Score : \(iqScoreCounter + engScoreCounter) \n Thank You", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
             _ in
-            let thanks = self.storyboard?.instantiateViewController(withIdentifier: "thanksVc") as! thanksVc
-            self.present(thanks, animated: true)
+            let activityInd = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.whiteLarge)
+            activityInd.color = UIColor.darkGray
+            activityInd.center = self.view.center
+            activityInd.startAnimating()
+            self.view.addSubview(activityInd)
+            helpedFunctions.sharedInstance.postDataWithOutRes(postData: exampPostData, url: self.insertExam, CompletionHandler: { data in
+                if let dataRes = data {
+                    do {
+                        let examJson = try JSONDecoder().decode(personalResponse.self, from: dataRes)
+                        if examJson.message == "Successfully" {
+                            DispatchQueue.main.async {
+                                activityInd.stopAnimating()
+                                activityInd.removeFromSuperview()
+                                let thanks = self.storyboard?.instantiateViewController(withIdentifier: "thanksVc") as! thanksVc
+                                self.present(thanks, animated: true)
+                            }
+                        }
+                    } catch let err as NSError {
+                        print(err.localizedDescription)
+                    }
+                }
+            })
         }
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)

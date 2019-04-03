@@ -62,7 +62,6 @@
 "dateBirth" = "تاريخ الميلاد";
 "jobApp" = "طلب توظيف";
 "Done" = "خلاص";
-//"rePass" = "اعادة ادخال كلمة السر";
 "education"="المؤهلات العلمية";
 "coures" = "الكورسات";
 "highSchool"="الثانوية";
@@ -91,7 +90,9 @@
 
 "addNewLang" = "اضافة لغة جديدة";
 "otherLang" = "لغات اخري";
-"arName" = "العربية";
+"arName" = "اختر لغة";
+"gradeName" = "الدرجة";
+"addAnother" = "اضافة اخري جديد";
 "enName" = "الإنجليزية";
 "excellent" = "ممتاز";
 "good" = "جيد";

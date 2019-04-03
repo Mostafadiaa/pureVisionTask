@@ -14,6 +14,8 @@ class thanksVc: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UserDefaults.standard.set(true, forKey: "donePersonal")
         thanks.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "thankyou", comment: "")
         reqRev.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "thanks", comment: "")
     }
