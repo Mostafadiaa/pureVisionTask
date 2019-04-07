@@ -195,3 +195,52 @@ struct allDatuModel:Codable {
     let image_name :String
     let position_name: String
 }
+
+struct postUserIdData:Encodable {
+  let  user_id : String
+}
+
+struct selectedUserData:Codable {
+    let data: [allUserData]
+}
+
+struct allUserData:Codable {
+    let user_id, general_id, fullname, birthday: String
+    let address, email, civil_id_no, telephone: String
+    let mobile, gender, martial_status, nationality_enNationality: String
+    let nicename, city_name, religion_name, image_name: String
+    let car_interest_id, salary, smoke, license_drive: String
+    let linkcv: String
+    let youafterfive, position_name, career_name, college_id: String
+    let college_name, graduationyear, education_id, university_name: String
+    let fields_study, endyear, degree_name, grade_name: String
+    let link_id: String
+    let linkedin: String
+    let facebook: String
+    let behance: String
+    let instgram: String
+    let github, stack_overview, youtube, blog: String
+    let website, others: String
+    let skills: [Skill]
+    let experiences: [Experience]
+    let courses: [Course]
+    let certification: [Certification]
+}
+
+struct Certification:Codable {
+    let certification_id, certification_url: String
+}
+
+struct Course:Codable {
+    let course_id, course_name, organization_name, start_date: String
+    let end_date: String
+}
+
+struct Experience:Codable {
+    let experience_id, company_name, job_title, date_start: String
+    let date_end, salary, reasonforleaving: String
+}
+
+struct Skill:Codable {
+    let skill_id, skill_name: String
+}

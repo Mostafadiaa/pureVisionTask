@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         else{
-            let loginVc = sb.instantiateViewController(withIdentifier: "loginVc")
+            let loginVc = sb.instantiateViewController(withIdentifier: "companyVc")
             self.window?.rootViewController = loginVc
         }
         self.window?.makeKeyAndVisible()

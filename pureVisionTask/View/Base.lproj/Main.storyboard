@@ -716,27 +716,46 @@
                     </view>
                     <connections>
                         <outlet property="compAllDataTabel" destination="Pvg-cC-8VZ" id="gO2-7G-c1e"/>
-                        <segue destination="HMs-vF-NEq" kind="show" id="5Ie-SZ-4Ue"/>
+                        <segue destination="HMs-vF-NEq" kind="show" identifier="getUserData" id="5Ie-SZ-4Ue"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tkq-xz-MWc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4505.625" y="1070.0704225352113"/>
         </scene>
-        <!--View Controller-->
+        <!--User Id View Vc-->
         <scene sceneID="dv5-W5-WDl">
             <objects>
-                <viewController id="HMs-vF-NEq" sceneMemberID="viewController">
+                <viewController id="HMs-vF-NEq" customClass="userIdViewVc" customModule="pureVisionTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZhM-XW-JUM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="tesrssrsr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxJ-Bj-uPf">
+                                <rect key="frame" x="127" y="119" width="67" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHL-cA-tNC">
+                                <rect key="frame" x="27" y="274" width="267" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="EsQ-OX-AAm"/>
                     </view>
+                    <connections>
+                        <outlet property="userId" destination="SHL-cA-tNC" id="Ac6-PH-MSe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8p-Xu-5OI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5417" y="1072"/>
+            <point key="canvasLocation" x="5416.875" y="1070.0704225352113"/>
         </scene>
         <!--Education-->
         <scene sceneID="FOS-mk-ccy">

@@ -11,7 +11,10 @@ import UIKit
 class companyVc: UIViewController {
     @IBOutlet weak var compAllDataTabel: UITableView!
     let allDataUrl = "https://ahmedhariedy62848.ipage.com/wazeftak/apis/allldatausers.php"
+    let getData = "https://ahmedhariedy62848.ipage.com/wazeftak/apis/alldatadiaa.php"
     var allDataList: [allDatuModel] = []
+    var allUserDataList : [allUserData] = []
+    var userId = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +46,11 @@ class companyVc: UIViewController {
         let imageData = Data(base64Encoded: imageString, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)!
         return UIImage(data: imageData)!
     }
-    
-    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc  = segue.destination as! userIdViewVc
+        vc.userIdData = self.userId
+    }
 
 
 
@@ -67,7 +73,27 @@ extension companyVc:UITableViewDataSource,UITableViewDelegate{
         return 205
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       let postUserId =  postUserIdData.init(user_id: allDataList[indexPath.row].user_id)
+        helpedFunctions.sharedInstance.postDataWithOutRes(postData: postUserId, url: getData) { (data) in
+            if let data  = data{
+                do {
+                    let selectedUserJson = try JSONDecoder().decode(selectedUserData.self, from: data)
+                   self.allUserDataList =  selectedUserJson.data
+                    print("allUserDataList[0].user_id = > \(self.allUserDataList[0].gender)")
+                    //self.performSegue(withIdentifier: "getUserData", sender: self)
+                    
+                    
+                    
+                }
+                catch let err as NSError {
+                    print(err.localizedDescription)
+                }
+            }
+        }
+        
+        
+    }
 }
 extension UIImage {
     func toBase64() -> String? {
