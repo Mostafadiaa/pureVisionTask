@@ -19,20 +19,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         let sb:UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
         let isLogin:Bool = UserDefaults.standard.bool(forKey: "logedIn")
+        let userLoginType:Int = UserDefaults.standard.integer(forKey: "logedInType")
         let isDonePersonal = UserDefaults.standard.bool(forKey: "donePersonal")
         if isLogin {
-            if isDonePersonal {
-                let thanksVc = sb.instantiateViewController(withIdentifier: "thanksVc")
-                self.window?.rootViewController = thanksVc
-            }
-            else{
-                let homeVc = sb.instantiateViewController(withIdentifier: "loginVc")
+            if userLoginType == 3{
+                if isDonePersonal {
+                    let thanksVc = sb.instantiateViewController(withIdentifier: "thanksVc")
+                    self.window?.rootViewController = thanksVc
+                }
+                else{
+                    let homeVc = sb.instantiateViewController(withIdentifier: "afterLogin")
+                    self.window?.rootViewController = homeVc
+                }
+            }else if userLoginType == 2{
+                let homeVc = sb.instantiateViewController(withIdentifier: "companyVc")
                 self.window?.rootViewController = homeVc
+            }else if userLoginType == 1{
+//                let homeVc = sb.instantiateViewController(withIdentifier: "adminVc")
+//                self.window?.rootViewController = homeVc
+                print("admin")
             }
-            
         }
         else{
-            let loginVc = sb.instantiateViewController(withIdentifier: "companyVc")
+            let loginVc = sb.instantiateViewController(withIdentifier: "loginVc")
             self.window?.rootViewController = loginVc
         }
         self.window?.makeKeyAndVisible()

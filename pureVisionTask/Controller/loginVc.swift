@@ -63,13 +63,24 @@ class loginVc: UIViewController {
                         self.dismiss(animated: true, completion: nil)
                         self.performSegue(withIdentifier: "access", sender: self)
                         UserDefaults.standard.set(true, forKey: "logedIn")
+                        UserDefaults.standard.set(3, forKey: "logedInType")
                         UserDefaults.standard.synchronize()
                         self.emailField.text = ""
                         self.passField.text = ""
                     } else if responsehh!["type"]! as! String == "2" {
                         print("company")
+                        self.dismiss(animated: true, completion: nil)
+                        self.performSegue(withIdentifier: "companyAcess", sender: self)
+                        UserDefaults.standard.set(true, forKey: "logedIn")
+                        UserDefaults.standard.set(2, forKey: "logedInType")
+                        UserDefaults.standard.synchronize()
+                        self.emailField.text = ""
+                        self.passField.text = ""
+                        
                     } else if responsehh!["type"]! as! String == "1" {
                         print("admin")
+                        UserDefaults.standard.set(true, forKey: "logedIn")
+                        UserDefaults.standard.set(1, forKey: "logedInType")
                     }
                 } else {
                     AlertController.showAlert(self, title: "Something Wrong", message: "please check your mail for the activation")

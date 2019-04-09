@@ -224,9 +224,13 @@ struct allUserData:Codable {
     let skills: [Skill]
     let experiences: [Experience]
     let courses: [Course]
+    let language_listRow: [language_listRow]
     let certification: [Certification]
 }
 
+struct language_listRow:Codable {
+    let language_name, level_lang_name: String
+}
 struct Certification:Codable {
     let certification_id, certification_url: String
 }
@@ -239,6 +243,7 @@ struct Course:Codable {
 struct Experience:Codable {
     let experience_id, company_name, job_title, date_start: String
     let date_end, salary, reasonforleaving: String
+    let Worked_Time:String
 }
 
 struct Skill:Codable {

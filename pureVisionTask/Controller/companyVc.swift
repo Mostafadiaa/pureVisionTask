@@ -14,7 +14,7 @@ class companyVc: UIViewController {
     let getData = "https://ahmedhariedy62848.ipage.com/wazeftak/apis/alldatadiaa.php"
     var allDataList: [allDatuModel] = []
     var allUserDataList : [allUserData] = []
-    var userId = ""
+   // var tsetText :Data!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,7 @@ class companyVc: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc  = segue.destination as! userIdViewVc
-        vc.userIdData = self.userId
+        vc.allUserDataListSegue = self.allUserDataList
     }
 
 
@@ -79,9 +79,12 @@ extension companyVc:UITableViewDataSource,UITableViewDelegate{
             if let data  = data{
                 do {
                     let selectedUserJson = try JSONDecoder().decode(selectedUserData.self, from: data)
-                   self.allUserDataList =  selectedUserJson.data
-                    print("allUserDataList[0].user_id = > \(self.allUserDataList[0].gender)")
-                    //self.performSegue(withIdentifier: "getUserData", sender: self)
+                    
+                    DispatchQueue.main.async {
+                        self.allUserDataList =  selectedUserJson.data
+                        self.performSegue(withIdentifier: "getUserData", sender: self)
+                    }
+                    
                     
                     
                     

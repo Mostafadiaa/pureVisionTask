@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class regVc: UIViewController {
     let regUrl = "http://ahmedhariedy62848.ipage.com/wazeftak/apis/regist.php"
     @IBOutlet var emailField: UITextField!
@@ -25,13 +24,12 @@ class regVc: UIViewController {
         userName.placeholder = LocalizationSystem.sharedInstance.localizedStringForKey(key: "name", comment: "")
         doneOutlet.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Done", comment: ""), for: .normal)
         hideKeyboardWhenTappedAround()
-        
     }
 
     func regAct() {
         let activityInd = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.whiteLarge)
         activityInd.color = UIColor.darkGray
-        activityInd.center = self.view.center
+        activityInd.center = view.center
         activityInd.startAnimating()
         view.addSubview(activityInd)
         let registrationData = regData(username: userName.text!, email: emailField.text!, password: passField.text!)
@@ -43,10 +41,9 @@ class regVc: UIViewController {
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.addValue("application/json", forHTTPHeaderField: "Accept")
         do {
-             let regJson = try JSONEncoder().encode(registrationData)
-             req.httpBody = regJson
-        }
-        catch let regError as NSError{
+            let regJson = try JSONEncoder().encode(registrationData)
+            req.httpBody = regJson
+        } catch let regError as NSError {
             AlertController.showAlert(self, title: "Something Wrong", message: "\(regError.localizedDescription)")
         }
         let session = URLSession.shared
@@ -68,10 +65,8 @@ class regVc: UIViewController {
                     }
                     alert.addAction(okAction)
                     self.present(alert, animated: true, completion: nil)
-                }
-                else {
+                } else {
                     AlertController.showAlert(self, title: "Something Wrong", message: "\(regJson.message)")
-                    
                 }
             } catch let error as NSError {
                 AlertController.showAlert(self, title: "Something Wrong", message: "\(error.localizedDescription)")
@@ -90,11 +85,9 @@ class regVc: UIViewController {
             } else {
                 if CheckInternet.Connection() {
                     regAct()
-                }
-                else{
+                } else {
                     AlertController.showAlert(self, title: "Something Wrong", message: "No Internet Connection")
                 }
-               
             }
         } else {
             AlertController.showAlert(self, title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "emptyField", comment: ""), message: LocalizationSystem.sharedInstance.localizedStringForKey(key: "allReq", comment: ""))
