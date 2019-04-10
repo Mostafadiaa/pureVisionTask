@@ -1,5 +1,5 @@
 //
-//  skillCell.swift
+//  cirtCell.swift
 //  pureVisionTask
 //
 //  Created by Pure Vision on 4/10/19.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class skillCell: UITableViewCell {
-    @IBOutlet weak var skillLabel: UILabel!
+class cirtCell: UITableViewCell {
+    @IBOutlet weak var cirtCollectionView: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

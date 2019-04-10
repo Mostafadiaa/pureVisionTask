@@ -1,5 +1,5 @@
 //
-//  skillCell.swift
+//  eduCell.swift
 //  pureVisionTask
 //
 //  Created by Pure Vision on 4/10/19.
@@ -8,11 +8,18 @@
 
 import UIKit
 
-class skillCell: UITableViewCell {
-    @IBOutlet weak var skillLabel: UILabel!
+class eduCell: UITableViewCell {
+    @IBOutlet weak var gradYearScholLabel: UILabel!
+    @IBOutlet weak var highScLabel: UILabel!
+    @IBOutlet weak var universtyLabel: UILabel!
+    @IBOutlet weak var degreeLabel: UILabel!
+    @IBOutlet weak var studyField: UILabel!
+    @IBOutlet weak var uniVerstyLabelOfGrad: UILabel!
+    @IBOutlet weak var gradeUNI: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 

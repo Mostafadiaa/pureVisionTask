@@ -1,5 +1,5 @@
 //
-//  skillCell.swift
+//  courseCell.swift
 //  pureVisionTask
 //
 //  Created by Pure Vision on 4/10/19.
@@ -8,8 +8,9 @@
 
 import UIKit
 
-class skillCell: UITableViewCell {
-    @IBOutlet weak var skillLabel: UILabel!
+class courseCell: UITableViewCell {
+    @IBOutlet weak var nameAtOrga: UILabel!
+    @IBOutlet weak var fromTo: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

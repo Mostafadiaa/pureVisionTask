@@ -1,5 +1,5 @@
 //
-//  skillCell.swift
+//  exoerCell.swift
 //  pureVisionTask
 //
 //  Created by Pure Vision on 4/10/19.
@@ -8,8 +8,10 @@
 
 import UIKit
 
-class skillCell: UITableViewCell {
-    @IBOutlet weak var skillLabel: UILabel!
+class exoerCell: UITableViewCell {
+    @IBOutlet weak var jobAtComp: UILabel!
+    @IBOutlet weak var dateStartToEnd: UILabel!
+    @IBOutlet weak var workedTime: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

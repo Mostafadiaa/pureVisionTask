@@ -41,7 +41,6 @@
 		16F26A6B222E7486000DE1DB /* onlinePresence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F26A6A222E7486000DE1DB /* onlinePresence.swift */; };
 		16F26A6D222EB3B5000DE1DB /* examsVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F26A6C222EB3B5000DE1DB /* examsVc.swift */; };
 		E1311FF5225CD8DC0032B243 /* generalInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1311FF4225CD8DC0032B243 /* generalInfoCell.swift */; };
-		E16EC98D225B889300B7A9C8 /* skillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16EC98C225B889300B7A9C8 /* skillCell.swift */; };
 		E177D438225A0B4700C0CEDD /* Cairo-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E177D432225A0B4600C0CEDD /* Cairo-ExtraLight.ttf */; };
 		E177D439225A0B4700C0CEDD /* Cairo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E177D433225A0B4600C0CEDD /* Cairo-SemiBold.ttf */; };
 		E177D43A225A0B4700C0CEDD /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E177D434225A0B4600C0CEDD /* Cairo-Regular.ttf */; };
@@ -49,6 +48,14 @@
 		E177D43C225A0B4700C0CEDD /* Cairo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E177D436225A0B4600C0CEDD /* Cairo-Black.ttf */; };
 		E177D43D225A0B4700C0CEDD /* Cairo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E177D437225A0B4600C0CEDD /* Cairo-Bold.ttf */; };
 		E177D43F225A2EF100C0CEDD /* userIdViewVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E177D43E225A2EF100C0CEDD /* userIdViewVc.swift */; };
+		E1F14F31225E017A0075B950 /* contactInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F14F30225E017A0075B950 /* contactInfoCell.swift */; };
+		E1F14F33225E13710075B950 /* eduCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F14F32225E13710075B950 /* eduCell.swift */; };
+		E1F14F35225E1CA00075B950 /* exoerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F14F34225E1CA00075B950 /* exoerCell.swift */; };
+		E1F14F37225E22E30075B950 /* langCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F14F36225E22E30075B950 /* langCell.swift */; };
+		E1F14F39225E22F60075B950 /* skillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F14F38225E22F60075B950 /* skillCell.swift */; };
+		E1F14F3B225E27260075B950 /* courseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F14F3A225E27260075B950 /* courseCell.swift */; };
+		E1F14F3D225E2C570075B950 /* cirtCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F14F3C225E2C570075B950 /* cirtCell.swift */; };
+		E1F14F3F225E2FF70075B950 /* certCollecCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F14F3E225E2FF70075B950 /* certCollecCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,7 +98,6 @@
 		16F26A6A222E7486000DE1DB /* onlinePresence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onlinePresence.swift; sourceTree = "<group>"; };
 		16F26A6C222EB3B5000DE1DB /* examsVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = examsVc.swift; sourceTree = "<group>"; };
 		E1311FF4225CD8DC0032B243 /* generalInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generalInfoCell.swift; sourceTree = "<group>"; };
-		E16EC98C225B889300B7A9C8 /* skillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skillCell.swift; sourceTree = "<group>"; };
 		E177D432225A0B4600C0CEDD /* Cairo-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-ExtraLight.ttf"; sourceTree = "<group>"; };
 		E177D433225A0B4600C0CEDD /* Cairo-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-SemiBold.ttf"; sourceTree = "<group>"; };
 		E177D434225A0B4600C0CEDD /* Cairo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Regular.ttf"; sourceTree = "<group>"; };
@@ -99,6 +105,14 @@
 		E177D436225A0B4600C0CEDD /* Cairo-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Black.ttf"; sourceTree = "<group>"; };
 		E177D437225A0B4600C0CEDD /* Cairo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Bold.ttf"; sourceTree = "<group>"; };
 		E177D43E225A2EF100C0CEDD /* userIdViewVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userIdViewVc.swift; sourceTree = "<group>"; };
+		E1F14F30225E017A0075B950 /* contactInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactInfoCell.swift; sourceTree = "<group>"; };
+		E1F14F32225E13710075B950 /* eduCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eduCell.swift; sourceTree = "<group>"; };
+		E1F14F34225E1CA00075B950 /* exoerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exoerCell.swift; sourceTree = "<group>"; };
+		E1F14F36225E22E30075B950 /* langCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = langCell.swift; sourceTree = "<group>"; };
+		E1F14F38225E22F60075B950 /* skillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skillCell.swift; sourceTree = "<group>"; };
+		E1F14F3A225E27260075B950 /* courseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseCell.swift; sourceTree = "<group>"; };
+		E1F14F3C225E2C570075B950 /* cirtCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cirtCell.swift; sourceTree = "<group>"; };
+		E1F14F3E225E2FF70075B950 /* certCollecCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = certCollecCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,8 +156,15 @@
 		168D74FB221D8094003445DC /* clell */ = {
 			isa = PBXGroup;
 			children = (
+				E1F14F3C225E2C570075B950 /* cirtCell.swift */,
+				E1F14F3E225E2FF70075B950 /* certCollecCell.swift */,
+				E1F14F34225E1CA00075B950 /* exoerCell.swift */,
+				E1F14F36225E22E30075B950 /* langCell.swift */,
+				E1F14F38225E22F60075B950 /* skillCell.swift */,
+				E1F14F3A225E27260075B950 /* courseCell.swift */,
+				E1F14F30225E017A0075B950 /* contactInfoCell.swift */,
+				E1F14F32225E13710075B950 /* eduCell.swift */,
 				E1311FF4225CD8DC0032B243 /* generalInfoCell.swift */,
-				E16EC98C225B889300B7A9C8 /* skillCell.swift */,
 				165358B42254EF5900623B25 /* companyCell.swift */,
 				1612026A221C6F9D00E0A01B /* langClassCell.swift */,
 				16C2002D221BFC8300BA7507 /* eduCellClass.swift */,
@@ -313,29 +334,36 @@
 				16C157E122182264005B2BA6 /* ViewController.swift in Sources */,
 				165358B52254EF5900623B25 /* companyCell.swift in Sources */,
 				169114E1223FC9C3001DB0B7 /* helpedFunctions.swift in Sources */,
+				E1F14F31225E017A0075B950 /* contactInfoCell.swift in Sources */,
 				161B1BCC221A4FC100F54255 /* eduVc.swift in Sources */,
+				E1F14F35225E1CA00075B950 /* exoerCell.swift in Sources */,
 				16C20034221C3E5000BA7507 /* jobTabelCell.swift in Sources */,
 				16B6766022369C3F009B6450 /* regVc.swift in Sources */,
 				16556BB22218CE290040566E /* loginVc.swift in Sources */,
 				16120269221C6E4D00E0A01B /* langVc.swift in Sources */,
+				E1F14F3B225E27260075B950 /* courseCell.swift in Sources */,
+				E1F14F3F225E2FF70075B950 /* certCollecCell.swift in Sources */,
 				165358B322539B9800623B25 /* companyVc.swift in Sources */,
+				E1F14F37225E22E30075B950 /* langCell.swift in Sources */,
 				16F26A6D222EB3B5000DE1DB /* examsVc.swift in Sources */,
 				160EF4D0221D594A00DD9640 /* thanksVc.swift in Sources */,
 				1612026B221C6F9D00E0A01B /* langClassCell.swift in Sources */,
 				163AB2D1223A5BC600D1A23E /* CheckInternet.swift in Sources */,
+				E1F14F3D225E2C570075B950 /* cirtCell.swift in Sources */,
 				164DADE8222BE048008B3EE9 /* educationVc.swift in Sources */,
 				16756058221D3AC0007FC513 /* cirtClassCell.swift in Sources */,
 				16C157F722182CBC005B2BA6 /* welcomeViewCell.swift in Sources */,
 				16C157DF22182264005B2BA6 /* AppDelegate.swift in Sources */,
 				16240137221A0C51002995E2 /* personlVC.swift in Sources */,
 				16C20030221C1DC100BA7507 /* AlertController.swift in Sources */,
+				E1F14F33225E13710075B950 /* eduCell.swift in Sources */,
 				16F26A6B222E7486000DE1DB /* onlinePresence.swift in Sources */,
 				16C9882F221882B100BEC7CE /* mainVc.swift in Sources */,
+				E1F14F39225E22F60075B950 /* skillCell.swift in Sources */,
 				16C20032221C3E0900BA7507 /* jobVc.swift in Sources */,
 				E1311FF5225CD8DC0032B243 /* generalInfoCell.swift in Sources */,
 				1675605A221D4759007FC513 /* acceptVC.swift in Sources */,
 				16756056221D3740007FC513 /* addCertificatesVc.swift in Sources */,
-				E16EC98D225B889300B7A9C8 /* skillCell.swift in Sources */,
 				16C2002E221BFC8300BA7507 /* eduCellClass.swift in Sources */,
 				1612026D221C94AE00E0A01B /* yourInfoVc.swift in Sources */,
 			);
