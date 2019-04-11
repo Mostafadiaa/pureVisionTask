@@ -31,6 +31,12 @@ class generalInfoCell: UITableViewCell {
         generalLabe.textColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.0)
         generalLabe.font  = UIFont.boldSystemFont(ofSize: 15)
         generalLabe.textAlignment = NSTextAlignment.center
+        userImage.layer.borderWidth = 1
+       // userImage.clipsToBounds = true
+        userImage.layer.borderColor = #colorLiteral(red: 0, green: 0.7019607843, blue: 0.5607843137, alpha: 1)
+        //userImage.
+        userImage.layer.cornerRadius = userImage.frame.size.width / 2
+        userImage.clipsToBounds = true
         // Initialization code
     }
 

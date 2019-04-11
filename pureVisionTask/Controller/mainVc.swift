@@ -45,6 +45,7 @@ class mainVc: UIViewController {
     }
     @IBAction func signOut(_ sender: Any) {
         UserDefaults.standard.set(false, forKey: "logedIn")
+        UserDefaults.standard.set(nil, forKey: "logedInType")
         UserDefaults.standard.synchronize()
         self.keychainAccess.setPasscode(identifier: "user_id", passcode: "")
         let loginViewController = storyboard?.instantiateViewController(withIdentifier: "loginVc") as! loginVc

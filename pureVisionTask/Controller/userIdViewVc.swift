@@ -10,19 +10,24 @@ import UIKit
 
 class userIdViewVc: UIViewController {
     @IBOutlet var userTabelData: UITableView!
-    
-    
-    
+    @IBOutlet weak var titelText: UINavigationItem!
     var allUserDataListSegue: [allUserData] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.titelText.title = "\(allUserDataListSegue[0].fullname) Data"
+    }
     class func convertBase64ToImage(imageString: String) -> UIImage {
         let imageData = Data(base64Encoded: imageString, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)!
         return UIImage(data: imageData)!
     }
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension userIdViewVc: UITableViewDelegate, UITableViewDataSource ,UICollectionViewDelegate,UICollectionViewDataSource{
@@ -70,7 +75,7 @@ extension userIdViewVc: UITableViewDelegate, UITableViewDataSource ,UICollection
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = userTabelData.dequeueReusableCell(withIdentifier: "cellNumOne") as! generalInfoCell
-            
+            cell.userImage.image = userIdViewVc.convertBase64ToImage(imageString: allUserDataListSegue[0].image_name)
             cell.birthDate.text = allUserDataListSegue[0].birthday
             cell.countryData.text = "\(allUserDataListSegue[0].city_name),\(allUserDataListSegue[0].nicename)"
             cell.exData.text = allUserDataListSegue[0].career_name
@@ -109,7 +114,7 @@ extension userIdViewVc: UITableViewDelegate, UITableViewDataSource ,UICollection
         }
         else if indexPath.section == 3{
             let cell = userTabelData.dequeueReusableCell(withIdentifier: "expCell") as! exoerCell
-            cell.jobAtComp.text = "\(allUserDataListSegue[0].experiences[indexPath.row].job_title) To \(allUserDataListSegue[0].experiences[indexPath.row].company_name)"
+            cell.jobAtComp.text = "\(allUserDataListSegue[0].experiences[indexPath.row].job_title) At \(allUserDataListSegue[0].experiences[indexPath.row].company_name)"
             cell.dateStartToEnd.text = "\(allUserDataListSegue[0].experiences[indexPath.row].date_start) To \(allUserDataListSegue[0].experiences[indexPath.row].date_end)"
             cell.workedTime.text = allUserDataListSegue[0].experiences[indexPath.row].Worked_Time
             cell.selectionStyle = .none
@@ -146,9 +151,8 @@ extension userIdViewVc: UITableViewDelegate, UITableViewDataSource ,UICollection
         else if indexPath.section == 7{
             let cell = userTabelData.dequeueReusableCell(withIdentifier: "cirtCell") as! cirtCell
            // cell.isUserInteractionEnabled = false
-            
             cell.cirtCollectionView.reloadData()
-            cell.selectionStyle = .none
+           // cell.selectionStyle = .none
             return cell
             
         }
@@ -232,7 +236,7 @@ extension userIdViewVc: UITableViewDelegate, UITableViewDataSource ,UICollection
             return  65
         }
         else if indexPath.section == 7{
-            return  200
+            return  100
         }
         
         return UITableView.automaticDimension
@@ -247,13 +251,28 @@ extension userIdViewVc: UITableViewDelegate, UITableViewDataSource ,UICollection
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return allUserDataListSegue[0].certification.count
+       // allUserDataListSegue[0].certification.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "certCollecCell", for: indexPath) as! certCollecCell
-        //cell.cirtCellImage.image = userIdViewVc.convertBase64ToImage(imageString: allUserDataListSegue[0].certification[indexPath.item].certification_url)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "colCell", for: indexPath) as! certCollecCell
+        cell.cirtCellImage.image = userIdViewVc.convertBase64ToImage(imageString: allUserDataListSegue[0].certification[indexPath.item].certification_url)
         //cell.cirtCellImage.image = userIdViewVc.convertBase64ToImage(imageString: allUserDataListSegue[0].certification[indexPath.row].certification_url)
         
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+         let imageView = UIImageView(image: userIdViewVc.convertBase64ToImage(imageString: allUserDataListSegue[0].certification[indexPath.item].certification_url))
+        imageView.frame = self.view.frame
+        imageView.backgroundColor = .white
+        imageView.contentMode = .scaleAspectFit
+        imageView.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
+        imageView.addGestureRecognizer(tap)
+        self.view.addSubview(imageView)
+    }
+    @objc func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
+        sender.view?.removeFromSuperview()
+    }
+    
 }

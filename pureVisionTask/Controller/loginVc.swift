@@ -8,10 +8,7 @@
 
 import UIKit
 
-struct loginData: Codable {
-    var userName = String()
-    var passWord = String()
-}
+
 
 class loginVc: UIViewController {
     @IBOutlet var emailField: UITextField!
